@@ -1,10 +1,12 @@
-module ShippingModel
+
+
+module ShippingModel2
 
 
 using JuMP
 using Gurobi
 
-function build_model(data)
+function build_model_with_penalty(data)
     model = Model(Gurobi.Optimizer)
 
     O = data.O
@@ -15,22 +17,18 @@ function build_model(data)
     N = data.N
     maxP = data.maxP
     maxT = data.maxT
-    Dmax = data.Dmax
-    WTP = data.WTP
+    D = data.Dmax
+    penalty = data.penalty
     spot_price = data.spot_price
     # Decision variables
     @variable(model, f[p in P, (i,j) in A] >= 0)
     @variable(model, q[o in O] >= 0)
+    @variable(model, u[o in O] >= 0)  # Spot market purchases
     @variable(model, prod[p in P] >= 0)
 
 
-    @objective(model, Max,
-    sum(WTP[o] * q[o] for o in O)
-    -
-    sum(c[(i,j)] * f[p,(i,j)] for p in P for (i,j) in A)
-    -
-    sum(spot_price[p] * prod[p] for p in P)
-    )
+    @objective(model, Min, sum(c[(i,j)] * f[p,(i,j)] for p in P for (i,j) in A) 
+    + sum(penalty*(u[o]) for o in O))
 
     # Flow variables are zero for arcs that do not originate from the production node
     @constraint(model,
@@ -41,7 +39,7 @@ function build_model(data)
     @constraint(model,[p in P],sum(f[p,(p,t)] for t in T if (p,t) in A) <= maxP[p])
 
     # Transportation capacity constraints
-    @constraint(model,[(i,j) in A], sum(f[p,(i,j)] for p in P) <= maxT[(i,j)])
+    #@constraint(model,[(i,j) in A], sum(f[p,(i,j)] for p in P) <= maxT[(i,j)])
 
     #flow conservation constraints
     @constraint(model,
@@ -57,10 +55,13 @@ function build_model(data)
     )
 
     # Demand constraints
-    @constraint(model, [o in O], q[o] <= Dmax[o])
+    @constraint(model, [o in O], q[o] + u[o] >= D[o])
 
+    #q is the delivered quantity to each customer. 
     @constraint(model, [o in O], q[o] == sum(f[p,(t,o)] for p in P for t in T if (t,o) in A))
-    return model, f, q, WTP, Dmax,prod
+    #o1 must have atleast 90% 
+    #@constraint(model, q["O1"] >= 0.5*D["O1"])
+    return model, f, q, u, prod
 end 
 end 
 

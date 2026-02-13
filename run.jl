@@ -1,5 +1,6 @@
 include("initial.jl")
 include("model.jl")
+include("model_2.jl")
 
 using .ShippingData
 using .ShippingModel
@@ -11,20 +12,22 @@ using JuMP
 
 data = ShippingData.generate_data()
 model,f,q,_,_,prod = ShippingModel.build_model(data)
+model2, f2, q2, u2, prod2 = ShippingModel2.build_model_with_penalty(data)
 O = data.O
-WTP, Dmax = data.WTP, data.Dmax
+WTP, Dmax,penalty = data.WTP, data.Dmax, data.penalty
 P = data.P
 T = data.T
 A = data.A
 
-optimize!(model)
+
+optimize!(model2)
 println("\nDelivered quantities:")
 for o in O
     println(
         o,
-        ": delivered = ", round(value(q[o]), digits=2),
+        ": delivered = ", round(value(q2[o]), digits=2),
         " / Demand required = ", Dmax[o],
-        " | WTP = ", WTP[o]
+        " | Unmet demand = ", round(value(u2[o]), digits=2),
     )
 end
 #Production sites used
@@ -32,13 +35,13 @@ println("\nProduction quantities:")
 for p in P
     println(
         p,
-        ": produced = ", round(value(prod[p]), digits=2),
+        ": produced = ", round(value(prod2[p]), digits=2),
         " | Spot price = ", data.spot_price[p]
     )
 end
 println("\nFlow on arcs (non-zero only):")
 for p in P, (i,j) in A
-    val = value(f[p,(i,j)])
+    val = value(f2[p,(i,j)])
     if val > 1e-6
         println(
             "Origin ", p, ": ",
@@ -57,7 +60,7 @@ end
 flow_on_arc = Dict{Tuple{String,String}, Float64}()
 
 for (i,j) in A
-    flow_on_arc[(i,j)] = sum(value(f[p,(i,j)]) for p in P)
+    flow_on_arc[(i,j)] = sum(value(f2[p,(i,j)]) for p in P)
 end
 
 edge_colors = Vector{RGBAf}(undef, ne(g))
@@ -84,16 +87,30 @@ node_colors = [
              :orange
     for n in nodes
 ]
+node_labels = [
+    n in O ? n : ""
+    for n in nodes
+]
 fig = Figure(size = (1000, 700))
 ax = Axis(fig[1,1], title = "Shipping network (red = used, grey = unused)")
 
 graphplot!(
     ax, g,
-    node_labels = nodes,
+    node_labels = node_labels,
     node_color = node_colors,
     edge_color = edge_colors,
     edge_width = edge_widths,
-    arrow_size = 12
+    arrow_size = 12,
+    node_size = 20,
+    node_label_size = 18,   # increase label size
 )
+#Print the origin at which each o recieves the flow from
+for o in O
+    for p in P, t in T
+        if (t,o) in A && value(f2[p,(t,o)]) > 1e-6
+            println("Customer ", o, " receives flow from production site ", p, " via transit node ", t)
+        end
+    end
+end 
 
 fig

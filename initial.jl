@@ -48,17 +48,18 @@ function generate_data(; seed = 42)
     for (t1,t2) in TT
         push!(A, (t1,t2))
     end
+
     spot_price = Dict(
     "P1" => 15.0,
-    "P2" => 18.0,
-    "P3" => 22.0,
-    "P4" => 30.0)
+    "P2" => 15.0,
+    "P3" => 15.0,
+    "P4" => 15.0)
 
     # Production capacity
     maxP = Dict(
-        "P1" => 120.0,
-        "P2" => 90.0,
-        "P3" => 110.0,
+        "P1" => 100.0,
+        "P2" => 9000.0,
+        "P3" => 25.0,
         "P4" => 80.0
     )
 
@@ -92,7 +93,7 @@ function generate_data(; seed = 42)
     Dmax = Dict(
         "O1" => 80.0, "O2" => 50.0, "O3" => 70.0,
         "O4" => 40.0, "O5" => 90.0, "O6" => 55.0,
-        "O7" => 65.0, "O8" => 45.0, "O9" => 80.0,
+        "O7" => 65.0, "O8" => 90.0, "O9" => 80.0,
         "O10" => 75.0
     )
     WTP = Dict(
@@ -106,7 +107,7 @@ function generate_data(; seed = 42)
     "O8"  => 70.0,
     "O9"  => 60.0,
     "O10" => 55.0)
-
+    penalty = 1000000
     return (
         O = O,
         P = P,
@@ -118,7 +119,8 @@ function generate_data(; seed = 42)
         maxP = maxP,
         maxT = maxT,
         Dmax = Dmax,
-        spot_price = spot_price
+        spot_price = spot_price,
+        penalty = penalty
     )
 end
 
