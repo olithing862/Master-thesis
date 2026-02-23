@@ -1,0 +1,19 @@
+Cluster,Western Europe,Nordics,Mediterranean,Middle East & India,Red Sea,Japan & South Korea,China & Hong Kong,South-east Asia,West Australia,East Australia,East Africa,West Africa,NA East Coast,NA West Coast,Gulf of Mexico,Panama,N Latin America,S Latin America
+Western Europe,60,75,80,110,100,140,140,125,130,140,120,100,105,120,110,105,100,100
+Nordics,,60,80,115,100,145,145,125,130,145,120,100,105,120,110,105,100,100
+Mediterranean,,,60,120,100,135,135,115,125,130,110,75,90,105,115,110,95,95
+Middle East & India,,,,60,80,105,100,95,100,110,100,110,115,150,140,140,120,120
+Red Sea,,,,,60,120,120,100,105,110,95,95,100,140,115,115,115,115
+Japan & South Korea,,,,,,60,75,75,75,100,110,135,135,100,135,120,125,135
+China & Hong Kong,,,,,,,60,75,75,100,105,130,130,100,125,120,120,135
+South-east Asia,,,,,,,,60,75,100,105,135,135,100,135,125,125,120
+West Australia,,,,,,,,,60,75,105,125,135,120,135,125,135,125
+East Australia,,,,,,,,,,60,110,125,125,115,125,110,110,110
+East Africa,,,,,,,,,,,60,75,120,125,120,115,110,95
+West Africa,,,,,,,,,,,,60,75,105,80,80,80,80
+NA East Coast,,,,,,,,,,,,,60,95,75,75,75,75
+NA West Coast,,,,,,,,,,,,,,60,85,75,75,100
+Gulf of Mexico,,,,,,,,,,,,,,,60,75,75,85
+Panama,,,,,,,,,,,,,,,,60,60,75
+N Latin America,,,,,,,,,,,,,,,,,60,75
+S Latin America,,,,,,,,,,,,,,,,,,60

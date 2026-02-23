@@ -1,0 +1,47 @@
+node_id,Location,Latitude,Longitude,region
+os1,Santo (Brazil),-19.9191,-43.9386,S Latin America
+os2,San Antonio (Chile),-33.5934,-71.6217,S Latin America
+os3,Colón (Panama),9.3592,-79.9014,Panama
+os4,New Orleans (USA),29.9511,-90.0715,Gulf of Mexico
+os5,Antwerp (Belgium),51.2194,4.4025,Western Europe
+os6,Algeciras (Spain),36.1408,-5.4562,Mediterranean
+os7,Tangier (Morocco),35.7595,-5.834,Mediterranean
+os8,Durban (South Africa),-29.8587,31.0218,East Africa
+os9,Singapore,1.264,103.840,South-east Asia
+os10,Ulsan (South Korea),35.529492,129.373208,Japan & South Korea
+ost1,Baoshan (China),31.41623,121.440087,China & Hong Kong
+ost2,Anshan (China),41.11667,122.98333,China & Hong Kong
+ost3,Bellary (India),15.20318,76.65912,Middle East & India
+ost4,Magnitogorsk (Russia),53.4186,59.0472,Middle East & India
+ost5,Abu Dhabi (UAE),24.32203,54.46799,Middle East & India
+ost6,Vanderbijlpark (South Africa),-26.6886,27.8358,East Africa
+ost7,Luleå (Sweden),65.55972,22.2197,Nordics
+ost8,Duisburg (Germany),51.35979,6.71754,Western Europe
+ost9,Volta Redonda (Brazil),-22.512631,-44.11287,S Latin America
+ost10,Ipatinga (Brazil),-19.491277,-42.544253,S Latin America
+ost11,Gary (USA),41.60202,-87.34673,NA East Coast
+ost12,North Charleston (USA),32.8745,-79.96461,NA East Coast
+t1,Mejillones (Chile),-23.0982,-70.4496,S Latin America
+t2,Açu (Brazil),-21.839478,-41.039560,S Latin America
+t3,Houston (USA),29.7604,-95.3698,Gulf of Mexico
+t4,Barranquilla (Colombia),10.967081,-74.764947,N Latin America
+t5,Mariehamn (Finland),60.0973,19.9348,Nordics
+t6,Huelva (Spain),37.2614,-6.9447,Mediterranean
+t7,Walvis Bay (Namibia),-22.9576,14.5053,West Africa
+t8,Cairo (Egypt),30.0444,31.2357,Red Sea
+t9,Kandla (India),22.999907,70.223626,Middle East & India
+t10,Nanjing (China),32.0603,118.7969,China & Hong Kong
+t11,Rotterdam (Netherlands),51.9244,4.4777,Western Europe
+t12,Ulsan (South Korea),35.5384,129.3114,Japan & South Korea
+t13,Shanghai,30.625773,122.063108,China & Hong Kong
+t14,Turku (Finland),60.438334,22.212743,Nordics
+ps1,Chile Ammonia Production,-23.0500,-70.3000,S Latin America
+ps2,Brazil Ammonia Production,-21.876568,-41.015887,S Latin America
+ps3,USA Ammonia Production,29.7200,-95.1000,Gulf of Mexico
+ps4,Colombia Ammonia Production,11.037840,-74.822028,N Latin America
+ps5,Finland Ammonia Production,60.4500,22.2500,Nordics
+ps6,Spain Ammonia Production,37.2400,-6.8800,Mediterranean
+ps7,Namibia Ammonia Production,-22.713268,14.618882,West Africa
+ps8,Egypt Ammonia Production,29.6000,32.3500,Red Sea
+ps9,India Ammonia Production,23.0333,70.2167,Middle East & India
+ps10,China Ammonia Production,32.0500,119.1000,China & Hong Kong
