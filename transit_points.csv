@@ -1,0 +1,12 @@
+Nr,Location,Latitude,Longitude,connection_truck,connection_shipping
+1,Mejillones (Chile),-23.0982,-70.4496,,3;10
+2,Açu (Brazil),-21.8217,-41.0108,,3;11
+3,Houston (USA),29.7604,-95.3698,,1;2;4;11
+4,Barranquilla (Colombia),10.9639,-74.7964,,3
+5,Mariehamn (Finland),60.0973,19.9348,,11
+6,Huelva (Spain),37.2614,-6.9447,,11;7;8
+7,Walvis Bay (Namibia),-22.9576,14.5053,,6;11
+8,Cairo (Egypt),30.0444,31.2357,,6;9;11
+9,Kandla (India),23.0333,70.2167,,8;10
+10,Nanjing (China),32.0603,118.7969,,1;9
+11,Rotterdam (Netherlands),51.9244,4.4777,,2;3;5;6;7;8

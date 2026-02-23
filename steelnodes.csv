@@ -1,0 +1,13 @@
+Nr,Location,Latitude,Longitude,connection_truck,connection_shipping
+1,Baoshan (China),31.41623,121.440087,10,
+2,Anshan (China),41.11667,122.98333,10,
+3,Bellary (India),15.20318,76.65912,9,
+4,Magnitogorsk (Russia),53.4186,59.0472,9,
+5,Abu Dhabi (UAE),24.32203,54.46799,9,
+6,Vanderbijlpark (South Africa),-26.6886,27.8358,7
+7,Luleå (Sweden),65.55972,22.2197,11
+8,Duisburg (Germany),51.35979,6.71754,6;11
+9,Volta Redonda (Brazil),-22.512631,-44.11287,1;2;4,
+10,Ipatinga (Brazil),-19.491277,-42.544253,1;2;4,
+11,Gary (USA),41.60202,-87.34673,3,
+12,North Charleston (USA),32.8745,-79.96461,3,
