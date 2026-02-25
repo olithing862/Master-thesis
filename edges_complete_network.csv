@@ -1,4 +1,5 @@
 from_id,to_id,mode,distance_km
+ps1,os2,truck,1436.0
 os1,ost9,truck,429.0024
 ost9,os1,truck,429.0024
 os1,ost10,truck,212.8937
@@ -13,6 +14,11 @@ os4,t3,truck,559.8353000000001
 t3,os4,truck,559.8353000000001
 os4,ps3,truck,544.8331999999999
 ps3,os4,truck,544.8331999999999
+ps2,ost10,truck,474
+ost10,ps2,truck,474
+ps2,ost9,truck,443
+ost9,ps2,truck,443
+ps2,t10,truck,1200.0
 os5,t5,truck,1685.9468
 t5,os5,truck,1685.9468
 os5,t11,truck,103.5338

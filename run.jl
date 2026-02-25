@@ -1,44 +1,87 @@
-include("initial.jl")
-include("model.jl")
-include("model_2.jl")
+include("ShippingData.jl")
+include("model_3.jl")
 
 using .ShippingData
-using .ShippingModel
+using .ShippingModelFinal
 using Graphs
 using CairoMakie
 using GraphMakie
 using JuMP
+using CSV
+using DataFrames
+
+# ----------------------------
+# Generate data
+# ----------------------------
+N, P, T, O, A,
+shipping_rate,
+maxP, Demand,
+penalty,
+region_of,
+mode_of,
+distance_of,
+truck_cost_per_km,truckcost =
+    ShippingData.generate_data()
 
 
-data = ShippingData.generate_data()
-model,f,q,_,_,prod = ShippingModel.build_model(data)
-model2, f2, q2, u2, prod2 = ShippingModel2.build_model_with_penalty(data)
-O = data.O
-WTP, Dmax,penalty = data.WTP, data.Dmax, data.penalty
-P = data.P
-T = data.T
-A = data.A
-
+# ----------------------------
+# Build model
+# ----------------------------
+model2, f2,q2, u2, prod2 =
+    ShippingModelFinal.build_model_with_penalty(
+    N, P, T, O, A,
+    shipping_rate,
+    maxP,
+    Demand,
+    penalty,
+    region_of,
+    mode_of,
+    distance_of,
+    truckcost
+)
 
 optimize!(model2)
+
+
+flow_rows = DataFrame(
+    from_id = String[],
+    to_id = String[],
+    flow = Float64[]
+)
+
+for (i,j) in A
+    total_flow = sum(value(f2[p,(i,j)]) for p in P)
+
+    if total_flow > 1e-6
+        push!(flow_rows, (i, j, total_flow))
+    end
+end
+
+CSV.write("optimized_flows.csv", flow_rows)
+
+println("Flows saved to optimized_flows.csv")
+# ----------------------------
+# Print results
+# ----------------------------
 println("\nDelivered quantities:")
 for o in O
     println(
         o,
         ": delivered = ", round(value(q2[o]), digits=2),
-        " / Demand required = ", Dmax[o],
+        " / Demand required = ", Demand[o],
         " | Unmet demand = ", round(value(u2[o]), digits=2),
     )
 end
-#Production sites used
+
 println("\nProduction quantities:")
 for p in P
     println(
         p,
         ": produced = ", round(value(prod2[p]), digits=2),
-        " | Spot price = ", data.spot_price[p]
+        " | Capacity = ", maxP[p]
     )
 end
+
 println("\nFlow on arcs (non-zero only):")
 for p in P, (i,j) in A
     val = value(f2[p,(i,j)])
@@ -50,67 +93,44 @@ for p in P, (i,j) in A
         )
     end
 end
-nodes = vcat(P, T, O)
-node_index = Dict(n => i for (i,n) in enumerate(nodes))
-g = DiGraph(length(nodes))
+println("\nCustomer supply routes:")
 
-for (i,j) in A
-    add_edge!(g, node_index[i], node_index[j])
-end
-flow_on_arc = Dict{Tuple{String,String}, Float64}()
-
-for (i,j) in A
-    flow_on_arc[(i,j)] = sum(value(f2[p,(i,j)]) for p in P)
-end
-
-edge_colors = Vector{RGBAf}(undef, ne(g))
-edge_widths = Vector{Float64}(undef, ne(g))
-
-edges_list = collect(edges(g))
-
-for (k, e) in enumerate(edges_list)
-    i = nodes[src(e)]
-    j = nodes[dst(e)]
-    flow = flow_on_arc[(i,j)]
-
-    if flow > 1e-6
-        edge_colors[k] = RGBAf(1, 0, 0, 0.9)   # red = used
-        edge_widths[k] = 2 + 0.05 * flow      # scale by flow
-    else
-        edge_colors[k] = RGBAf(0.7, 0.7, 0.7, 0.6)  # grey = unused
-        edge_widths[k] = 1.0
-    end
-end
-node_colors = [
-    n in P ? :green :
-    n in T ? :blue  :
-             :orange
-    for n in nodes
-]
-node_labels = [
-    n in O ? n : ""
-    for n in nodes
-]
-fig = Figure(size = (1000, 700))
-ax = Axis(fig[1,1], title = "Shipping network (red = used, grey = unused)")
-
-graphplot!(
-    ax, g,
-    node_labels = node_labels,
-    node_color = node_colors,
-    edge_color = edge_colors,
-    edge_width = edge_widths,
-    arrow_size = 12,
-    node_size = 20,
-    node_label_size = 18,   # increase label size
-)
-#Print the origin at which each o recieves the flow from
 for o in O
-    for p in P, t in T
-        if (t,o) in A && value(f2[p,(t,o)]) > 1e-6
-            println("Customer ", o, " receives flow from production site ", p, " via transit node ", t)
-        end
-    end
-end 
+    for p in P
 
-fig
+        # Check ALL incoming arcs to o
+        for i in N
+            if (i,o) in A && value(f2[p,(i,o)]) > 1e-6
+
+                if i == p
+                    println("Customer ", o,
+                            " receives DIRECT flow from ", p)
+                else
+                    println("Customer ", o,
+                            " receives flow from ", p,
+                            " via ", i)
+                end
+
+            end
+        end
+
+    end
+end
+#delivered to customer from production site via terminal and directly from production site
+
+flow_rows = DataFrame(
+    from_id = String[],
+    to_id   = String[],
+    flow    = Float64[]
+)
+
+for (i,j) in A
+    total_flow = sum(value(f2[p,(i,j)]) for p in P)
+
+    if total_flow > 1e-6
+        push!(flow_rows, (i, j, total_flow))
+    end
+end
+
+CSV.write("results_flows.csv", flow_rows)
+println("Saved: results_flows.csv")
