@@ -78,24 +78,30 @@ shipping_df = pd.DataFrame(shipping_edges)
 print(f"Total shipping edges: {len(shipping_df)}")
 
 # =====================================================
-# 5️⃣ TRUCK NETWORK (≤ 400 km, ONE DIRECTION ONLY)
+# 5️⃣ STRUCTURED TRUCK NETWORK (NO os↔ost CONNECTIONS)
 # =====================================================
 
 valid_truck_edges = []
 
-print("Testing truck connectivity (≤ 400 km)...")
+print("Building structured truck network (≤ 400 km)...")
 
-for from_id, to_id in itertools.combinations(all_nodes, 2):
+# Define node groups
+ps_nodes = [n for n in nodes if n.startswith("ps")]
+os_nodes = [n for n in nodes if n.startswith("os") or n.startswith("ost")]
+t_nodes  = [n for n in nodes if n.startswith("t")]
+
+def try_truck_connection(from_id, to_id):
 
     origin = nodes[from_id]
-    dest = nodes[to_id]
+    dest   = nodes[to_id]
 
-    # Pre-filter using great circle distance
+    # Pre-filter
     gc_dist = haversine(origin["lat"], origin["lon"],
                         dest["lat"], dest["lon"])
-
+    print("Testing:", from_id, to_id)
+    print("GC distance:", gc_dist)
     if gc_dist > 500:
-        continue
+        return
 
     try:
         route = ors.directions(
@@ -105,7 +111,7 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
             ],
             profile="driving-car",
             format="geojson",
-            radiuses=[1000, 1000]   # 👈 snapping box (1 km)
+            radiuses=[10000, 10000]
         )
 
         distance_km = (
@@ -121,24 +127,51 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
                 "from_id": from_id,
                 "to_id": to_id,
                 "mode": "truck",
-                "distance_km": distance_km
+                "distance_km": distance_km,
+                "geometry": json.dumps(geometry)
             })
 
             print(f"Truck OK: {from_id} → {to_id} ({distance_km:.0f} km)")
+        else:
+            print(f"Truck TOO FAR: {from_id} → {to_id} ({distance_km:.0f} km)")
 
         time.sleep(1)
 
     except Exception as e:
-        print(f"Truck routing failed {from_id} → {to_id}: {e}")
-        continue
+        print(type(e).__name__)
+        print(f"Truck failed {from_id} → {to_id}: {e}")
+
+
+# -----------------------------------------------------
+# 1️⃣ Production → Terminal
+# -----------------------------------------------------
+for p in ps_nodes:
+    for t in t_nodes:
+        try_truck_connection(p, t)
+
+# -----------------------------------------------------
+# 2️⃣ Production → Steel Demand
+# -----------------------------------------------------
+for p in ps_nodes:
+    for o in os_nodes:
+        try_truck_connection(p, o)
+
+# -----------------------------------------------------
+# 3️⃣ Terminal → Steel Demand
+# -----------------------------------------------------
+for t in t_nodes:
+    for o in os_nodes:
+        try_truck_connection(t, o)
+
 
 truck_df = pd.DataFrame(valid_truck_edges)
-print(f"Total truck edges (≤400 km): {len(truck_df)}")
+
+print(f"Total structured truck edges (≤400 km): {len(truck_df)}")
 
 # =====================================================
 # 6️⃣ COMBINE
 # =====================================================
 edges_final = pd.concat([shipping_df, truck_df], ignore_index=True)
-edges_final.to_csv("edges_complete_network.csv", index=False)
+edges_final.to_csv("edges_complete_network1.csv", index=False)
 
 print("Directed multimodal network successfully built.")

@@ -1,5 +1,5 @@
 node_id,Location,Latitude,Longitude,region
-os1,Santo (Brazil),-19.9191,-43.9386,S Latin America
+os1,Santo (Brazil),-23.98228, -46.29606,S Latin America
 os2,San Antonio (Chile),-33.5934,-71.6217,S Latin America
 os3,Colón (Panama),9.3592,-79.9014,Panama
 os4,New Orleans (USA),29.9511,-90.0715,Gulf of Mexico
@@ -7,18 +7,16 @@ os5,Antwerp (Belgium),51.2194,4.4025,Western Europe
 os6,Algeciras (Spain),36.1408,-5.4562,Mediterranean
 os7,Tangier (Morocco),35.7595,-5.834,Mediterranean
 os8,Durban (South Africa),-29.8587,31.0218,East Africa
-os9,Singapore Industrial (Jurong Island),1.2650,103.7000,South-east Asia
+os9,Singapore ,1.269063, 103.833311,South-east Asia
 os10,Ulsan (South Korea),35.529492,129.373208,Japan & South Korea
 ost1,Baoshan (China),31.41623,121.440087,China & Hong Kong
 ost2,Anshan (China),41.11667,122.98333,China & Hong Kong
 ost3,Jamshedpur,22.7886,86.1996,Middle East & India
-ost4,Magnitogorsk (Russia),53.4186,59.0472,Middle East & India
 ost6,Saldanha (South Africa),-33.0240,17.9440,West Africa
 ost7,Luleå (Sweden),65.55972,22.2197,Nordics
 ost8,Duisburg (Germany),51.35979,6.71754,Western Europe
 ost9,Volta Redonda (Brazil),-22.512631,-44.11287,S Latin America
-ost10,Ipatinga (Brazil),-19.491277,-42.544253,S Latin America
-ost12,North Charleston (USA),32.8745,-79.96461,NA East Coast
+ost10,North Charleston (USA),32.8745,-79.96461,NA East Coast
 t1,Mejillones (Chile),-23.0982,-70.4496,S Latin America
 t2,Açu (Brazil),-21.839478,-41.039560,S Latin America
 t3,Houston (USA),29.611485, -95.013248,Gulf of Mexico
@@ -29,22 +27,21 @@ t7,Walvis Bay (Namibia),-22.9576,14.5053,West Africa
 t8,Ein El Sokhna (Egypt),29.657084, 32.352840,Red Sea
 t9,Kandla (India),22.999907,70.223626,Middle East & India
 t11,Rotterdam (Netherlands),51.9244,4.4777,Western Europe
-t12,Ulsan (South Korea),35.5384,129.3114,Japan & South Korea
+t12,Ulsan (South Korea),35.518385,129.373074,Japan & South Korea
 t13,Shanghai,30.625773,122.063108,China & Hong Kong
 t14,Turku (Finland),60.438334,22.212743,Nordics
 t15,Valparaíso (Chile),-33.0458,-71.6197,S Latin America
 t16,Cristobal (Panama),9.377324, -79.887173,Panama
 t17,Mobile (USA),30.6944,-88.0431,Gulf of Mexico
-t18,Savannah (USA),32.0809,-81.0912,NA East Coast,
+t18,Savannah (USA),32.0809,-81.0912,NA East Coast
 t19,Paradip (India),20.2649,86.6700,Middle East & India
-t20,Astrakhan (Russia),46.3497,48.0408,Middle East & India,
-t21,Richards Bay (South Africa),-28.7807,32.0383,East Africa,
-t22,Luleå Port (Sweden),65.5848,22.1547,Nordics,
-t23,Singapore Export Terminal (Tuas),1.2660,103.6350,South-east Asia
+t21,Richards Bay (South Africa),-28.7807,32.0383,East Africa
+t22,Luleå Port (Sweden),65.5848,22.1547,Nordics
+t23,Singapore Export Terminal (Tuas),1.266022, 103.842629,South-east Asia
 t24,Rio de Janeiro (Brazil),-22.9068,-43.1729,S Latin America
-t25,Vitória (Brazil),-20.3225,-40.3163,S Latin America
-t26,Yingkou (China),40.6674,122.2352,China & Hong Kong
-t27,Saldanha Bay (South Africa),-33.0180,17.9600,West Africa
+t25,Yingkou (China),40.700156, 122.274667,China & Hong Kong
+t26,Saldanha Bay (South Africa),-33.0180,17.9600,West Africa
+t27, Santo (Brazil),-23.978435, -46.29348,S Latin America
 ps1,Chile Ammonia Production,-23.0500,-70.3000,S Latin America
 ps2,Brazil Ammonia Production,-21.876568,-41.015887,S Latin America
 ps3,USA Ammonia Production,29.7200,-95.1000,Gulf of Mexico

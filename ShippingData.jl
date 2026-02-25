@@ -6,7 +6,7 @@ using Random
 function generate_data(; seed=42)
 
     nodes = CSV.read("nodes.csv", DataFrame)
-    edges = CSV.read("edges_cleaned.csv", DataFrame)
+    edges = CSV.read("edges_complete_network1.csv", DataFrame)
     costs = CSV.read("shippingcost.csv", DataFrame)
 
     # ----------------------------

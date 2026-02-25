@@ -6,7 +6,7 @@ import json
 # Load data
 # -----------------------------
 nodes_df = pd.read_csv("nodes.csv")
-edges_df = pd.read_csv("edges_complete_network.csv")
+edges_df = pd.read_csv("edges_complete_network1.csv")
 flows_df = pd.read_csv("results_flows.csv")
 
 # -----------------------------

@@ -3,9 +3,6 @@ include("model_3.jl")
 
 using .ShippingData
 using .ShippingModelFinal
-using Graphs
-using CairoMakie
-using GraphMakie
 using JuMP
 using CSV
 using DataFrames
@@ -56,8 +53,6 @@ for (i,j) in A
         push!(flow_rows, (i, j, total_flow))
     end
 end
-
-CSV.write("optimized_flows.csv", flow_rows)
 
 println("Flows saved to optimized_flows.csv")
 # ----------------------------
@@ -130,7 +125,8 @@ for (i,j) in A
     if total_flow > 1e-6
         push!(flow_rows, (i, j, total_flow))
     end
+
 end
 
-CSV.write("results_flows.csv", flow_rows)
-println("Saved: results_flows.csv")
+CSV.write("results_flows_1.csv", flow_rows)
+println("Saved: results_flows_1.csv")
