@@ -64,6 +64,7 @@ function generate_data(; seed=42)
 
     truck_cost_per_km = 0.08   # example €/ton/km (choose realistic value)
     truckcost = [5, 15.0, 20.0, 25, 30,40] # example cost per ton based on distance brackets
+    
     return N, P, T, O, A,
            shipping_rate,
            maxP, Demand,
