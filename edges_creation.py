@@ -90,7 +90,7 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
     origin = nodes[from_id]
     dest = nodes[to_id]
 
-    # Pre-filter
+    # Pre-filter using great circle distance
     gc_dist = haversine(origin["lat"], origin["lon"],
                         dest["lat"], dest["lon"])
 
@@ -104,10 +104,14 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
                 (dest["lon"], dest["lat"])
             ],
             profile="driving-car",
-            format="geojson"
+            format="geojson",
+            radiuses=[1000, 1000]   # 👈 snapping box (1 km)
         )
 
-        distance_km = route["features"][0]["properties"]["summary"]["distance"] / 1000
+        distance_km = (
+            route["features"][0]["properties"]["summary"]["distance"]
+            / 1000
+        )
 
         if distance_km <= 400:
 
@@ -125,7 +129,8 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
 
         time.sleep(1)
 
-    except:
+    except Exception as e:
+        print(f"Truck routing failed {from_id} → {to_id}: {e}")
         continue
 
 truck_df = pd.DataFrame(valid_truck_edges)
