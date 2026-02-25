@@ -1,3 +1,5 @@
 {
-    "julia.environmentPath": "/Users/oliviathingvad/Library/CloudStorage/OneDrive-DanmarksTekniskeUniversitet/Olivia/MSc/4.sem/kandidat/Master-thesis"
+    "julia.environmentPath": "/Users/oliviathingvad/Library/CloudStorage/OneDrive-DanmarksTekniskeUniversitet/Olivia/MSc/4.sem/kandidat/Master-thesis",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
 }

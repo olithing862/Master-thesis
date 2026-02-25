@@ -10,7 +10,7 @@ import time
 # =====================================================
 # 1️⃣ LOAD NODES
 # =====================================================
-nodes_df = pd.read_csv("shipping.csv", dtype=str)
+nodes_df = pd.read_csv("nodes.csv", dtype=str)
 nodes_df["region"] = nodes_df["region"].str.replace(",", "", regex=False)
 
 nodes = {}
@@ -66,8 +66,7 @@ for from_id, to_id in itertools.combinations(harbours, 2):
             "from_id": from_id,
             "to_id": to_id,
             "mode": "ship",
-            "distance_km": distance_km,
-            "geometry": json.dumps(geometry)
+            "distance_km": distance_km
         })
 
         print(f"Ship {from_id} → {to_id}: {distance_km:.0f} km")
@@ -81,6 +80,7 @@ print(f"Total shipping edges: {len(shipping_df)}")
 # =====================================================
 # 5️⃣ TRUCK NETWORK (≤ 400 km, ONE DIRECTION ONLY)
 # =====================================================
+
 valid_truck_edges = []
 
 print("Testing truck connectivity (≤ 400 km)...")
@@ -90,7 +90,7 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
     origin = nodes[from_id]
     dest = nodes[to_id]
 
-    # Pre-filter
+    # Pre-filter using great circle distance
     gc_dist = haversine(origin["lat"], origin["lon"],
                         dest["lat"], dest["lon"])
 
@@ -104,10 +104,14 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
                 (dest["lon"], dest["lat"])
             ],
             profile="driving-car",
-            format="geojson"
+            format="geojson",
+            radiuses=[1000, 1000]   # 👈 snapping box (1 km)
         )
 
-        distance_km = route["features"][0]["properties"]["summary"]["distance"] / 1000
+        distance_km = (
+            route["features"][0]["properties"]["summary"]["distance"]
+            / 1000
+        )
 
         if distance_km <= 400:
 
@@ -117,15 +121,15 @@ for from_id, to_id in itertools.combinations(all_nodes, 2):
                 "from_id": from_id,
                 "to_id": to_id,
                 "mode": "truck",
-                "distance_km": distance_km,
-                "geometry": json.dumps(geometry)
+                "distance_km": distance_km
             })
 
             print(f"Truck OK: {from_id} → {to_id} ({distance_km:.0f} km)")
 
         time.sleep(1)
 
-    except:
+    except Exception as e:
+        print(f"Truck routing failed {from_id} → {to_id}: {e}")
         continue
 
 truck_df = pd.DataFrame(valid_truck_edges)
