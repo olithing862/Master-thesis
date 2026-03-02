@@ -8,6 +8,8 @@ function generate_data(; seed=42)
     nodes = CSV.read("nodes.csv", DataFrame)
     edges = CSV.read("edges_complete_network1.csv", DataFrame)
     costs = CSV.read("shippingcost.csv", DataFrame)
+    production = CSV.read("production_nh3.csv", DataFrame)
+    demand = CSV.read("demand_nh3.csv", DataFrame)
 
     # ----------------------------
     # Sets
@@ -56,9 +58,14 @@ function generate_data(; seed=42)
     end
 
     Random.seed!(seed)
+    #make demand with the real data but 5% steel demand
+    Demand = Dict(row.node_id => row.demand*0.05 for row in eachrow(demand))
+    Prodcost = Dict(row.node_id => row.prod_cost for row in eachrow(production))
 
-    Demand = Dict(o => rand(300.0:10.0:800.0) for o in O)
-    maxP = Dict(p => rand(450.0:10.0:1000.0) for p in P)
+    maxP = Dict(row.node_id => row.prod_cap for row in eachrow(production))
+
+    #deamnd on random
+    Demand_rand = Dict(o => rand(100:500) for o in O)
 
     penalty = 10000000
 
@@ -73,6 +80,6 @@ function generate_data(; seed=42)
            mode_of,
            distance_of,
            truck_cost_per_km,
-            truckcost
+            truckcost,Demand_rand,Prodcost
 end
 end # module

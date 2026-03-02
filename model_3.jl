@@ -43,7 +43,8 @@ function build_model_with_penalty(
     region_of,
     mode_of,
     distance_of,
-    truckcost
+    truckcost,
+    Prodcost
 )
 
     model = Model(Gurobi.Optimizer)
@@ -71,6 +72,7 @@ function build_model_with_penalty(
             for p in P for (i,j) in A
         )
         + sum(penalty * u[o] for o in O)
+        + sum(Prodcost[p] * prod[p] for p in P)
     )
     @constraint(model,
     [p in P, (i,j) in A; i in P && i != p],

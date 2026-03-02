@@ -39,8 +39,8 @@ def haversine(lat1, lon1, lat2, lon2):
 # =====================================================
 # 3️⃣ INITIALIZE ORS
 # =====================================================
-ors = openrouteservice.Client(key=os.getenv("ORS_API_KEY"))
-
+#ors = openrouteservice.Client(key=os.getenv("ORS_API_KEY"))
+ors = 1
 # =====================================================
 # 4️⃣ SHIPPING NETWORK (ONE DIRECTION ONLY)
 # =====================================================
@@ -62,11 +62,14 @@ for from_id, to_id in itertools.combinations(harbours, 2):
         distance_km = route["properties"]["length"]
         geometry = route["geometry"]
 
+
+
         shipping_edges.append({
             "from_id": from_id,
             "to_id": to_id,
             "mode": "ship",
-            "distance_km": distance_km
+            "distance_km": distance_km,
+            "geometry": json.dumps(geometry)
         })
 
         print(f"Ship {from_id} → {to_id}: {distance_km:.0f} km")
@@ -142,36 +145,39 @@ def try_truck_connection(from_id, to_id):
         print(f"Truck failed {from_id} → {to_id}: {e}")
 
 
-# -----------------------------------------------------
-# 1️⃣ Production → Terminal
-# -----------------------------------------------------
-for p in ps_nodes:
-    for t in t_nodes:
-        try_truck_connection(p, t)
+# # -----------------------------------------------------
+# # 1️⃣ Production → Terminal
+# # -----------------------------------------------------
+# for p in ps_nodes:
+#     for t in t_nodes:
+#         try_truck_connection(p, t)
 
-# -----------------------------------------------------
-# 2️⃣ Production → Steel Demand
-# -----------------------------------------------------
-for p in ps_nodes:
-    for o in os_nodes:
-        try_truck_connection(p, o)
+# # -----------------------------------------------------
+# # 2️⃣ Production → Steel Demand
+# # -----------------------------------------------------
+# for p in ps_nodes:
+#     for o in os_nodes:
+#         try_truck_connection(p, o)
 
-# -----------------------------------------------------
-# 3️⃣ Terminal → Steel Demand
-# -----------------------------------------------------
-for t in t_nodes:
-    for o in os_nodes:
-        try_truck_connection(t, o)
+# # -----------------------------------------------------
+# # 3️⃣ Terminal → Steel Demand
+# # -----------------------------------------------------
+# for t in t_nodes:
+#     for o in os_nodes:
+#         try_truck_connection(t, o)
 
 
-truck_df = pd.DataFrame(valid_truck_edges)
+# truck_df = pd.DataFrame(valid_truck_edges)
 
-print(f"Total structured truck edges (≤400 km): {len(truck_df)}")
+# print(f"Total structured truck edges (≤400 km): {len(truck_df)}")
 
-# =====================================================
-# 6️⃣ COMBINE
-# =====================================================
-edges_final = pd.concat([shipping_df, truck_df], ignore_index=True)
-edges_final.to_csv("edges_complete_network1.csv", index=False)
+# # =====================================================
+# # 6️⃣ COMBINE
+# # =====================================================
+# edges_final = pd.concat([shipping_df, truck_df], ignore_index=True)
+# edges_final.to_csv("edges_complete_network1.csv", index=False)
 
-print("Directed multimodal network successfully built.")
+# print("Directed multimodal network successfully built.")
+
+
+

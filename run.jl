@@ -17,9 +17,11 @@ penalty,
 region_of,
 mode_of,
 distance_of,
-truck_cost_per_km,truckcost =
+truck_cost_per_km,truckcost,Demand_rand,Prodcost =
     ShippingData.generate_data()
-
+print(Demand_rand)
+print(Demand)
+print(maxP)
 
 # ----------------------------
 # Build model
@@ -34,7 +36,8 @@ model2, f2,q2, u2, prod2 =
     region_of,
     mode_of,
     distance_of,
-    truckcost
+    truckcost,
+    Prodcost
 )
 
 optimize!(model2)
@@ -128,5 +131,10 @@ for (i,j) in A
 
 end
 
-CSV.write("results_flows_1.csv", flow_rows)
-println("Saved: results_flows_1.csv")
+#I want to write a description name and use as name for csv file 
+#and i want to save it here /Users/oliviathingvad/Master-thesis/Results
+description = "results_02march_1"
+
+
+CSV.write("/Users/oliviathingvad/Master-thesis/Results/$(description).csv", flow_rows)
+println("Saved: $(description).csv")
