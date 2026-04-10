@@ -1,0 +1,78 @@
+id,name,lat,lon,type,industry,region
+ps1,Chile Ammonia Production,-23.0500,-70.3000,production,,S Latin America
+ps2,Brazil Ammonia Production,-21.8766,-41.0159,production,,S Latin America
+ps3,USA Ammonia Production,29.7200,-95.1000,production,,Gulf of Mexico
+ps4,Colombia Ammonia Production,11.0378,-74.8220,production,,N Latin America
+ps5,Finland Ammonia Production,60.4500,22.2500,production,,Nordics
+ps6,Spain Ammonia Production,37.2400,-6.8800,production,,Mediterranean
+ps7,Namibia Ammonia Production,-22.7133,14.6189,production,,West Africa
+ps8,Egypt Ammonia Production,29.5972,32.3422,production,,Red Sea
+ps9,India Ammonia Production,23.0333,70.2167,production,,Middle East & India
+ps10,China Ammonia Production,32.0500,119.1000,production,,China & Hong Kong
+t1,Mejillones (Chile),-23.0982,-70.4496,transit,,S Latin America
+t2,Açu (Brazil),-21.8395,-41.0396,transit,,S Latin America
+t3,Houston (USA),29.6115,-95.0132,transit,,Gulf of Mexico
+t4,Barranquilla (Colombia),10.9671,-74.7649,transit,,N Latin America
+t5,Mariehamn (Finland),60.0973,19.9348,transit,,Nordics
+t6,Huelva (Spain),37.2614,-6.9447,transit,,Mediterranean
+t7,Walvis Bay (Namibia),-22.9576,14.5053,transit,,West Africa
+t8,Ein El Sokhna (Egypt),29.6571,32.3528,transit,,Red Sea
+t9,Kandla (India),22.9999,70.2236,transit,,Middle East & India
+t11,Rotterdam (Netherlands),51.9244,4.4777,transit,,Western Europe
+t12,Ulsan (South Korea),35.5184,129.3731,transit,,Japan & South Korea
+t13,Shanghai (China),30.6258,122.0631,transit,,China & Hong Kong
+t14,Turku (Finland),60.4383,22.2127,transit,,Nordics
+t15,Valparaíso (Chile),-33.0458,-71.6197,transit,,S Latin America
+t16,Cristobal (Panama),9.3773,-79.8872,transit,,Panama
+t17,Mobile (USA),30.6944,-88.0431,transit,,Gulf of Mexico
+t18,Savannah (USA),32.0809,-81.0912,transit,,NA East Coast
+t19,Paradip (India),20.2649,86.6700,transit,,Middle East & India
+t21,Richards Bay (South Africa),-28.7807,32.0383,transit,,East Africa
+t22,Luleå Port (Sweden),65.5848,22.1547,transit,,Nordics
+t23,Singapore Export Terminal (Tuas),1.2660,103.8426,transit,,Southeast Asia
+t24,Rio de Janeiro (Brazil),-22.9068,-43.1729,transit,,S Latin America
+t25,Yingkou (China),40.7002,122.2747,transit,,China & Hong Kong
+t26,Saldanha Bay (South Africa),-33.0180,17.9600,transit,,West Africa
+t27,Santos (Brazil),-23.9784,-46.2935,transit,,S Latin America
+t28,Guangzhou Port (China),23.0870,113.3700,transit,,South China
+t29,Tanjung Perak (Surabaya Indonesia),-7.2000,112.7300,transit,,Southeast Asia
+t30,Gdansk (Poland),54.3520,18.6466,transit,,Eastern Europe
+t31,St Petersburg (Russia),59.9343,30.3351,transit,,Russia/Baltic
+t32,Dammam (Saudi Arabia),26.4207,50.0888,transit,,Middle East
+t33,Lagos (Nigeria),6.4531,3.3958,transit,,West Africa
+t34,Mombasa (Kenya),-4.0435,39.6682,transit,,East Africa
+t35,Fremantle (Australia),-32.0569,115.7439,transit,,Oceania
+t36,Port Adelaide (Australia),-34.8450,138.5100,transit,,Oceania
+oft_f1,North China Plain (Shijiazhuang),38.0230,114.5417,offtake,Fertilizer,China
+oft_f2,Northeast China (Harbin),45.8038,126.5350,offtake,Fertilizer,China
+oft_f3,Sichuan Basin (Chengdu),30.5728,104.0668,offtake,Fertilizer,China
+oft_f4,South China (Guangzhou),23.1291,113.2644,offtake,Fertilizer,China
+oft_f5,Indo-Gangetic Plain West (Kanpur),26.4499,80.3319,offtake,Fertilizer,South & Southeast Asia
+oft_f6,Indo-Gangetic Plain East (Patna),25.5941,85.1376,offtake,Fertilizer,South & Southeast Asia
+oft_f7,Punjab Pakistan (Lahore),31.5497,74.3436,offtake,Fertilizer,South & Southeast Asia
+oft_f8,Java Indonesia (Surabaya),-7.2575,112.7521,offtake,Fertilizer,South & Southeast Asia
+oft_f9,Western Europe (Rouen),49.4431,1.0993,offtake,Fertilizer,Europe
+oft_f10,Eastern Europe (Lodz),51.7592,19.4560,offtake,Fertilizer,Europe
+oft_f11,Russia Volga (Kazan),55.7887,49.1221,offtake,Fertilizer,Europe
+oft_f12,Middle East (Riyadh),24.7136,46.6753,offtake,Fertilizer,Middle East & North Africa
+oft_f13,North Africa (Cairo),30.0444,31.2357,offtake,Fertilizer,Middle East & North Africa
+oft_f14,US Corn Belt (Decatur IL),39.8403,-88.9548,offtake,Fertilizer,North America
+oft_f15,US Gulf South (Baton Rouge LA),30.4515,-91.1871,offtake,Fertilizer,North America
+oft_f16,Brazil Cerrado (Sorriso MT),-12.5407,-55.7227,offtake,Fertilizer,Latin America
+oft_f17,Brazil South (Curitiba PR),-25.4284,-49.2733,offtake,Fertilizer,Latin America
+oft_f18,Sub-Saharan Africa (Kano),12.0000,8.5920,offtake,Fertilizer,Sub-Saharan Africa
+oft_f19,East Africa (Nairobi),-1.2921,36.8219,offtake,Fertilizer,Sub-Saharan Africa
+oft_f20,Oceania (Perth),-31.9505,115.8605,offtake,Fertilizer,Oceania
+oft_s5,Jamshedpur (India),22.7886,86.1996,offtake,Steel,South & Southeast Asia
+oft_s6,Visakhapatnam (India),17.6868,83.2185,offtake,Steel,South & Southeast Asia
+oft_s7,Ho Chi Minh City (Vietnam),10.8231,106.6297,offtake,Steel,South & Southeast Asia
+oft_s8,Duisburg (Germany),51.3598,6.7175,offtake,Steel,Europe
+oft_s9,Krakow (Poland),50.0647,19.9450,offtake,Steel,Europe
+oft_s10,Cherepovets (Russia),59.1221,37.9022,offtake,Steel,Europe
+oft_s11,Jubail (Saudi Arabia),27.0662,49.5616,offtake,Steel,Middle East & North Africa
+oft_s12,North Charleston (USA),32.8745,-79.9646,offtake,Steel,North America
+oft_s13,Middletown Ohio (USA),39.5151,-84.3983,offtake,Steel,North America
+oft_s14,Volta Redonda (Brazil),-22.5126,-44.1129,offtake,Steel,Latin America
+oft_s15,Saldanha (South Africa),-33.0240,17.9440,offtake,Steel,Sub-Saharan Africa
+oft_s16,Luleå (Sweden),65.5597,22.2197,offtake,Steel,Nordics
+oft_s17,Whyalla (Australia),-33.0333,137.5667,offtake,Steel,Oceania
