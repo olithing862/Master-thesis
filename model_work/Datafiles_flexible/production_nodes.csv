@@ -1,0 +1,51 @@
+node_id,Location,lat,lon,region,industry,type,capacity_share_percent
+p0,-14_-47_1000000.0,-14.0,-47.0,S Latin America,Green Hydrogen,production,0.6912239967510095
+p1,8_81_1000000.0,8.0,81.0,Middle East & India,Green Hydrogen,production,0.34921425300949477
+p2,14_26_1000000.0,14.0,26.0,East Africa,Green Hydrogen,production,4.292631601271028
+p3,-28_142_1000000.0,-28.0,142.0,East Australia,Green Hydrogen,production,2.108862500323504
+p4,24_-110_1000000.0,24.0,-110.0,N Latin America,Green Hydrogen,production,0.5670765510101367
+p5,30_55_1000000.0,30.0,55.0,Middle East & India,Green Hydrogen,production,4.595750287215579
+p6,-31_-70_1000000.0,-31.0,-70.0,S Latin America,Green Hydrogen,production,3.302870770454897
+p7,41_97_1000000.0,41.0,97.0,China & Hong Kong,Green Hydrogen,production,3.4762249643020637
+p8,24_0_1000000.0,24.0,0.0,Mediterranean,Green Hydrogen,production,4.550203750860973
+p9,-21_124_1000000.0,-21.0,124.0,West Australia,Green Hydrogen,production,2.6802860518347176
+p10,-21_15_1000000.0,-21.0,15.0,East Africa,Green Hydrogen,production,1.3937036161513716
+p11,21_24_1000000.0,21.0,24.0,Mediterranean,Green Hydrogen,production,5.892377104933285
+p12,18_12_1000000.0,18.0,12.0,West Africa,Green Hydrogen,production,3.264471483320799
+p13,18_-98_1000000.0,18.0,-98.0,Gulf of Mexico,Green Hydrogen,production,0.8967281701090392
+p14,-21_25_1000000.0,-21.0,25.0,East Africa,Green Hydrogen,production,1.0203656495493263
+p15,-11_-43_1000000.0,-11.0,-43.0,S Latin America,Green Hydrogen,production,0.8052017859185621
+p16,36_77_1000000.0,36.0,77.0,Middle East & India,Green Hydrogen,production,1.8392211363177173
+p17,45_115_1000000.0,45.0,115.0,China & Hong Kong,Green Hydrogen,production,0.6374990969739998
+p18,16_10_1000000.0,16.0,10.0,West Africa,Green Hydrogen,production,0.8134666330980956
+p19,17_46_1000000.0,17.0,46.0,Red Sea,Green Hydrogen,production,5.776234036115129
+p20,-20_124_1000000.0,-20.0,124.0,West Australia,Green Hydrogen,production,2.754367760849592
+p21,-28_-69_1000000.0,-28.0,-69.0,S Latin America,Green Hydrogen,production,3.436273442922805
+p22,37_-118_1000000.0,37.0,-118.0,NA West Coast,Green Hydrogen,production,0.8407552095681864
+p23,12_106_1000000.0,12.0,106.0,South-east Asia,Green Hydrogen,production,0.5290818679501051
+p24,17_25_1000000.0,17.0,25.0,East Africa,Green Hydrogen,production,6.133829025157779
+p25,54_159_1000000.0,54.0,159.0,China & Hong Kong,Green Hydrogen,production,0.4007038293405064
+p26,27_38_1000000.0,27.0,38.0,Middle East & India,Green Hydrogen,production,3.4630122061809896
+p27,42_81_1000000.0,42.0,81.0,Middle East & India,Green Hydrogen,production,1.2633873025864761
+p28,27_-82_1000000.0,27.0,-82.0,NA East Coast,Green Hydrogen,production,0.481195669241884
+p29,-21_44_1000000.0,-21.0,44.0,East Africa,Green Hydrogen,production,0.41630951192348886
+p30,35_67_1000000.0,35.0,67.0,Middle East & India,Green Hydrogen,production,0.7509379264244924
+p31,30_85_1000000.0,30.0,85.0,Middle East & India,Green Hydrogen,production,2.209310216460117
+p32,-21_-58_1000000.0,-21.0,-58.0,S Latin America,Green Hydrogen,production,0.7075930777107586
+p33,17_-16_1000000.0,17.0,-16.0,West Africa,Green Hydrogen,production,1.6447562740700465
+p34,37_63_1000000.0,37.0,63.0,Middle East & India,Green Hydrogen,production,1.7298230607697724
+p35,6_102_1000000.0,6.0,102.0,South-east Asia,Green Hydrogen,production,0.32711106432539744
+p36,3_36_1000000.0,3.0,36.0,East Africa,Green Hydrogen,production,4.44261623969798
+p37,38_-106_1000000.0,38.0,-106.0,NA West Coast,Green Hydrogen,production,0.6511834039116507
+p38,12_-72_1000000.0,12.0,-72.0,N Latin America,Green Hydrogen,production,0.878715254552492
+p39,33_92_1000000.0,33.0,92.0,China & Hong Kong,Green Hydrogen,production,1.5485949653265623
+p40,20_9_1000000.0,20.0,9.0,West Africa,Green Hydrogen,production,1.3115341609862285
+p41,-6_35_1000000.0,-6.0,35.0,East Africa,Green Hydrogen,production,0.9085365613994781
+p42,23_-103_1000000.0,23.0,-103.0,N Latin America,Green Hydrogen,production,1.0381155882439561
+p43,-23_134_1000000.0,-23.0,134.0,East Australia,Green Hydrogen,production,2.6135026365102916
+p44,17_121_1000000.0,17.0,121.0,China & Hong Kong,Green Hydrogen,production,0.3460020531205808
+p45,20_-12_1000000.0,20.0,-12.0,West Africa,Green Hydrogen,production,5.762379119692072
+p46,-16_137_1000000.0,-16.0,137.0,East Australia,Green Hydrogen,production,0.7607216202902074
+p47,-15_-72_1000000.0,-15.0,-72.0,S Latin America,Green Hydrogen,production,1.6796273829725217
+p48,-19_13_1000000.0,-19.0,13.0,West Africa,Green Hydrogen,production,1.1522546606420738
+p49,42_109_1000000.0,42.0,109.0,China & Hong Kong,Green Hydrogen,production,0.8641554676507833
