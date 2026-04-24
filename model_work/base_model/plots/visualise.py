@@ -21,7 +21,7 @@ def curved_line(lat1, lon1, lat2, lon2, curvature=0.15, n_points=30):
 
 
 def plot_network_map(nodes_csv, flows_csv, prod_csv, demand_csv,
-                     output_html, clustered_sites_csv=None,
+                     output_html,
                      zoom_start=3, tiles="CartoDB positron"):
     """
     Build an interactive folium map of the optimization network results.
@@ -73,11 +73,11 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv, demand_csv,
     transit_layer     = folium.FeatureGroup(name="Active Transit Nodes", show=True)
     all_transit_layer = folium.FeatureGroup(name="All Transit Nodes",    show=False)
     prod_layer        = folium.FeatureGroup(name="Production Nodes",     show=True)
-    clustered_layer   = folium.FeatureGroup(name="Clustered Sites",      show=True)
+    
     demand_layer      = folium.FeatureGroup(name="Demand Served",        show=True)
 
     for layer in [ship_layer, land_layer, transit_layer, all_transit_layer,
-                  prod_layer, clustered_layer, demand_layer]:
+                  prod_layer, demand_layer]:
         layer.add_to(m)
 
 
@@ -163,26 +163,8 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv, demand_csv,
                 f"Served:    {pct:.1f}%"
             ),
         ).add_to(demand_layer)
-        # ---------- Clustered production sites (input, pre-optimization) ----------
 
-    if clustered_sites_csv is not None:
-        clustered_df = pd.read_csv(clustered_sites_csv)
-        max_share = clustered_df["capacity_share_percent"].max() or 1
-        for _, row in clustered_df.iterrows():
-            radius = 3 + 15 * (row["capacity_share_percent"] / max_share)
-            folium.CircleMarker(
-                location=[row["Latitude"], row["Longitude"]],
-                radius=radius,
-                color="#008080", fill=True,
-                fill_color="#008080", fill_opacity=0.6,
-                tooltip=(
-                    f"Clustered site<br>"
-                    f"Lat/Lon: {row['Latitude']}, {row['Longitude']}<br>"
-                    f"LCOA: {row['LCOA']:.2f}<br>"
-                    f"Max capacity: {row['Max_capacity']:,.2f} Mt/yr<br>"
-                    f"Share: {row['capacity_share_percent']:.2f}%"
-                ),
-            ).add_to(clustered_layer)
+           
 
     # ---------- Save ----------
     folium.LayerControl(collapsed=False).add_to(m)
@@ -286,22 +268,24 @@ def print_underutilized_production(results_production_csv, threshold=100.0):
 
 
 if __name__ == "__main__":
-    results_dir = Path("Results/Base 2026-04-22")
-    plot_network_map(
-        nodes_csv           = "model_work/DataFiles_base/nodes.csv",
-        flows_csv           = results_dir / "results_flows.csv",
-        prod_csv            = results_dir / "results_production.csv",
-        demand_csv          = results_dir / "results_demand.csv",
-        clustered_sites_csv = "/Users/oliviathingvad/Master-thesis/model_work/DataFiles_base/production_sites_clustered_3.csv",
-        output_html         = results_dir / "network_flows.html",
-    )
+    capacity_levels = [8]
 
-    plot_industry_share(
-        results_demand_csv       = results_dir / f"results_demand.csv",
-        nodes_csv                 = "model_work/DataFiles_base/nodes.csv",
-        save_path                 = results_dir / f"industry_share.png",
-    )
+    for cap in capacity_levels:
+        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/2026-04-23_1")
+        
+        plot_network_map(
+            nodes_csv  = "model_work/DataFiles_base/nodes.csv",
+            flows_csv  = results_dir / "results_flows.csv",
+            prod_csv   = results_dir / "results_production.csv",
+            demand_csv = results_dir / "results_demand.csv",
+            output_html= results_dir / "network_flows.html",
+        )
 
+        plot_industry_share(
+            results_demand_csv = results_dir / "results_demand.csv",
+            nodes_csv          = "model_work/DataFiles_base/nodes.csv",
+            save_path          = results_dir / "industry_share.png",
+        )
 
 
 

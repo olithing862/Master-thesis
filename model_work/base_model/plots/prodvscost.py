@@ -207,37 +207,43 @@ def plot_region_coverage(nodes_csv, demand_csv, output_path,
 
 
 
-
 if __name__ == "__main__":
-    results_dir = Path("Results/Base 2026-04-20") 
-    date = "20044"
-    prod_csv     = pd.read_csv(results_dir / f"results_production_{date}.csv")
-    demand_csv = pd.read_csv(results_dir / f"results_demand_{date}.csv")
+    from datetime import date
+    today = "2026-04-23_1"
+    capacity_levels = [8, 700, 1100]
 
-    df = plot_prodcost_vs_volume(
-        nodes_csv    = "model_work/DataFiles_base/nodes.csv",
-        prod_csv     = results_dir / f"results_production_{date}.csv",
-        prodcost_csv = "model_work/DataFiles_base/prodcost.csv",
-        output_path  = results_dir / f"prodcost_vs_volume_{date}.png",
-        title        = "Base model: production volume vs. cost per region (2030)",
-    )
-    df = plot_region_coverage(
-        nodes_csv   = "model_work/DataFiles_base/nodes.csv",
-        demand_csv  = results_dir / f"results_demand_{date}.csv",
-        output_path = results_dir / f"region_coverage_{date}.png",
-        title       = "Base model: demand coverage by offtake region (2030)",
-    )
-    print()
-    print(df.to_string(index=False))
-    
-    prod   = prod_csv
-    demand = demand_csv
+    for cap in capacity_levels:
+        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/{today}")
 
-    
-    total_produced  = prod["produced"].sum()
-    total_capacity  = prod["capacity"].sum()
-    total_demand    = demand["demand"].sum()
-    total_delivered = demand["delivered"].sum()
-    total_unmet     = demand["unmet"].sum()
-   
-  
+        prod_csv   = pd.read_csv(results_dir / "results_production.csv")
+        demand_csv = pd.read_csv(results_dir / "results_demand.csv")
+
+        plot_prodcost_vs_volume(
+            nodes_csv    = "model_work/DataFiles_base/nodes.csv",
+            prod_csv     = results_dir / "results_production.csv",
+            prodcost_csv = "model_work/DataFiles_base/prodcost.csv",
+            output_path  = results_dir / "prodcost_vs_volume.png",
+            title        = f"Capacity {cap}: production volume vs. cost per region (2030)",
+        )
+
+        df = plot_region_coverage(
+            nodes_csv   = "model_work/DataFiles_base/nodes.csv",
+            demand_csv  = results_dir / "results_demand.csv",
+            output_path = results_dir / "region_coverage.png",
+            title       = f"Capacity {cap}: demand coverage by offtake region (2030)",
+        )
+        print(f"\n=== Capacity {cap} ===")
+        print(df.to_string(index=False))
+
+        total_produced  = prod_csv["produced"].sum()
+        total_capacity  = prod_csv["capacity"].sum()
+        total_demand    = demand_csv["demand"].sum()
+        total_delivered = demand_csv["delivered"].sum()
+        total_unmet     = demand_csv["unmet"].sum()
+
+        print(f"  Total capacity:  {total_capacity:.2f}")
+        print(f"  Total produced:  {total_produced:.2f}")
+        print(f"  Utilization:     {100 * total_produced / total_capacity:.1f}%")
+        print(f"  Total demand:    {total_demand:.2f}")
+        print(f"  Delivered:       {total_delivered:.2f}")
+        print(f"  Unmet:           {total_unmet:.2f}")

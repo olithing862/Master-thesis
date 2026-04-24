@@ -23,7 +23,7 @@ n_clusters = 50
 kmeans = KMeans(n_clusters=n_clusters, random_state=0, n_init=50)
 ammonia_df1["cluster"] = kmeans.fit_predict(ammonia_df1[["X", "Y", "Z"]])
 
-
+print(ammonia_df1.head())
 # Pick cheapest site per cluster as representative
 cheapest_idx = ammonia_df1.groupby("cluster")["LCOA"].idxmin()
 best_ammonia = ammonia_df1.loc[cheapest_idx].copy()
@@ -33,14 +33,14 @@ best_ammonia["Max_capacity"] = ammonia_df1.groupby("cluster")["Max_capacity"].su
 best_ammonia = best_ammonia.reset_index(drop=True)
 
 # Capacity share as percentage of total
-best_ammonia["capacity_share_percent"] = (
-    best_ammonia["Max_capacity"] / best_ammonia["Max_capacity"].sum() * 100
-)
+# best_ammonia["capacity_share_percent"] = (
+#     best_ammonia["Max_capacity"] / best_ammonia["Max_capacity"].sum() * 100
+# )
 
 # Print total capacity
 print(f"Total capacity: {best_ammonia['Max_capacity'].sum():.0f} tonnes/year")
 
 # Drop helper columns before saving
 #best_ammonia = best_ammonia.drop(columns=["X", "Y", "Z", "cluster"])
-best_ammonia.to_csv("model_work/Datafiles_base/production_sites_clustered_4.csv", index=False)
+best_ammonia.to_csv("model_work/Datafiles_base/production_sites_clustered.csv", index=False)
 

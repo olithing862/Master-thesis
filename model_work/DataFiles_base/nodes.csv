@@ -164,19 +164,19 @@ t171,Antilla,20.833333,-75.733333,N Latin America,Port,transit,Cuba
 t172,Chi-Lung,25.133333,121.766667,China & Hong Kong,Port,transit,Taiwan
 t173,Kawasaki Ko,35.5,139.766667,Japan & South Korea,Port,transit,Japan
 t174,Yokohama Ko,35.45,139.583333,Japan & South Korea,Port,transit,Japan
-oft_f1,China Hubei,30.67,111.37,China & Hong Kong,Ammonia,offtake,Eurasia_Africa
-oft_f2,China Yunnan,25.02,102.74,China & Hong Kong,Ammonia,offtake,Eurasia_Africa
-oft_f3,China Sichuan,30.4,103.7,China & Hong Kong,Ammonia,offtake,Eurasia_Africa
-oft_f4,Norway Porsgrunn,59.13,9.66,Nordics,Ammonia,offtake,Eurasia_Africa
-oft_f5,Germany Ludwigshafen,49.49,8.41,Western Europe,Ammonia,offtake,Eurasia_Africa
-oft_f6,Belgium Antwerpen,51.18,4.41,Western Europe,Ammonia,offtake,Eurasia_Africa
-oft_f7,USA Texas,31.5,-91.17,NA East Coast,Ammonia,offtake,NorthAmerica
-oft_f8,Canada Alberta,53.69,-113.6,NA West Coast,Ammonia,offtake,NorthAmerica
-oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Ammonia,offtake,Eurasia_Africa
-oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Ammonia,offtake,Eurasia_Africa
-oft_f11,Gujarat India,21.97,73.06,Middle East & India,Ammonia,offtake,Eurasia_Africa
-oft_f12,Odisha India,20.94,85.17,Middle East & India,Ammonia,offtake,Eurasia_Africa
-oft_f13,Bontang Indonesia,0.18,117.48,South-east Asia,Ammonia,offtake,Borneo
+oft_f1,China Hubei,30.67,111.37,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f2,China Yunnan,25.02,102.74,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f3,China Sichuan,30.4,103.7,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f4,Norway Porsgrunn,59.13,9.66,Nordics,Fertiliser,offtake,Eurasia_Africa
+oft_f5,Germany Ludwigshafen,49.49,8.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f6,Belgium Antwerpen,51.18,4.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f7,USA Texas,31.5,-91.17,NA East Coast,Fertiliser,offtake,NorthAmerica
+oft_f8,Canada Alberta,53.69,-113.6,NA West Coast,Fertiliser,offtake,NorthAmerica
+oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f11,Gujarat India,21.97,73.06,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f12,Odisha India,20.94,85.17,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f13,Jakarta Indonesia,-6.312, 107.424,South-east Asia,Fertiliser,offtake,Indonesia_Java
 oft_steel1,China Hubei,31.15,114.77,China & Hong Kong,Steel,offtake,Eurasia_Africa
 oft_steel2,China Jiangsu,32.93,119.47,China & Hong Kong,Steel,offtake,Eurasia_Africa
 oft_steel3,China Shandong,35.31,119.4,China & Hong Kong,Steel,offtake,Eurasia_Africa
@@ -199,50 +199,43 @@ oft_sh7,Busan,35.1,129.033333,Japan & South Korea,Shipping,offtake,Eurasia_Afric
 oft_sh8,Hong Kong,22.266667,114.2,China & Hong Kong,Shipping,offtake,Eurasia_Africa
 oft_sh9,Panama Canal,9.0,-79.5,N Latin America,Shipping,offtake,NorthAmerica
 oft_sh10,Gibraltar,36.133333,-5.35,Mediterranean,Shipping,offtake,Eurasia_Africa
-p0,-14_-47_1000000.0,-14,-47,S Latin America,Green Hydrogen,production,SouthAmerica
-p2,14_26_1000000.0,14,26,East Africa,Green Hydrogen,production,Eurasia_Africa
-p3,-28_142_1000000.0,-28,142,East Australia,Green Hydrogen,production,Australia
-p4,24_-110_1000000.0,24,-110,N Latin America,Green Hydrogen,production,NorthAmerica
-p5,30_55_1000000.0,30,55,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p6,-31_-70_1000000.0,-31,-70,S Latin America,Green Hydrogen,production,SouthAmerica
-p7,41_97_1000000.0,41,97,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p8,24_0_1000000.0,24,0,Mediterranean,Green Hydrogen,production,Eurasia_Africa
-p9,-21_124_1000000.0,-21,124,West Australia,Green Hydrogen,production,Australia
-p10,-21_15_1000000.0,-21,15,East Africa,Green Hydrogen,production,Eurasia_Africa
-p11,21_24_1000000.0,21,24,Red Sea,Green Hydrogen,production,Eurasia_Africa
-p12,18_12_1000000.0,18,12,West Africa,Green Hydrogen,production,Eurasia_Africa
-p13,18_-98_1000000.0,18,-98,Gulf of Mexico,Green Hydrogen,production,NorthAmerica
-p14,-21_25_1000000.0,-21,25,East Africa,Green Hydrogen,production,Eurasia_Africa
-p15,-11_-43_1000000.0,-11,-43,S Latin America,Green Hydrogen,production,SouthAmerica
-p16,36_77_1000000.0,36,77,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p17,45_115_1000000.0,45,115,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p18,16_10_1000000.0,16,10,West Africa,Green Hydrogen,production,Eurasia_Africa
-p19,17_46_1000000.0,17,46,Red Sea,Green Hydrogen,production,Eurasia_Africa
-p20,-20_124_1000000.0,-20,124,West Australia,Green Hydrogen,production,Australia
-p21,-28_-69_1000000.0,-28,-69,S Latin America,Green Hydrogen,production,SouthAmerica
-p22,37_-118_1000000.0,37,-118,NA West Coast,Green Hydrogen,production,NorthAmerica
-p23,12_106_1000000.0,12,106,South-east Asia,Green Hydrogen,production,Eurasia_Africa
-p24,17_25_1000000.0,17,25,East Africa,Green Hydrogen,production,Eurasia_Africa
-p26,27_38_1000000.0,27,38,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p27,42_81_1000000.0,42,81,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p28,27_-82_1000000.0,27,-82,NA East Coast,Green Hydrogen,production,NorthAmerica
-p30,35_67_1000000.0,35,67,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p31,30_85_1000000.0,30,85,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p32,-21_-58_1000000.0,-21,-58,S Latin America,Green Hydrogen,production,SouthAmerica
-p33,17_-16_1000000.0,17,-16,West Africa,Green Hydrogen,production,Eurasia_Africa
-p34,37_63_1000000.0,37,63,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p35,6_102_1000000.0,6,102,South-east Asia,Green Hydrogen,production,Eurasia_Africa
-p36,3_36_1000000.0,3,36,East Africa,Green Hydrogen,production,Eurasia_Africa
-p37,38_-106_1000000.0,38,-106,NA West Coast,Green Hydrogen,production,NorthAmerica
-p38,12_-72_1000000.0,12,-72,N Latin America,Green Hydrogen,production,NorthAmerica
-p39,33_92_1000000.0,33,92,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p40,20_9_1000000.0,20,9,West Africa,Green Hydrogen,production,Eurasia_Africa
-p41,-6_35_1000000.0,-6,35,East Africa,Green Hydrogen,production,Eurasia_Africa
-p42,23_-103_1000000.0,23,-103,N Latin America,Green Hydrogen,production,NorthAmerica
-p43,-23_134_1000000.0,-23,134,East Australia,Green Hydrogen,production,Australia
-p44,17_121_1000000.0,17,121,South-east Asia,Green Hydrogen,production,Philippines
-p45,20_-12_1000000.0,20,-12,West Africa,Green Hydrogen,production,Eurasia_Africa
-p46,-16_137_1000000.0,-16,137,East Australia,Green Hydrogen,production,Australia
-p47,-15_-72_1000000.0,-15,-72,S Latin America,Green Hydrogen,production,SouthAmerica
-p48,-19_13_1000000.0,-19,13,West Africa,Green Hydrogen,production,Eurasia_Africa
-p49,42_109_1000000.0,42,109,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
+p0,42_97_1000000.0,42.0,97.0,China & Hong Kong,Green Fertiliser,production,Eurasia_Africa
+p1,19_-98_1000000.0,19.0,-98.0,Gulf of Mexico,Green Fertiliser,production,NorthAmerica
+p2,17_25_1000000.0,17.0,25.0,East Africa,Green Fertiliser,production,Eurasia_Africa
+p3,-20_124_1000000.0,-20.0,124.0,West Australia,Green Fertiliser,production,Australia
+p4,51_-124_1000000.0,51.0,-124.0,NA West Coast,Green Fertiliser,production,NorthAmerica
+p5,-28_-69_1000000.0,-28.0,-69.0,S Latin America,Green Fertiliser,production,SouthAmerica
+p7,23_1_1000000.0,23.0,1.0,Mediterranean,Green Fertiliser,production,Eurasia_Africa
+p8,33_80_1000000.0,33.0,80.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p10,17_10_1000000.0,17.0,10.0,West Africa,Green Fertiliser,production,Eurasia_Africa
+p11,15_32_1000000.0,15.0,32.0,Red Sea,Green Fertiliser,production,Eurasia_Africa
+p13,63_-99_1000000.0,63.0,-99.0,NA West Coast,Green Fertiliser,production,NorthAmerica
+p14,-11_-56_1000000.0,-11.0,-56.0,S Latin America,Green Fertiliser,production,SouthAmerica
+p15,-19_16_1000000.0,-19.0,16.0,East Africa,Green Fertiliser,production,Eurasia_Africa
+p16,11_108_1000000.0,11.0,108.0,South-east Asia,Green Fertiliser,production,Eurasia_Africa
+p17,48_-89_1000000.0,48.0,-89.0,NA East Coast,Green Fertiliser,production,NorthAmerica
+p18,27_38_1000000.0,27.0,38.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p19,-24_135_1000000.0,-24.0,135.0,East Australia,Green Fertiliser,production,Australia
+p20,30_-85_1000000.0,30.0,-85.0,NA East Coast,Green Fertiliser,production,NorthAmerica
+p21,35_67_1000000.0,35.0,67.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p22,37_-118_1000000.0,37.0,-118.0,NA West Coast,Green Fertiliser,production,NorthAmerica
+p23,15_17_1000000.0,15.0,17.0,East Africa,Green Fertiliser,production,Eurasia_Africa
+p24,-11_-43_1000000.0,-11.0,-43.0,S Latin America,Green Fertiliser,production,SouthAmerica
+p25,23_-103_1000000.0,23.0,-103.0,N Latin America,Green Fertiliser,production,NorthAmerica
+p28,20_-12_1000000.0,20.0,-12.0,West Africa,Green Fertiliser,production,Eurasia_Africa
+p29,-7_114_1000000.0,-7.0,114.0,South-east Asia,Green Fertiliser,production,Indonesia_Java
+p30,45_35_1000000.0,45.0,35.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p32,16_120_1000000.0,16.0,120.0,South-east Asia,Green Fertiliser,production,Philippines
+p33,47_-64_1000000.0,47.0,-64.0,NA East Coast,Green Fertiliser,production,NorthAmerica
+p34,12_-70_1000000.0,12.0,-70.0,N Latin America,Green Fertiliser,production,NorthAmerica
+p35,-16_12_1000000.0,-16.0,12.0,West Africa,Green Fertiliser,production,Eurasia_Africa
+p37,30_85_1000000.0,30.0,85.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p38,60_-166_1000000.0,60.0,-166.0,NA West Coast,Green Fertiliser,production,NorthAmerica
+p39,45_119_1000000.0,45.0,119.0,China & Hong Kong,Green Fertiliser,production,Eurasia_Africa
+p40,31_83_1000000.0,31.0,83.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa
+p41,-33_-70_1000000.0,-33.0,-70.0,S Latin America,Green Fertiliser,production,SouthAmerica
+p42,-17_131_1000000.0,-17.0,131.0,East Australia,Green Fertiliser,production,Australia
+p43,-6_35_1000000.0,-6.0,35.0,East Africa,Green Fertiliser,production,Eurasia_Africa
+p45,-20_-68_1000000.0,-20.0,-68.0,S Latin America,Green Fertiliser,production,SouthAmerica
+p47,17_46_1000000.0,17.0,46.0,Red Sea,Green Fertiliser,production,Eurasia_Africa
+p49,43_64_1000000.0,43.0,64.0,Middle East & India,Green Fertiliser,production,Eurasia_Africa

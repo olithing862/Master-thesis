@@ -11,12 +11,12 @@ using Dates
 # Generate data
 # ----------------------------
 nodes      = CSV.read("model_work/DataFiles_base/nodes.csv", DataFrame)
-costs_df   = CSV.read("model_work/DataFiles_base/cost_matrix_5.csv", DataFrame,missingstring=["inf", "Inf",""])
+costs_df   = CSV.read("model_work/DataFiles_base/cost_matrix.csv", DataFrame,missingstring=["inf", "Inf",""])
 production = CSV.read("model_work/DataFiles_base/production_nodes.csv", DataFrame)
 demand_df  = CSV.read("model_work/DataFiles_base/demand_nodes.csv", DataFrame)
 globald    = CSV.read("model_work/DataFiles_base/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_base/prodcost.csv", DataFrame)
-total_capacity = 8
+total_capacity = 16
 N, P, T, O, costs, Demand, MaxP, Prodcost, penalty, production = DataPrep.generate_data(total_capacity,nodes,costs_df,production,demand_df,globald,productioncost)
 #print the max number of costs
 
@@ -24,10 +24,10 @@ N, P, T, O, costs, Demand, MaxP, Prodcost, penalty, production = DataPrep.genera
 
 function next_results_dir(base::String = "Results")
     date = Dates.format(now(), "yyyy-mm-dd")
-    candidate = joinpath(base, "Base $date")
+    candidate = joinpath(base, "Base_double $date")
     i = 1
     while isdir(candidate)
-        candidate = joinpath(base, "Base $(date)_$i")
+        candidate = joinpath(base, "Base_double $(date)_$i")
         i += 1
     end
     mkpath(candidate)
