@@ -2,6 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 # Create dataframe
 data = {
     'Distance_km': [200,400,600,800,1000,1200,1400,1600],
@@ -13,6 +14,10 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+# Multiply all columns except Distance_km by 18.6 to convert from GJ to ton
+cols_to_multiply = df.columns.difference(['Distance_km'])
+df[cols_to_multiply] = df[cols_to_multiply] * 18.6
 
 
 # Compute mean
@@ -34,7 +39,7 @@ plt.plot(df['Distance_km'], df['Mean'], marker='o', label='Mean',
          color=mean_color, linewidth=3)
 
 plt.xlabel('Distance (km)')
-plt.ylabel('Cost')
+plt.ylabel('Cost t ton/km (USD)')
 plt.title('Transport Cost by Mode vs Distance')
 plt.legend()
 plt.grid(True)
