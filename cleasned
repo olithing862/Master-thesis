@@ -1,0 +1,46 @@
+using CSV
+using DataFrames
+
+# Load original edges
+edges_df = CSV.read("edges_complete_network.csv", DataFrame)
+
+clean_edges = DataFrame(
+    from_id = String[],
+    to_id   = String[],
+    mode    = String[],
+    distance_km = Float64[]
+)
+
+for row in eachrow(edges_df)
+
+    i = row.from_id
+    j = row.to_id
+    mode = row.mode
+    d = row.distance_km
+
+    if mode == "ship"
+        push!(clean_edges, (i, j, mode, d))
+        continue
+    end
+
+    if mode == "truck"
+
+        
+        if startswith(i, "ps")
+            push!(clean_edges, (i, j, mode, d))
+            continue
+        end
+
+        if startswith(i, "t")
+            push!(clean_edges, (i, j, mode, d))
+            continue
+        end
+    end
+end
+
+CSV.write("edges_cleaned.csv", clean_edges)
+
+println("✅ Saved cleaned network to edges_cleaned.csv")
+println("Original arcs: ", nrow(edges_df))
+println("Clean arcs: ", nrow(clean_edges))
+

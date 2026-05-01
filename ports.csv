@@ -1,0 +1,113 @@
+Main Port Name,Country Code,Latitude,Longitude,Facilities - Liquid Bulk,node_id
+Maputo,Mozambique,-25.962777778,32.544722222,Yes,1
+Durban,South Africa,-29.866667,31.066667,Yes,2
+Richards Bay,South Africa,-28.81,32.098333333,Yes,3
+Karachi,Pakistan,24.783333,66.983333,Yes,4
+Rade De Brest,France,48.383333,-4.5,Yes,5
+Lorient,France,47.75,-3.35,Yes,6
+Port Elizabeth,South Africa,-33.951944444,25.6425,Yes,7
+Puerto La Cruz,Venezuela,10.25,-64.633333,Yes,8
+Cartagena,Colombia,10.416667,-75.533333,Yes,9
+Tarabulus,Lebanon,34.45,35.833333,Yes,10
+Bayrut,Lebanon,33.9,35.5,Yes,11
+Baniyas,Syria,35.188333333,35.943333333,Yes,12
+Santiago De Cuba,Cuba,20.016667,-75.83333299999998,Yes,13
+Road Harbor,British Virgin Islands,18.416667,-64.616667,Yes,14
+Cienfuegos,Cuba,22.15,-80.45,Yes,15
+Nassau,The Bahamas,25.083333,-77.34999999999998,Yes,16
+Aden,Yemen,12.783333,44.95,Yes,17
+Duqm,Oman,19.673252583,57.716908916,Yes,18
+Bandar Abbas,Iran,27.15,56.2,Yes,19
+Veracruz,Mexico,19.2,-96.133333,Yes,20
+Al Ladhiqiyah,Syria,35.533333,35.766667,Yes,21
+Nuevitas Bay,Cuba,21.55,-77.266667,Yes,22
+Port Dickson,Malaysia,2.533333,101.783333,Yes,23
+Lerwick,United Kingdom,60.167,-1.15,Yes,24
+Arhus,Denmark,56.15,10.216667,Yes,25
+Lulea,Sweden,65.583333,22.166667,Yes,26
+Malmo,Sweden,55.623333333,12.984722222,Yes,27
+Falkenberg,Sweden,56.881666667,12.466111111,Yes,28
+Kiel,Germany,54.316667,10.133333,Yes,29
+Gdansk,Poland,54.35,18.666667,Yes,30
+Kaliningrad,Russia,54.7,20.483333,Yes,31
+Bergen,Norway,60.402777778,5.298611111,Yes,32
+Mongstad,Norway,60.830833333,5.036666667,Yes,33
+Kokkola,Finland,63.85,23.016667,Yes,34
+Kaskinen,Finland,62.383333,21.233333,Yes,35
+Hammerfest,Norway,70.666667,23.666667,Yes,36
+Kotka,Finland,60.466667,26.966667,Yes,37
+Liepaja,Latvia,56.516667,21.016667,Yes,38
+Argentia,Canada,47.3,-53.983333,Yes,39
+Drammen,Norway,59.733333,10.25,Yes,40
+Norrkoping,Sweden,58.583333,16.2,Yes,41
+Helsinki,Finland,60.166667,24.966667,Yes,42
+Uddevalla,Sweden,58.334722222,11.8775,Yes,43
+Rauma,Finland,61.125,21.446111111,Yes,44
+Oulu,Finland,65.016667,25.4,Yes,45
+Stockholm,Sweden,59.333333,18.05,Yes,46
+Vaasa,Finland,63.1,21.583333,Yes,47
+Trondheim,Norway,63.448333333,10.401666667,Yes,48
+Stavanger,Norway,58.966667,5.75,Yes,49
+Vyborg,Russia,60.716667,28.75,Yes,50
+Varna,Bulgaria,43.183333,27.966667,Yes,51
+Oslo,Norway,59.898055556,10.745555556,Yes,52
+Studstrup,Denmark,56.25,10.35,Yes,53
+Szczecin,Poland,53.416667,14.55,Yes,54
+Rostock,Germany,54.1,12.133333,Yes,55
+Sundsvall,Sweden,62.383333,17.35,Yes,56
+Tromso,Norway,69.65,18.966667,Yes,57
+Reykjavik,Iceland,64.15,-21.933333,Yes,58
+Vanasadam - Port of Tallinn,Estonia,59.450128,24.766676,Yes,59
+Paljassaare,Estonia,59.459102,24.70564,Yes,60
+Sillamae,Estonia,59.42612,27.73945,Yes,61
+Cork,Ireland,51.85,-8.266667,Yes,62
+Belfast,United Kingdom,54.616667,-5.9,Yes,63
+Dublin,Ireland,53.35,-6.25,Yes,64
+Cobh,Ireland,51.85,-8.3,Yes,65
+Pori,Finland,61.483333,21.8,Yes,66
+Sankt-Peterburg,Russia,59.933333,30.3,Yes,67
+Turku,Finland,60.45,22.233333,Yes,68
+Bullen Baai,Curacao,12.183333,-69.033333,Yes,69
+Willemstad,Curacao,12.116667,-68.933333,Yes,70
+Barranquilla,Colombia,10.966667,-74.766667,Yes,71
+Puerto Cabello,Venezuela,10.483333,-68.0,Yes,72
+Tuxpan,Mexico,20.95,-97.4,Yes,73
+Tampico,Mexico,22.216667,-97.866667,Yes,74
+Port Of Spain,Trinidad and Tobago,10.65,-61.516667,Yes,75
+Paldiski Lounasadam,Estonia,59.333343,24.081111,Yes,76
+Kristinestad,Finland,62.283333,21.4,Yes,77
+Pietarsaari,Finland,63.683333,22.666667,Yes,78
+Tan-Shui,Taiwan,25.183333,121.4,Yes,79
+Muuga-Port of Tallin,Estonia,59.500042,24.966693,Yes,80
+Tai-Chung Kang,Taiwan,24.3,120.5,Yes,81
+Karlsborg,Sweden,65.8,23.283333,Yes,82
+Hua-Lien Kang,Taiwan,23.983333,121.6,Yes,83
+Kao-Hsiung,Taiwan,22.616667,120.25,Yes,84
+Kingston,Jamaica,17.966667,-76.783333,Yes,85
+Port Au Prince,Haiti,18.55,-72.34999999999998,Yes,86
+Gdynia,Poland,54.533333,18.55,Yes,87
+Kobenhavn,Denmark,55.7,12.616667,Yes,88
+Helsingborg,Sweden,56.035277778,12.687777778,Yes,89
+Lubeck,Germany,53.883333,10.7,Yes,90
+Ventspils,Latvia,57.4,21.533333,Yes,91
+Karlshamn,Sweden,56.152777778,14.869166667,Yes,92
+Klaipeda,Lithuania,55.716667,21.116667,Yes,93
+Vasteras,Sweden,59.616667,16.55,Yes,94
+Riga,Latvia,56.95,24.1,Yes,95
+Darwin,Australia,-12.471388889,130.847777778,Yes,96
+Fremantle,Australia,-32.05,115.75,Yes,97
+Dampier,Australia,-20.633333,116.716667,Yes,98
+Bahai De La Habana,Cuba,23.133333,-82.366667,Yes,99
+Puerto Cristobal,Panama,9.35,-79.916667,Yes,100
+Puerto Colon,Panama,9.366667,-79.88333299999998,Yes,101
+Santo Domingo,Dominican Republic,18.466667,-69.883333,Yes,102
+Vladivostok,Russia,43.108888889,131.888333333,Yes,103
+Newcastle,Australia,-32.916667,151.783333,Yes,104
+Brisbane,Australia,-27.466667,153.033333,Yes,105
+Port Kembla,Australia,-34.483333,150.916667,Yes,106
+Sydney,Australia,-33.866667,151.2,Yes,107
+Bahia De Sagua De Tanamo,Cuba,20.683333,-75.33333299999998,Yes,108
+Antilla,Cuba,20.833333,-75.733333,Yes,109
+Chi-Lung,Taiwan,25.133333,121.766667,Yes,110
+Su-Ao,Taiwan,24.6,121.866667,Yes,111
+Porto Romano,Albania,41.383333333,19.416666667,Yes,112

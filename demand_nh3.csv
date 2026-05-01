@@ -1,0 +1,19 @@
+node_id,location,demand
+os1,Santo (Brazil),0
+os2,San Antonio (Chile),0
+os3,Colón (Panama),0
+os4,New Orleans (USA),0
+os5,Antwerp (Belgium),0
+os6,Algeciras (Spain),0
+os7,Tangier (Morocco),0
+os8,Durban (South Africa),0
+os9,Singapore,0
+os10,Ulsan (South Korea),0
+ost1,Baoshan (China),141519680.0
+ost2,Anshan (China),141519680.0
+ost3,Jamshedpur,45286200.0
+ost6,Saldanha (South Africa),5660790.0
+ost7,Luleå (Sweden),31134330.0
+ost8,Duisburg (Germany),31134330.0
+ost9,Volta Redonda (Brazil),11321570.0
+ost10,North Charleston (USA),28303940.0
