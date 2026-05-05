@@ -2,12 +2,13 @@ import searoute as sr
 import pandas as pd
 import numpy as np
 import folium
-import matplotlib.pyplot as plt
 from pathlib import Path
+import matplotlib.pyplot as plt
+import matplotlib.lines as mlines
+import matplotlib.patches as mpatches
 
 
 def curved_line(lat1, lon1, lat2, lon2, curvature=0.15, n_points=30):
-    """Quadratic bezier curve between two points for smoother land routes."""
     mid_lat = (lat1 + lat2) / 2
     mid_lon = (lon1 + lon2) / 2
     dlat, dlon = lat2 - lat1, lon2 - lon1
@@ -22,27 +23,16 @@ def curved_line(lat1, lon1, lat2, lon2, curvature=0.15, n_points=30):
 def plot_network_map(nodes_csv, flows_csv, prod_csv,
                      demand_rigid_csv, demand_ship_ports_csv,
                      output_html, zoom_start=3, tiles="CartoDB positron"):
-    """
-    Interactive folium map of optimization network results.
-
-    Layers:
-      - Shipping Routes          (blue, sea-routed via searoute)
-      - Onshore Transport        (red, curved land lines)
-      - Active Transit Nodes     (blue, sized by flow-through)
-      - All Transit Nodes        (grey, hidden)
-      - Production Nodes         (purple, sized by production)
-      - Rigid Demand (Steel/Fert)(green/orange/red by served %)
-      - Shipping Bunkering Ports (teal, sized by delivered volume)
-    """
     # ---------- Load ----------
-    nodes_df       = pd.read_csv(nodes_csv)
-    flows_df       = pd.read_csv(flows_csv)
-    prod_df        = pd.read_csv(prod_csv)
-    demand_rigid   = pd.read_csv(demand_rigid_csv)
-    demand_ship    = pd.read_csv(demand_ship_ports_csv)
+    nodes_df     = pd.read_csv(nodes_csv)
+    flows_df     = pd.read_csv(flows_csv)
+    prod_df      = pd.read_csv(prod_csv)
+    demand_rigid = pd.read_csv(demand_rigid_csv)
+    demand_ship  = pd.read_csv(demand_ship_ports_csv)
 
     nodes = {
-        str(r["node_id"]): {"lat": float(r["lat"]), "lon": float(r["lon"])}
+        str(r["node_id"]): {"lat": float(r["lat"]), "lon": float(r["lon"]),
+                            "industry": str(r.get("industry", ""))}
         for _, r in nodes_df.iterrows()
     }
     active_nodes = set(flows_df["from_id"].astype(str)) | set(flows_df["to_id"].astype(str))
@@ -64,15 +54,16 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
     # ---------- Map + layers ----------
     m = folium.Map(
         location=[nodes_df["lat"].mean(), nodes_df["lon"].mean()],
-        zoom_start=zoom_start,
-        tiles=tiles,
+        zoom_start=zoom_start, tiles=tiles,
+        zoom_snap=0.25, zoom_delta=0.5,
+        wheel_debounce_time=80, wheel_pxPerZoomLevel=120,
     )
 
-    ship_layer         = folium.FeatureGroup(name="Shipping Routes",         show=True)
-    land_layer         = folium.FeatureGroup(name="Onshore Transport",       show=True)
-    transit_layer      = folium.FeatureGroup(name="Active Transit Nodes",    show=True)
-    all_transit_layer  = folium.FeatureGroup(name="All Transit Nodes",       show=False)
-    prod_layer         = folium.FeatureGroup(name="Production Nodes",        show=True)
+    ship_layer         = folium.FeatureGroup(name="Shipping Routes",           show=True)
+    land_layer         = folium.FeatureGroup(name="Onshore Transport",         show=True)
+    transit_layer      = folium.FeatureGroup(name="Active Transit Nodes",      show=True)
+    all_transit_layer  = folium.FeatureGroup(name="All Transit Nodes",         show=False)
+    prod_layer         = folium.FeatureGroup(name="Production Nodes",          show=True)
     demand_rigid_layer = folium.FeatureGroup(name="Rigid Demand (Steel/Fert)", show=True)
     demand_ship_layer  = folium.FeatureGroup(name="Shipping Bunkering Ports",  show=True)
 
@@ -80,11 +71,10 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
                   prod_layer, demand_rigid_layer, demand_ship_layer]:
         layer.add_to(m)
 
-    # ---------- Transit nodes (all + active) ----------
+    # ---------- Transit nodes ----------
     for node_id, node in nodes.items():
         if not node_id.startswith("t"):
             continue
-
         folium.CircleMarker(
             location=[node["lat"], node["lon"]],
             radius=3, color="grey", fill=True,
@@ -99,23 +89,27 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
             )
             folium.CircleMarker(
                 location=[node["lat"], node["lon"]],
-                radius=5, color="blue", fill=True,
-                fill_color="blue", fill_opacity=0.7,
+                radius=5, color="#2ca1b0", fill=True,
+                fill_color="#2ca1b0", fill_opacity=0.7,
                 tooltip=f"{node_id}<br>Flow through: {flow_through:,.2f} Mt",
             ).add_to(transit_layer)
 
-    # ---------- Flows ----------
-    for _, row in flows_df.iterrows():
+    # ---------- Flows (aggregated per edge) ----------
+    edge_flows = (flows_df.groupby(["from_id", "to_id"])["flow"]
+                  .sum().reset_index())
+    max_edge_flow = edge_flows["flow"].max() or 1
+
+    for _, row in edge_flows.iterrows():
         from_id, to_id = str(row["from_id"]), str(row["to_id"])
         flow = float(row["flow"])
         if from_id not in nodes or to_id not in nodes:
             continue
         route, mode = get_route(from_id, to_id)
-        weight = 2 + 8 * (flow / 10000)
+        weight = 1.5 + 6 * (flow / max_edge_flow)
         folium.PolyLine(
             route,
-            color="blue" if mode == "ship" else "red",
-            weight=weight, opacity=0.8,
+            color="#0f3d64" if mode == "ship" else "#e83b20",
+            weight=weight, opacity=1,
             tooltip=f"{from_id} → {to_id} | Flow: {flow:,.2f} Mt",
         ).add_to(ship_layer if mode == "ship" else land_layer)
 
@@ -129,8 +123,8 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
         radius = 3 + 12 * (row["produced"] / max_prod)
         folium.CircleMarker(
             location=[node["lat"], node["lon"]],
-            radius=radius, color="purple", fill=True,
-            fill_color="purple", fill_opacity=0.8,
+            radius=radius, color="#b8860b", fill=True,
+            fill_color="#b8860b", fill_opacity=0.8,
             tooltip=(
                 f"{node_id}<br>"
                 f"Produced: {row['produced']:,.2f} Mt<br>"
@@ -138,22 +132,27 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
             ),
         ).add_to(prod_layer)
 
-    # ---------- Rigid demand (steel + fert): served % coloring ----------
+    # ---------- Rigid demand (steel + fert) ----------
+    industry_colors = {
+        "Fertilizer": "#e58250",
+        "Steel":      "#5780b6",
+    }
     max_demand_rigid = demand_rigid["demand"].max() or 1
     for _, row in demand_rigid.iterrows():
         node_id = str(row["node_id"])
         if node_id not in nodes:
             continue
         node = nodes[node_id]
+        industry = node.get("industry", "")
+        color = industry_colors.get(industry, "#888888")
         pct = row["served_pct"]
-        color = "green" if pct >= 99 else "orange" if pct >= 50 else "red"
         radius = 3 + 12 * (row["demand"] / max_demand_rigid)
         folium.CircleMarker(
             location=[node["lat"], node["lon"]],
             radius=radius, color=color, fill=True,
-            fill_color=color, fill_opacity=0.8,
+            fill_color=color, fill_opacity=0.92,
             tooltip=(
-                f"{node_id}<br>"
+                f"{node_id} ({industry})<br>"
                 f"Demand:    {row['demand']:,.2f} Mt<br>"
                 f"Delivered: {row['delivered']:,.2f} Mt<br>"
                 f"Unmet:     {row['unmet']:,.2f} Mt<br>"
@@ -161,19 +160,19 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
             ),
         ).add_to(demand_rigid_layer)
 
-    # ---------- Shipping demand (ports): sized by delivered volume only ----------
+    # ---------- Shipping bunkering ports ----------
     delivered_ship = demand_ship[demand_ship["delivered"] > 1e-6].copy()
-    max_ship_delivered = delivered_ship["delivered"].max() if not delivered_ship.empty else 1
+    max_ship = delivered_ship["delivered"].max() if not delivered_ship.empty else 1
     for _, row in delivered_ship.iterrows():
         node_id = str(row["node_id"])
         if node_id not in nodes:
             continue
         node = nodes[node_id]
-        radius = 3 + 12 * (row["delivered"] / max_ship_delivered)
+        radius = 3 + 12 * (row["delivered"] / max_ship)
         folium.CircleMarker(
             location=[node["lat"], node["lon"]],
-            radius=radius, color="teal", fill=True,
-            fill_color="teal", fill_opacity=0.8,
+            radius=radius, color="#008a65", fill=True,
+            fill_color="#008a65", fill_opacity=0.8,
             tooltip=(
                 f"{node_id} (bunkering port)<br>"
                 f"Delivered: {row['delivered']:,.2f} Mt"
@@ -189,54 +188,60 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
 
 def plot_industry_share(demand_rigid_csv, demand_ship_aggregate_csv, nodes_csv,
                         value_col="delivered", title=None, save_path=None):
-    """
-    Pie chart of demand share per industry.
-
-    Combines rigid per-node demand (steel, fert) with aggregate shipping
-    so shipping shows up as one slice.
-    """
-    rigid = pd.read_csv(demand_rigid_csv)
+    rigid    = pd.read_csv(demand_rigid_csv)
     ship_agg = pd.read_csv(demand_ship_aggregate_csv)
-    nodes = pd.read_csv(nodes_csv)[["node_id", "industry"]]
+    nodes    = pd.read_csv(nodes_csv)[["node_id", "industry"]]
 
-    # Rigid: group by industry via node lookup
     rigid = rigid.merge(nodes, on="node_id", how="left")
     rigid_shares = rigid.groupby("industry")[value_col].sum()
 
-    # Shipping: one aggregate row
     ship_value = float(ship_agg[value_col].iloc[0])
-    shares = rigid_shares.copy()
-    shares["Shipping"] = ship_value
-    shares = shares[shares > 0].sort_values(ascending=False)
+    industry_df = rigid_shares.reset_index()
+    industry_df.columns = ["industry", value_col]
+    industry_df = pd.concat([industry_df,
+                             pd.DataFrame({"industry": ["Shipping"], value_col: [ship_value]})],
+                            ignore_index=True)
+    industry_df = industry_df[industry_df[value_col] > 0]
+    industry_df = industry_df.sort_values(value_col, ascending=True)
 
-    total = shares.sum()
-    fig, ax = plt.subplots(figsize=(8, 8))
-    colors = plt.cm.Set2(range(len(shares)))
+    industries = industry_df["industry"].tolist()
+    volumes    = industry_df[value_col].tolist()
+    total      = sum(volumes)
+    shares     = [v / total * 100 for v in volumes]
 
-    wedges, texts, autotexts = ax.pie(
-        shares.values,
-        labels=shares.index,
-        autopct=lambda p: f"{p:.2f}%\n({p*total/100:,.2f} Mt)",
-        startangle=90,
-        colors=colors,
-        wedgeprops=dict(edgecolor="white", linewidth=2),
-        textprops=dict(fontsize=11),
-    )
-    for t in autotexts:
-        t.set_fontsize(9)
-        t.set_color("black")
+    colors = {
+        "Shipping":   "#008a65",
+        "Fertilizer": "#e58250",
+        "Steel":      "#5780b6",
+    }
+    bar_colors = [colors.get(ind, "#888888") for ind in industries]
 
-    ax.set_title(title or f"{value_col.capitalize()} share by industry (total: {total:,.2f} Mt)",
-                 fontsize=13, pad=20)
+    fig, ax = plt.subplots(figsize=(7, 3))
+    bars = ax.barh(industries, volumes, color=bar_colors, height=0.55,
+                   edgecolor="white", linewidth=0.5)
+
+    for bar, vol, share in zip(bars, volumes, shares):
+        ax.text(bar.get_width() + total * 0.02, bar.get_y() + bar.get_height() / 2,
+                f"{vol:.2f} Mt  ({share:.1f}%)",
+                va="center", ha="left", fontsize=10, color="#333333")
+
+    ax.set_xlim(0, max(volumes) * 1.45)
+    ax.set_title(title or f"Delivered share by industry (total: {total:,.2f} Mt)",
+                 fontsize=12, pad=10)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_visible(False)
+    ax.tick_params(left=False, labelsize=10)
+    ax.xaxis.set_visible(False)
+
     plt.tight_layout()
     if save_path:
-        plt.savefig(save_path, dpi=200, bbox_inches="tight")
+        plt.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
     plt.show()
-    return shares
+    return industry_df
 
 
 def print_underutilized_production(results_production_csv, threshold=100.0):
-    #print flow out of t53
     prod = pd.read_csv(results_production_csv)
     prod["utilization_pct"] = 100.0 * prod["produced"] / prod["capacity"]
     under = prod[prod["utilization_pct"] < threshold - 1e-6].copy()
@@ -259,40 +264,23 @@ def print_underutilized_production(results_production_csv, threshold=100.0):
 
 # -------------------- Usage --------------------
 if __name__ == "__main__":
-    results_dir = Path("/Users/oliviathingvad/Master-thesis/Results/flexible_demand/2026-05-01_1")   # change to the dated folder you want to plot
+    results_dir = Path("Results/flexible_demand/2026-05-05_2")
+    nodes_csv   = "model_work/DataFiles_flexible/nodes.csv"
 
     print_underutilized_production(results_dir / "results_production.csv")
-    print("Flow out of t53:")
-    flows = pd.read_csv(results_dir / "results_flows.csv")
-    t53_out = flows[flows["from_id"] == "t53"]
-    if t53_out.empty:
-        print("No flow out of t53.")
-    else:
-        for _, row in t53_out.iterrows():
-            print(f"To {row['to_id']}: {row['flow']:,.2f} Mt")
-    t107_in = flows[flows["to_id"] == "t107"]
-    if t107_in.empty:
-        print("No flow into t107.")
-    else:
-        for _, row in t107_in.iterrows():
-            print(f"From {row['from_id']}: {row['flow']:,.2f} Mt")
-            
+
     plot_network_map(
-        nodes_csv             = "model_work/DataFiles_flexible/nodes.csv",
+        nodes_csv             = nodes_csv,
         flows_csv             = results_dir / "results_flows.csv",
         prod_csv              = results_dir / "results_production.csv",
-        demand_rigid_csv      = results_dir / "results_demand_rigid.csv",
+        demand_rigid_csv      = results_dir / "results_demand.csv",
         demand_ship_ports_csv = results_dir / "results_demand_ship_ports.csv",
         output_html           = results_dir / "network_flows.html",
     )
 
     plot_industry_share(
-        demand_rigid_csv          = results_dir / "results_demand_rigid.csv",
+        demand_rigid_csv          = results_dir / "results_demand.csv",
         demand_ship_aggregate_csv = results_dir / "results_demand_ship_aggregate.csv",
-        nodes_csv                 = "model_work/DataFiles_flexible/nodes.csv",
+        nodes_csv                 = nodes_csv,
         save_path                 = results_dir / "industry_share.png",
     )
-
-
-
-

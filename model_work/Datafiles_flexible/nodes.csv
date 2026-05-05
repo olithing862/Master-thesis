@@ -176,7 +176,7 @@ oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Fertilizer,offtake,Eurasia
 oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Fertilizer,offtake,Eurasia_Africa
 oft_f11,Gujarat India,21.97,73.06,Middle East & India,Fertilizer,offtake,Eurasia_Africa
 oft_f12,Odisha India,20.94,85.17,Middle East & India,Fertilizer,offtake,Eurasia_Africa
-oft_f13,Bontang Indonesia,0.18,117.48,South-east Asia,Fertilizer,offtake,Borneo
+oft_f13,Jakarta Indonesia,-6.312, 107.424,South-east Asia,Fertiliser,offtake,Indonesia_Java
 oft_steel1,China Hubei,31.15,114.77,China & Hong Kong,Steel,offtake,Eurasia_Africa
 oft_steel2,China Jiangsu,32.93,119.47,China & Hong Kong,Steel,offtake,Eurasia_Africa
 oft_steel3,China Shandong,35.31,119.4,China & Hong Kong,Steel,offtake,Eurasia_Africa
@@ -354,52 +354,101 @@ oft_ship162,Antilla,20.833333,-75.733333,N Latin America,Shipping,offtake,Cuba
 oft_ship163,Chi-Lung,25.133333,121.766667,China & Hong Kong,Shipping,offtake,Taiwan
 oft_ship164,Kawasaki Ko,35.5,139.766667,Japan & South Korea,Shipping,offtake,Japan
 oft_ship165,Yokohama Ko,35.45,139.583333,Japan & South Korea,Shipping,offtake,Japan
-p0,-14_-47_1000000.0,-14,-47,S Latin America,Green Hydrogen,production,SouthAmerica
-p1,8_81_1000000.0,8,81,Middle East & India,Green Hydrogen,production,SriLanka
-p2,14_26_1000000.0,14,26,East Africa,Green Hydrogen,production,Eurasia_Africa
-p3,-28_142_1000000.0,-28,142,East Australia,Green Hydrogen,production,Australia
-p4,24_-110_1000000.0,24,-110,N Latin America,Green Hydrogen,production,NorthAmerica
-p5,30_55_1000000.0,30,55,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p6,-31_-70_1000000.0,-31,-70,S Latin America,Green Hydrogen,production,SouthAmerica
-p7,41_97_1000000.0,41,97,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p8,24_0_1000000.0,24,0,Mediterranean,Green Hydrogen,production,Eurasia_Africa
-p9,-21_124_1000000.0,-21,124,West Australia,Green Hydrogen,production,Australia
-p10,-21_15_1000000.0,-21,15,East Africa,Green Hydrogen,production,Eurasia_Africa
-p11,21_24_1000000.0,21,24,Mediterranean,Green Hydrogen,production,Eurasia_Africa
-p12,18_12_1000000.0,18,12,West Africa,Green Hydrogen,production,Eurasia_Africa
-p13,18_-98_1000000.0,18,-98,Gulf of Mexico,Green Hydrogen,production,NorthAmerica
-p14,-21_25_1000000.0,-21,25,East Africa,Green Hydrogen,production,Eurasia_Africa
-p15,-11_-43_1000000.0,-11,-43,S Latin America,Green Hydrogen,production,SouthAmerica
-p16,36_77_1000000.0,36,77,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p17,45_115_1000000.0,45,115,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p18,16_10_1000000.0,16,10,West Africa,Green Hydrogen,production,Eurasia_Africa
-p19,17_46_1000000.0,17,46,Red Sea,Green Hydrogen,production,Eurasia_Africa
-p20,-20_124_1000000.0,-20,124,West Australia,Green Hydrogen,production,Australia
-p21,-28_-69_1000000.0,-28,-69,S Latin America,Green Hydrogen,production,SouthAmerica
-p22,37_-118_1000000.0,37,-118,NA West Coast,Green Hydrogen,production,NorthAmerica
-p23,12_106_1000000.0,12,106,South-east Asia,Green Hydrogen,production,Eurasia_Africa
-p24,17_25_1000000.0,17,25,East Africa,Green Hydrogen,production,Eurasia_Africa
-p25,54_159_1000000.0,54,159,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p26,27_38_1000000.0,27,38,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p27,42_81_1000000.0,42,81,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p28,27_-82_1000000.0,27,-82,NA East Coast,Green Hydrogen,production,NorthAmerica
-p30,35_67_1000000.0,35,67,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p31,30_85_1000000.0,30,85,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p32,-21_-58_1000000.0,-21,-58,S Latin America,Green Hydrogen,production,SouthAmerica
-p33,17_-16_1000000.0,17,-16,West Africa,Green Hydrogen,production,Eurasia_Africa
-p34,37_63_1000000.0,37,63,Middle East & India,Green Hydrogen,production,Eurasia_Africa
-p35,6_102_1000000.0,6,102,South-east Asia,Green Hydrogen,production,Eurasia_Africa
-p36,3_36_1000000.0,3,36,East Africa,Green Hydrogen,production,Eurasia_Africa
-p37,38_-106_1000000.0,38,-106,NA West Coast,Green Hydrogen,production,NorthAmerica
-p38,12_-72_1000000.0,12,-72,N Latin America,Green Hydrogen,production,NorthAmerica
-p39,33_92_1000000.0,33,92,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
-p40,20_9_1000000.0,20,9,West Africa,Green Hydrogen,production,Eurasia_Africa
-p41,-6_35_1000000.0,-6,35,East Africa,Green Hydrogen,production,Eurasia_Africa
-p42,23_-103_1000000.0,23,-103,N Latin America,Green Hydrogen,production,NorthAmerica
-p43,-23_134_1000000.0,-23,134,East Australia,Green Hydrogen,production,Australia
-p44,17_121_1000000.0,17,121,South-east Asia,Green Hydrogen,production,Philippines
-p45,20_-12_1000000.0,20,-12,West Africa,Green Hydrogen,production,Eurasia_Africa
-p46,-16_137_1000000.0,-16,137,East Australia,Green Hydrogen,production,Australia
-p47,-15_-72_1000000.0,-15,-72,S Latin America,Green Hydrogen,production,SouthAmerica
-p48,-19_13_1000000.0,-19,13,West Africa,Green Hydrogen,production,Eurasia_Africa
-p49,42_109_1000000.0,42,109,China & Hong Kong,Green Hydrogen,production,Eurasia_Africa
+p0,-14_-47_1000000.0,-14,-47,S Latin America,Green Ammonia,production,SouthAmerica
+p1,8_81_1000000.0,8,81,Middle East & India,Green Ammonia,production,SriLanka
+p2,14_26_1000000.0,14,26,East Africa,Green Ammonia,production,Eurasia_Africa
+p3,-28_142_1000000.0,-28,142,East Australia,Green Ammonia,production,Australia
+p4,24_-110_1000000.0,24,-110,N Latin America,Green Ammonia,production,NorthAmerica
+p5,30_55_1000000.0,30,55,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p6,-31_-70_1000000.0,-31,-70,S Latin America,Green Ammonia,production,SouthAmerica
+p7,41_97_1000000.0,41,97,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p8,24_0_1000000.0,24,0,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p9,-21_124_1000000.0,-21,124,West Australia,Green Ammonia,production,Australia
+p10,-21_15_1000000.0,-21,15,East Africa,Green Ammonia,production,Eurasia_Africa
+p11,21_24_1000000.0,21,24,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p12,18_12_1000000.0,18,12,West Africa,Green Ammonia,production,Eurasia_Africa
+p13,18_-98_1000000.0,18,-98,Gulf of Mexico,Green Ammonia,production,NorthAmerica
+p14,-21_25_1000000.0,-21,25,East Africa,Green Ammonia,production,Eurasia_Africa
+p15,-11_-43_1000000.0,-11,-43,S Latin America,Green Ammonia,production,SouthAmerica
+p16,36_77_1000000.0,36,77,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p17,45_115_1000000.0,45,115,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p18,16_10_1000000.0,16,10,West Africa,Green Ammonia,production,Eurasia_Africa
+p19,17_46_1000000.0,17,46,Red Sea,Green Ammonia,production,Eurasia_Africa
+p20,-20_124_1000000.0,-20,124,West Australia,Green Ammonia,production,Australia
+p21,-28_-69_1000000.0,-28,-69,S Latin America,Green Ammonia,production,SouthAmerica
+p22,37_-118_1000000.0,37,-118,NA West Coast,Green Ammonia,production,NorthAmerica
+p23,12_106_1000000.0,12,106,South-east Asia,Green Ammonia,production,Eurasia_Africa
+p24,17_25_1000000.0,17,25,East Africa,Green Ammonia,production,Eurasia_Africa
+p25,54_159_1000000.0,54,159,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p26,27_38_1000000.0,27,38,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p27,42_81_1000000.0,42,81,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p28,27_-82_1000000.0,27,-82,NA East Coast,Green Ammonia,production,NorthAmerica
+p30,35_67_1000000.0,35,67,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p31,30_85_1000000.0,30,85,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p32,-21_-58_1000000.0,-21,-58,S Latin America,Green Ammonia,production,SouthAmerica
+p33,17_-16_1000000.0,17,-16,West Africa,Green Ammonia,production,Eurasia_Africa
+p34,37_63_1000000.0,37,63,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p35,6_102_1000000.0,6,102,South-east Asia,Green Ammonia,production,Eurasia_Africa
+p36,3_36_1000000.0,3,36,East Africa,Green Ammonia,production,Eurasia_Africa
+p37,38_-106_1000000.0,38,-106,NA West Coast,Green Ammonia,production,NorthAmerica
+p38,12_-72_1000000.0,12,-72,N Latin America,Green Ammonia,production,NorthAmerica
+p39,33_92_1000000.0,33,92,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p40,20_9_1000000.0,20,9,West Africa,Green Ammonia,production,Eurasia_Africa
+p41,-6_35_1000000.0,-6,35,East Africa,Green Ammonia,production,Eurasia_Africa
+p42,23_-103_1000000.0,23,-103,N Latin America,Green Ammonia,production,NorthAmerica
+p43,-23_134_1000000.0,-23,134,East Australia,Green Ammonia,production,Australia
+p44,17_121_1000000.0,17,121,South-east Asia,Green Ammonia,production,Philippines
+p45,20_-12_1000000.0,20,-12,West Africa,Green Ammonia,production,Eurasia_Africa
+p46,-16_137_1000000.0,-16,137,East Australia,Green Ammonia,production,Australia
+p47,-15_-72_1000000.0,-15,-72,S Latin America,Green Ammonia,production,SouthAmerica
+p48,-19_13_1000000.0,-19,13,West Africa,Green Ammonia,production,Eurasia_Africa
+p49,42_109_1000000.0,42,109,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+pf0,-14_-47_1000000.0,-14,-47,S Latin America,Fossil,production,SouthAmerica
+pf1,8_81_1000000.0,8,81,Middle East & India,Fossil,production,SriLanka
+pf2,14_26_1000000.0,14,26,East Africa,Fossil,production,Eurasia_Africa
+pf3,-28_142_1000000.0,-28,142,East Australia,Fossil,production,Australia
+pf4,24_-110_1000000.0,24,-110,N Latin America,Fossil,production,NorthAmerica
+pf5,30_55_1000000.0,30,55,Middle East & India,Fossil,production,Eurasia_Africa
+pf6,-31_-70_1000000.0,-31,-70,S Latin America,Fossil,production,SouthAmerica
+pf7,41_97_1000000.0,41,97,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf8,24_0_1000000.0,24,0,Mediterranean,Fossil,production,Eurasia_Africa
+pf9,-21_124_1000000.0,-21,124,West Australia,Fossil,production,Australia
+pf10,-21_15_1000000.0,-21,15,East Africa,Fossil,production,Eurasia_Africa
+pf11,21_24_1000000.0,21,24,Mediterranean,Fossil,production,Eurasia_Africa
+pf12,18_12_1000000.0,18,12,West Africa,Fossil,production,Eurasia_Africa
+pf13,18_-98_1000000.0,18,-98,Gulf of Mexico,Fossil,production,NorthAmerica
+pf14,-21_25_1000000.0,-21,25,East Africa,Fossil,production,Eurasia_Africa
+pf15,-11_-43_1000000.0,-11,-43,S Latin America,Fossil,production,SouthAmerica
+pf16,36_77_1000000.0,36,77,Middle East & India,Fossil,production,Eurasia_Africa
+pf17,45_115_1000000.0,45,115,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf18,16_10_1000000.0,16,10,West Africa,Fossil,production,Eurasia_Africa
+pf19,17_46_1000000.0,17,46,Red Sea,Fossil,production,Eurasia_Africa
+pf20,-20_124_1000000.0,-20,124,West Australia,Fossil,production,Australia
+pf21,-28_-69_1000000.0,-28,-69,S Latin America,Fossil,production,SouthAmerica
+pf22,37_-118_1000000.0,37,-118,NA West Coast,Fossil,production,NorthAmerica
+pf23,12_106_1000000.0,12,106,South-east Asia,Fossil,production,Eurasia_Africa
+pf24,17_25_1000000.0,17,25,East Africa,Fossil,production,Eurasia_Africa
+pf25,54_159_1000000.0,54,159,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf26,27_38_1000000.0,27,38,Middle East & India,Fossil,production,Eurasia_Africa
+pf27,42_81_1000000.0,42,81,Middle East & India,Fossil,production,Eurasia_Africa
+pf28,27_-82_1000000.0,27,-82,NA East Coast,Fossil,production,NorthAmerica
+pf30,35_67_1000000.0,35,67,Middle East & India,Fossil,production,Eurasia_Africa
+pf31,30_85_1000000.0,30,85,Middle East & India,Fossil,production,Eurasia_Africa
+pf32,-21_-58_1000000.0,-21,-58,S Latin America,Fossil,production,SouthAmerica
+pf33,17_-16_1000000.0,17,-16,West Africa,Fossil,production,Eurasia_Africa
+pf34,37_63_1000000.0,37,63,Middle East & India,Fossil,production,Eurasia_Africa
+pf35,6_102_1000000.0,6,102,South-east Asia,Fossil,production,Eurasia_Africa
+pf36,3_36_1000000.0,3,36,East Africa,Fossil,production,Eurasia_Africa
+pf37,38_-106_1000000.0,38,-106,NA West Coast,Fossil,production,NorthAmerica
+pf38,12_-72_1000000.0,12,-72,N Latin America,Fossil,production,NorthAmerica
+pf39,33_92_1000000.0,33,92,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf40,20_9_1000000.0,20,9,West Africa,Fossil,production,Eurasia_Africa
+pf41,-6_35_1000000.0,-6,35,East Africa,Fossil,production,Eurasia_Africa
+pf42,23_-103_1000000.0,23,-103,N Latin America,Fossil,production,NorthAmerica
+pf43,-23_134_1000000.0,-23,134,East Australia,Fossil,production,Australia
+pf44,17_121_1000000.0,17,121,South-east Asia,Fossil,production,Philippines
+pf45,20_-12_1000000.0,20,-12,West Africa,Fossil,production,Eurasia_Africa
+pf46,-16_137_1000000.0,-16,137,East Australia,Fossil,production,Australia
+pf47,-15_-72_1000000.0,-15,-72,S Latin America,Fossil,production,SouthAmerica
+pf48,-19_13_1000000.0,-19,13,West Africa,Fossil,production,Eurasia_Africa
+pf49,42_109_1000000.0,42,109,China & Hong Kong,Fossil,production,Eurasia_Africa

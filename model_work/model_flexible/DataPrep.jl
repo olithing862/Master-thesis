@@ -2,18 +2,17 @@ using JuMP
 using Gurobi
 using CSV
 using DataFrames
-
 module DataPrep
 using CSV
 using DataFrames
 
-function generate_data(total_capacity,nodes,costs_df,production,demand_df,globald,productioncost)
+function generate_data(total_capacity,nodes,costs_df,production,demand_df,globald,productioncost,penalty_df)
 
     # Global demand lookup
     global_demand_dict = Dict(row.industry => row.demand_mt for row in eachrow(globald))
 
     # Demand per offtake node
-    D_rigid = Dict(
+    D = Dict(
     row.node_id => global_demand_dict[row.industry] * row.demand_percent
     for row in eachrow(demand_df) if row.industry != "Shipping"
     )   
@@ -21,9 +20,12 @@ function generate_data(total_capacity,nodes,costs_df,production,demand_df,global
     # Node ID sets
     N     = nodes.node_id
     P_ids = filter(row -> row.type == "production", nodes).node_id
+    P_fossil = filter(row -> row.type == "production" && row.industry == "Fossil", nodes).node_id
+    P_green = filter(row -> row.type == "production" && row.industry == "Green Ammonia", nodes).node_id
     T_ids = filter(row -> row.type == "transit",    nodes).node_id
     O_ids = filter(row -> row.type == "offtake",    nodes).node_id
-    O_rigid = filter(row -> row.type == "offtake" && row.industry != "Shipping", nodes).node_id
+    O_steel = filter(row -> row.type == "offtake" && row.industry == "Steel", nodes).node_id
+    O_fert = filter(row -> row.type == "offtake" && row.industry == "Fertilizer", nodes).node_id
     O_ship  = filter(row -> row.type == "offtake" && row.industry == "Shipping", nodes).node_id
 
     # Cost matrix: Dict (i, j) => cost
@@ -51,17 +53,19 @@ function generate_data(total_capacity,nodes,costs_df,production,demand_df,global
         for row in eachrow(nodes)
     )
 
-    penalty = 2_730_000_000.0
-
+    penalty = Dict(row.node_id => row.penalty for row in eachrow(penalty_df))
     return (
         N        = N,
         P        = P_ids,
+        P_fossil = P_fossil,
+        P_green  = P_green,
         T        = T_ids,
         O        = O_ids,
-        O_rigid  = O_rigid,
+        O_steel  = O_steel,
+        O_fert   = O_fert,
         O_ship   = O_ship,
         costs    = cost_dict,
-        D_rigid  = D_rigid,
+        D        = D,
         D_ship   = D_ship,
         MaxP     = MaxP,
         Prodcost = Prodcost,
