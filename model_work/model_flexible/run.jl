@@ -1,6 +1,8 @@
 include("DataPrep.jl")
 include("model_1.jl")
+include("save_results.jl")
 
+using .save
 using .DataPrep
 using .Model_flexible
 using JuMP
@@ -17,13 +19,13 @@ production     = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", 
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_flexible/prodcost.csv", DataFrame)
-penalty_df      = CSV.read("model_work/DataFiles_flexible/penalty.csv", DataFrame)
+penalty_df      = CSV.read("model_work/DataFiles_flexible/penalty_parameters.csv", DataFrame)
 
 total_capacity = 1000
-N, P,P_fossil, P_green, T, O, O_Steel, O_fert, O_ship, costs, D, D_ship, MaxP, Prodcost, penalty, production =
+N, P,P_fossil, P_green, T, O, O_Steel, O_fert, O_ship, costs, 
+D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production =
     DataPrep.generate_data(total_capacity, nodes, costs_df, production, demand_df, globald, productioncost, penalty_df)
 # After generate_data, before building model:
-
 
 # ----------------------------
 # Create dated results folder
@@ -42,107 +44,70 @@ end
 results_dir = next_results_dir("Results/flexible_demand")
 println("Writing results to: $results_dir")
 
-# ----------------------------
-# Build + solve
-# ----------------------------
-model, f, q, u, prod, valid_edges =
-    Model_flexible.network_model_flexible(P_fossil,P_green, T, O_Steel, O_fert, O_ship, N,
-                                          costs, MaxP, Prodcost,
-                                          D, D_ship, penalty)
+scenarios = Dict(
+    "cheap" => 0.2,
+    "base"  => 0.7
+)
+for (scen_name, factor) in scenarios
 
-optimize!(model)
+    println("\n==============================")
+    println("Running scenario: ", scen_name)
+    println("==============================")
 
-# ----------------------------
-# Console summary
-# ----------------------------
-println("\nRigid demand (steel + fertilizer):")
-for o in vcat(O_Steel, O_fert)
-    println(
-        o,
-        ": delivered = ", round(value(q[o]), digits=2),
-        " / demand = ", D[o],
-        " | unmet = ", round(value(u[o]), digits=2),
-    )
-end
+    # Scale production cost
+    Prodcost_scen = Dict(k => v * factor for (k,v) in Prodcost)
 
-println("\nShipping (aggregate):")
-delivered_ship = sum(value(q[o]) for o in O_ship)
-unmet_ship = sum(value(u[o]) for o in O_ship)
-println("  total delivered across ", length(O_ship), " ports = ", round(delivered_ship, digits=2))
-println("  demand = ", D_ship, " | unmet = ", round(unmet_ship, digits=2))
+    # Create scenario-specific results folder
+    scen_dir = joinpath(results_dir, scen_name)
+    mkpath(scen_dir)
 
-# ----------------------------
-# Save results
-# ----------------------------
-function save_results(f, prod, q, u, valid_edges, P, O_Steel, O_fert, O_ship,
-                      D, D_ship, MaxP, results_dir)
+    # Build model
+    model, f, q, u, prod, valid_edges =
+        Model_flexible.network_model_flexible(
+            P_fossil, P_green, T, O_Steel, O_fert, O_ship, N,
+            costs, MaxP, Prodcost_scen,
+            D, D_ship, fossil_price, co2_tax, conversion
+        )
 
-    # ── Flows ──────────────────────────────────────────────────
-    flow_rows = []
-    for p in P, (i,j) in valid_edges
-        val = value(f[p,i,j])
-        if val > 1e-6
-            push!(flow_rows, (commodity=p, from_id=i, to_id=j, flow=val))
-        end
-    end
-    CSV.write(joinpath(results_dir, "results_flows.csv"), DataFrame(flow_rows))
+    optimize!(model)
 
-    # ── Production per node ────────────────────────────────────
-    prod_rows = []
-    for p in P_green
-        push!(prod_rows, (
-            node_id  = p,
-            produced = value(prod[p]),
-            capacity = MaxP[p]
-        ))
-    end
-    CSV.write(joinpath(results_dir, "results_production.csv"), DataFrame(prod_rows))
+    println("Objective value: ", objective_value(model))
 
-    # ── Rigid demand per offtake node ──────────────────────────
-    rigid_rows = []
+    # ----------------------------
+    # Console summary
+    # ----------------------------
+    println("\nLocked demand (steel + fertiliser):")
     for o in vcat(O_Steel, O_fert)
-        delivered = value(q[o])
-        unmet     = value(u[o])
-        push!(rigid_rows, (
-            node_id    = o,
-            demand     = D[o],
-            delivered  = delivered,
-            unmet      = unmet,
-            served_pct = 100.0 * delivered / D[o],
-        ))
+        println(
+            o,
+            ": delivered = ", round(value(q[o]), digits=2),
+            " / demand = ", D[o],
+            " | unmet = ", round(value(u[o]), digits=2),
+        )
     end
-    CSV.write(joinpath(results_dir, "results_demand.csv"), DataFrame(rigid_rows))
 
-    # ── Shipping demand per candidate port ─────────────────────
-    ship_rows = []
-    for o in O_ship
-        push!(ship_rows, (
-            node_id   = o,
-            delivered = value(q[o]),
-            unmet     = value(u[o]),
-        ))
-    end
-    CSV.write(joinpath(results_dir, "results_demand_ship_ports.csv"), DataFrame(ship_rows))
-
-    # ── Shipping aggregate summary ─────────────────────────────
+    println("\nShipping (aggregate):")
     delivered_ship = sum(value(q[o]) for o in O_ship)
     unmet_ship = sum(value(u[o]) for o in O_ship)
-    ship_agg = DataFrame(
-        demand        = [D_ship],
-        delivered     = [delivered_ship],
-        unmet         = [unmet_ship],
-        served_pct    = [100.0 * delivered_ship / D_ship],
-        ports_used    = [count(o -> value(q[o]) > 1e-6, O_ship)],
-        ports_total   = [length(O_ship)],
-    )
-    CSV.write(joinpath(results_dir, "results_demand_ship_aggregate.csv"), ship_agg)
+    println("  total delivered = ", round(delivered_ship, digits=2))
+    println("  demand = ", D_ship, " | unmet = ", round(unmet_ship, digits=2))
 
-    println("\nSaved:")
-    println("  flows:             $(length(flow_rows)) entries")
-    println("  production:        $(length(prod_rows)) nodes")
-    println("  rigid demand:      $(length(rigid_rows)) nodes")
-    println("  ship candidates:   $(length(ship_rows)) nodes")
+    # Save results
+    data = (
+    P = P,
+    P_green = P_green,
+    P_fossil = P_fossil,
+    T = T,
+    O_Steel = O_Steel,
+    O_fert = O_fert,
+    O_ship = O_ship,
+    D = D,
+    D_ship = D_ship,
+    MaxP = MaxP
+    )
+    save.save_results(f, prod, q, u, valid_edges,data,scen_dir)
+
+
 end
 
-save_results(f, prod, q, u, valid_edges, P, O_Steel, O_fert, O_ship,
-             D, D_ship, MaxP, results_dir)
+

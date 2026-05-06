@@ -164,18 +164,18 @@ t171,Antilla,20.833333,-75.733333,N Latin America,Port,transit,Cuba
 t172,Chi-Lung,25.133333,121.766667,China & Hong Kong,Port,transit,Taiwan
 t173,Kawasaki Ko,35.5,139.766667,Japan & South Korea,Port,transit,Japan
 t174,Yokohama Ko,35.45,139.583333,Japan & South Korea,Port,transit,Japan
-oft_f1,China Hubei,30.67,111.37,China & Hong Kong,Fertilizer,offtake,Eurasia_Africa
-oft_f2,China Yunnan,25.02,102.74,China & Hong Kong,Fertilizer,offtake,Eurasia_Africa
-oft_f3,China Sichuan,30.4,103.7,China & Hong Kong,Fertilizer,offtake,Eurasia_Africa
-oft_f4,Norway Porsgrunn,59.13,9.66,Nordics,Fertilizer,offtake,Eurasia_Africa
-oft_f5,Germany Ludwigshafen,49.49,8.41,Western Europe,Fertilizer,offtake,Eurasia_Africa
-oft_f6,Belgium Antwerpen,51.18,4.41,Western Europe,Fertilizer,offtake,Eurasia_Africa
-oft_f7,USA Texas,31.5,-91.17,NA East Coast,Fertilizer,offtake,NorthAmerica
-oft_f8,Canada Alberta,53.69,-113.6,NA West Coast,Fertilizer,offtake,NorthAmerica
-oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Fertilizer,offtake,Eurasia_Africa
-oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Fertilizer,offtake,Eurasia_Africa
-oft_f11,Gujarat India,21.97,73.06,Middle East & India,Fertilizer,offtake,Eurasia_Africa
-oft_f12,Odisha India,20.94,85.17,Middle East & India,Fertilizer,offtake,Eurasia_Africa
+oft_f1,China Hubei,30.67,111.37,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f2,China Yunnan,25.02,102.74,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f3,China Sichuan,30.4,103.7,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f4,Norway Porsgrunn,59.13,9.66,Nordics,Fertiliser,offtake,Eurasia_Africa
+oft_f5,Germany Ludwigshafen,49.49,8.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f6,Belgium Antwerpen,51.18,4.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f7,USA Texas,31.5,-91.17,NA East Coast,Fertiliser,offtake,NorthAmerica
+oft_f8,Canada Alberta,53.69,-113.6,NA West Coast,Fertiliser,offtake,NorthAmerica
+oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f11,Gujarat India,21.97,73.06,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f12,Odisha India,20.94,85.17,Middle East & India,Fertiliser,offtake,Eurasia_Africa
 oft_f13,Jakarta Indonesia,-6.312, 107.424,South-east Asia,Fertiliser,offtake,Indonesia_Java
 oft_steel1,China Hubei,31.15,114.77,China & Hong Kong,Steel,offtake,Eurasia_Africa
 oft_steel2,China Jiangsu,32.93,119.47,China & Hong Kong,Steel,offtake,Eurasia_Africa

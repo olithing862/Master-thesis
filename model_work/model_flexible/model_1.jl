@@ -10,7 +10,7 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
                             Prodcost,    # Dict: Prodcost[p]
                             D,           # Dict: D[o] for o in O_steel and O_fert
                             D_ship,      # Scalar: aggregate shipping demand
-                            penalty)           # scalar penalty
+                            fossil_price, co2_tax, conversion)
 
     model = Model(Gurobi.Optimizer)
 
@@ -35,7 +35,8 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
     @objective(model, Min,
         sum(c[i,j] * f[p,i,j] for p in P, (i,j) in valid_edges)
         + sum(Prodcost[p] * prod[p] for p in P_green)
-        + sum(penalty[o] * u[o] for o in O)
+        + sum(fossil_price[o] * u[o] for o in O)
+        + sum(co2_tax[o] * u[o] * conversion[o] for o in O)
     )
 
     # Production node outflow

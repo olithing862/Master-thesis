@@ -264,23 +264,25 @@ def print_underutilized_production(results_production_csv, threshold=100.0):
 
 # -------------------- Usage --------------------
 if __name__ == "__main__":
-    results_dir = Path("Results/flexible_demand/2026-05-05_2")
-    nodes_csv   = "model_work/DataFiles_flexible/nodes.csv"
+    scen = ["base", "cheap", "exp"]
+    for scen_name in scen:  # Change index to select scenario
+        results_dir = Path(f"Results/flexible_demand/2026-05-06/{scen_name}")
+        nodes_csv   = "model_work/DataFiles_flexible/nodes.csv"
 
-    print_underutilized_production(results_dir / "results_production.csv")
+        print_underutilized_production(results_dir / "results_production.csv")
 
-    plot_network_map(
-        nodes_csv             = nodes_csv,
-        flows_csv             = results_dir / "results_flows.csv",
-        prod_csv              = results_dir / "results_production.csv",
-        demand_rigid_csv      = results_dir / "results_demand.csv",
-        demand_ship_ports_csv = results_dir / "results_demand_ship_ports.csv",
-        output_html           = results_dir / "network_flows.html",
-    )
+        plot_network_map(
+            nodes_csv             = nodes_csv,
+            flows_csv             = results_dir / "results_flows.csv",
+            prod_csv              = results_dir / "results_production.csv",
+            demand_rigid_csv      = results_dir / "results_demand.csv",
+            demand_ship_ports_csv = results_dir / "results_demand_ship_ports.csv",
+            output_html           = results_dir / "network_flows.html",
+        )
 
-    plot_industry_share(
-        demand_rigid_csv          = results_dir / "results_demand.csv",
-        demand_ship_aggregate_csv = results_dir / "results_demand_ship_aggregate.csv",
-        nodes_csv                 = nodes_csv,
-        save_path                 = results_dir / "industry_share.png",
-    )
+        plot_industry_share(
+            demand_rigid_csv          = results_dir / "results_demand.csv",
+            demand_ship_aggregate_csv = results_dir / "results_demand_ship_aggregate.csv",
+            nodes_csv                 = nodes_csv,
+            save_path                 = results_dir / "industry_share.png",
+        )
