@@ -6,8 +6,10 @@ module DataPrep
 using CSV
 using DataFrames
 
-function generate_data(total_capacity,nodes,costs_df,production,demand_df,globald,productioncost,penalty_df)
-
+function generate_data(total_capacity,nodes,costs_df,production,demand_df,
+    globald,productioncost,penalty_df,
+    )
+    print(penalty_df)
     # Global demand lookup
     global_demand_dict = Dict(row.industry => row.demand_mt for row in eachrow(globald))
 
@@ -25,7 +27,7 @@ function generate_data(total_capacity,nodes,costs_df,production,demand_df,global
     T_ids = filter(row -> row.type == "transit",    nodes).node_id
     O_ids = filter(row -> row.type == "offtake",    nodes).node_id
     O_steel = filter(row -> row.type == "offtake" && row.industry == "Steel", nodes).node_id
-    O_fert = filter(row -> row.type == "offtake" && row.industry == "Fertilizer", nodes).node_id
+    O_fert = filter(row -> row.type == "offtake" && row.industry == "Fertiliser", nodes).node_id
     O_ship  = filter(row -> row.type == "offtake" && row.industry == "Shipping", nodes).node_id
 
     # Cost matrix: Dict (i, j) => cost
@@ -52,8 +54,10 @@ function generate_data(total_capacity,nodes,costs_df,production,demand_df,global
         string(row.node_id) => region_cost[row.region]
         for row in eachrow(nodes)
     )
-
-    penalty = Dict(row.node_id => row.penalty for row in eachrow(penalty_df))
+    
+    fossil_price = Dict(row.node_id => row.fossil_price* 1_000_000 for row in eachrow(penalty_df))
+    co2_tax      = Dict(row.node_id => row.co2_tax * 1_000_000 for row in eachrow(penalty_df))
+    conversion   = Dict(row.node_id => row.conversion for row in eachrow(penalty_df))
     return (
         N        = N,
         P        = P_ids,
@@ -69,7 +73,9 @@ function generate_data(total_capacity,nodes,costs_df,production,demand_df,global
         D_ship   = D_ship,
         MaxP     = MaxP,
         Prodcost = Prodcost,
-        penalty  = penalty,
+        fossil_price = fossil_price,
+        co2_tax = co2_tax,
+        conversion = conversion,
         production = production
     )
 end
