@@ -89,4 +89,4 @@ n_finite = np.isfinite(c.values).sum()
 print(f"Finite arcs: {n_finite} / {c.size} "
       f"(land cap: {MAX_LAND_DISTANCE_KM} km)")
 
-c.to_csv("model_work/DataFiles_flexible/cost_matrix.csv")
+c.to_csv("model_work/DataFiles_flexible/cost_matrix_fossil.csv")
