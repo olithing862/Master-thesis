@@ -8,6 +8,7 @@ import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
 
 
+
 def curved_line(lat1, lon1, lat2, lon2, curvature=0.15, n_points=30):
     mid_lat = (lat1 + lat2) / 2
     mid_lon = (lon1 + lon2) / 2
@@ -196,14 +197,20 @@ def plot_industry_share(demand_rigid_csv, demand_ship_aggregate_csv, nodes_csv,
     rigid_shares = rigid.groupby("industry")[value_col].sum()
 
     ship_value = float(ship_agg[value_col].iloc[0])
+
+
+
+    ship_value = float(ship_agg[value_col].iloc[0])
     industry_df = rigid_shares.reset_index()
     industry_df.columns = ["industry", value_col]
     industry_df = pd.concat([industry_df,
-                             pd.DataFrame({"industry": ["Shipping"], value_col: [ship_value]})],
+                            pd.DataFrame({"industry": ["Shipping"], value_col: [ship_value]})],
                             ignore_index=True)
     industry_df = industry_df[industry_df[value_col] > 0]
-    industry_df = industry_df.sort_values(value_col, ascending=True)
 
+    if industry_df.empty:
+        print(f"Skipping plot — no positive deliveries found in {demand_rigid_csv}")
+        return pd.DataFrame()
     industries = industry_df["industry"].tolist()
     volumes    = industry_df[value_col].tolist()
     total      = sum(volumes)
@@ -264,12 +271,16 @@ def print_underutilized_production(results_production_csv, threshold=100.0):
 
 # -------------------- Usage --------------------
 if __name__ == "__main__":
-    scen = ["base", "cheap", "exp"]
+    
+    import os
+    os.chdir(r"C:/Users/mille/OneDrive/Dokumenter/DTU/Kandidat/Master-thesis")
+    scen = ["cost_low__cap_medium","cost_medium__cap_medium",
+            "cost_high__cap_medium"]  # List of scenario names to plot
     for scen_name in scen:  # Change index to select scenario
-        results_dir = Path(f"Results/flexible_demand/2026-05-06/{scen_name}")
+        results_dir = Path(f"Results/flexible_demand/2026-05-11_1/{scen_name}")
         nodes_csv   = "model_work/DataFiles_flexible/nodes.csv"
 
-        print_underutilized_production(results_dir / "results_production.csv")
+        print_underutilized_production(results_dir/"results_production.csv")
 
         plot_network_map(
             nodes_csv             = nodes_csv,
@@ -284,5 +295,5 @@ if __name__ == "__main__":
             demand_rigid_csv          = results_dir / "results_demand.csv",
             demand_ship_aggregate_csv = results_dir / "results_demand_ship_aggregate.csv",
             nodes_csv                 = nodes_csv,
-            save_path                 = results_dir / "industry_share.png",
+            save_path                 = results_dir / "industry_share.png"
         )
