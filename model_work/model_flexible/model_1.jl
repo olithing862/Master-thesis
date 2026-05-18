@@ -10,9 +10,9 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
                             Prodcost,    # Dict: Prodcost[p]
                             D,           # Dict: D[o] for o in O_steel and O_fert
                             D_ship,      # Scalar: aggregate shipping demand
-                            fossil_price, co2_tax, conversion)
+                            fossil_price, co2_tax, conversion,GRB_ENV)
 
-    model = Model(Gurobi.Optimizer)
+    model = Model(() -> Gurobi.Optimizer(GRB_ENV))
 
     # Full offtake set (union of rigid and shipping candidates)
     O = union(O_steel,O_fert,O_ship)

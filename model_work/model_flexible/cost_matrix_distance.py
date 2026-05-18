@@ -5,6 +5,8 @@ from math import radians, sin, cos, sqrt, atan2
 
 # --- Config ---
 MAX_LAND_DISTANCE_KM = 3219  # set to None to disable the cap
+BLOCK_HORMUZ = True  # set to True to block t80
+HORMUZ_NODES = ["t80"]
 
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371
@@ -89,4 +91,19 @@ n_finite = np.isfinite(c.values).sum()
 print(f"Finite arcs: {n_finite} / {c.size} "
       f"(land cap: {MAX_LAND_DISTANCE_KM} km)")
 
-c.to_csv("model_work/DataFiles_flexible/cost_matrix_fossil.csv")
+# --- Hormuz blocking ---
+if BLOCK_HORMUZ:
+    for node in HORMUZ_NODES:
+        if node in N:
+            for j in N:
+                c.loc[node, j] = np.inf
+                c.loc[j, node] = np.inf
+print("\nt80 row (t80 -> j), finite only:")
+row = c.loc["t80"]
+print(row[np.isfinite(row)].to_string())
+
+print("\nt80 column (i -> t80), finite only:")
+col = c["t80"]
+print(col[np.isfinite(col)].to_string())
+
+c.to_csv("model_work/DataFiles_flexible/cost_matrix_hormuz.csv")

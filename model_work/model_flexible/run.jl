@@ -9,12 +9,13 @@ using JuMP
 using CSV
 using DataFrames
 using Dates
+using Gurobi
 
 # ----------------------------
 # Load input data
 # ----------------------------
 nodes          = CSV.read("model_work/DataFiles_flexible/nodes.csv", DataFrame)
-costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_fossil.csv", DataFrame, missingstring=["inf","Inf",""])
+costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_hormuz.csv", DataFrame, missingstring=["inf","Inf",""])
 production_df     = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", DataFrame)
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
@@ -50,6 +51,9 @@ cp("model_work/DataFiles_flexible/base_map.csv", joinpath(results_dir, "base_map
 # ----------------------------
 # Run scenarios
 # ----------------------------
+if !isdefined(Main, :GRB_ENV)
+    const GRB_ENV = Gurobi.Env()
+end
 for scen in eachrow(scenarios)
     println("\n==============================")
     println("Running scenario: ", scen.scenario_id)
@@ -59,10 +63,6 @@ for scen in eachrow(scenarios)
     D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production =
         DataPrep.generate_data(total_capacity, nodes, costs_df, production_df, demand_df,
             globald, productioncost, penalty_df, config_df, scen)
-    println("\nco2_tax for shipping nodes:")
-        for o in O_ship
-            println(o, ": ", co2_tax[o] / 1_000_000)
-        end
 
     scen_dir = joinpath(results_dir, scen.scenario_id)
     mkpath(scen_dir)
@@ -71,7 +71,7 @@ for scen in eachrow(scenarios)
         Model_flexible.network_model_flexible(
             P_fossil, P_green, T, O_Steel, O_fert, O_ship, N,
             costs, MaxP, Prodcost,
-            D, D_ship, fossil_price, co2_tax, conversion
+            D, D_ship, fossil_price, co2_tax, conversion,GRB_ENV
         )
 
     optimize!(model)

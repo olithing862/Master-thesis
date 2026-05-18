@@ -271,16 +271,19 @@ def print_underutilized_production(results_production_csv, threshold=100.0):
 
 # -------------------- Usage --------------------
 if __name__ == "__main__":
-    
     import os
-    os.chdir(r"C:/Users/mille/OneDrive/Dokumenter/DTU/Kandidat/Master-thesis")
-    scen = ["cost_low__cap_medium","cost_medium__cap_medium",
-            "cost_high__cap_medium"]  # List of scenario names to plot
-    for scen_name in scen:  # Change index to select scenario
-        results_dir = Path(f"Results/flexible_demand/2026-05-11_1/{scen_name}")
-        nodes_csv   = "model_work/DataFiles_flexible/nodes.csv"
+    #os.chdir(r"Users/oliviathingvad/Master-thesis")
 
-        print_underutilized_production(results_dir/"results_production.csv")
+    results_base = Path("Results/flexible_demand/2026-05-14_4")
+    nodes_csv    = "model_work/DataFiles_flexible/nodes.csv"
+
+    scen = ["R5-S9"]  # change this list to whatever you want
+
+    for scen_name in scen:
+        results_dir = results_base / scen_name
+        print(f"\n=== {scen_name} ===")
+
+        print_underutilized_production(results_dir / "results_production.csv")
 
         plot_network_map(
             nodes_csv             = nodes_csv,
