@@ -16,7 +16,7 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
     set_optimizer_attribute(model, "NumericFocus", 3)
     set_optimizer_attribute(model, "ScaleFlag", 2)
     set_optimizer_attribute(model, "BarHomogeneous", 1)
-    set_optimizer_attribute(model, "TimeLimit", 120)
+    set_optimizer_attribute(model, "TimeLimit", 180)
     set_optimizer_attribute(model, "OutputFlag", 0)   # silence per-scenario logs if you want
 
     # Full offtake set (union of rigid and shipping candidates)
