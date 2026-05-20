@@ -10,13 +10,22 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
                             Prodcost,    # Dict: Prodcost[p]
                             D,           # Dict: D[o] for o in O_steel and O_fert
                             D_ship,      # Scalar: aggregate shipping demand
-                            fossil_price, co2_tax, conversion,GRB_ENV)
+                            fossil_price, co2_tax, conversion,GRB_ENV, min_coverage)
 
     model = Model(() -> Gurobi.Optimizer(GRB_ENV))
+    set_optimizer_attribute(model, "NumericFocus", 3)
+    set_optimizer_attribute(model, "ScaleFlag", 2)
+    set_optimizer_attribute(model, "BarHomogeneous", 1)
+    set_optimizer_attribute(model, "TimeLimit", 120)
+    set_optimizer_attribute(model, "OutputFlag", 0)   # silence per-scenario logs if you want
 
     # Full offtake set (union of rigid and shipping candidates)
     O = union(O_steel,O_fert,O_ship)
-
+    O_industry = union(O_steel, O_fert)
+    industry_sets = Dict(
+        "steel" => O_steel,
+        "fertiliser" => O_fert
+    )
     P = union(P_fossil, P_green)
       # same penalty for rigid and shipping unmet demand (can be different if desired)
     # ----------------------
@@ -76,6 +85,13 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
     # No flow of commodity p through other production nodes
     @constraint(model, [p in P, i in P, j in N; i != p && (i,j) in valid_edges],
         f[p,i,j] == 0
+    )
+
+    @constraint(model, [ind in keys(industry_sets), o in industry_sets[ind]],
+        q[o] >= min_coverage[ind] * D[o]
+    )
+    @constraint(model,
+        sum(q[o] for o in O_ship) >= min_coverage["ship"] * D_ship
     )
 
     return model, f, q, u, prod, valid_edges

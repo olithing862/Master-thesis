@@ -6,6 +6,8 @@ using .save
 using .DataPrep
 using .Model_flexible
 using JuMP
+using MathOptInterface
+const MOI = MathOptInterface
 using CSV
 using DataFrames
 using Dates
@@ -16,7 +18,7 @@ using Gurobi
 # ----------------------------
 nodes          = CSV.read("model_work/DataFiles_flexible/nodes.csv", DataFrame)
 costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_hormuz.csv", DataFrame, missingstring=["inf","Inf",""])
-production_df     = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", DataFrame)
+production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", DataFrame)
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_flexible/prodcost.csv", DataFrame)
@@ -60,7 +62,7 @@ for scen in eachrow(scenarios)
     println("==============================")
 
     N, P, P_fossil, P_green, T, O, O_Steel, O_fert, O_ship, costs,
-    D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production =
+    D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production,min_coverage =
         DataPrep.generate_data(total_capacity, nodes, costs_df, production_df, demand_df,
             globald, productioncost, penalty_df, config_df, scen)
 
@@ -71,10 +73,16 @@ for scen in eachrow(scenarios)
         Model_flexible.network_model_flexible(
             P_fossil, P_green, T, O_Steel, O_fert, O_ship, N,
             costs, MaxP, Prodcost,
-            D, D_ship, fossil_price, co2_tax, conversion,GRB_ENV
+            D, D_ship, fossil_price, co2_tax, conversion,GRB_ENV,min_coverage
         )
 
     optimize!(model)
+
+    status = termination_status(model)
+    if status ∉ (MOI.OPTIMAL, MOI.LOCALLY_SOLVED)
+        println("Scenario ", scen.scenario_id, " skipped — status: ", status)
+        continue
+    end
 
     println("Objective value: ", objective_value(model))
 
