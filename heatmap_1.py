@@ -14,14 +14,14 @@ def plot_unmet_by_R(results_base_dir, scenarios_csv, nodes_csv, save_dir=None):
     cost_order = ["low", "medium", "high"]
     cap_order  = ["low", "medium", "high"]
     industries = ["Steel", "Fertiliser", "Shipping"]
-    ind_colors = {"Steel": "Blues", "Fertiliser": "Oranges", "Shipping": "Greens"}
+    ind_colors = {"Steel": "Greens", "Fertiliser": "Oranges", "Shipping": "Blues"}
 
     # group by R-level (R1, R2, ...)
-    r_levels = sorted(scenarios["scenario_id"].str.extract(r"^(R\d+)")[0].dropna().unique())
+    r_levels = sorted(scenarios["scenario_id"].str.extract(r"^(S\d+)")[0].dropna().unique())
 
     for r in r_levels:
-        r_scenarios = scenarios[scenarios["scenario_id"].str.startswith(r + "-")]
-        tax = int(r_scenarios["co2_tax_shipping"].iloc[0])
+        r_scenarios = scenarios[scenarios["scenario_id"] == r]
+        #tax = int(r_scenarios["co2_tax_shipping"].iloc[0])
 
         data = {ind: np.full((3, 3), np.nan) for ind in industries}
 
@@ -48,7 +48,7 @@ def plot_unmet_by_R(results_base_dir, scenarios_csv, nodes_csv, save_dir=None):
             data["Shipping"][i, j] = (ship_unmet / ship_demand * 100) if ship_demand > 0 else 0
 
         fig, axes = plt.subplots(1, 3, figsize=(14, 4))
-        fig.suptitle(f"{r} — Shipping co2 tax = {tax} $/t", fontsize=13)
+        fig.suptitle(f"{r}", fontsize=13)
         plt.tight_layout()
         plt.subplots_adjust(top=0.88)
 
@@ -72,8 +72,8 @@ def plot_unmet_by_R(results_base_dir, scenarios_csv, nodes_csv, save_dir=None):
 
 
 plot_unmet_by_R(
-    results_base_dir = "Results/flexible_demand/2026-05-14_4",
-    scenarios_csv    = "Results/flexible_demand/2026-05-14_4/Scenario.csv",
+    results_base_dir = "Results/flexible_demand/base_case",
+    scenarios_csv    = "Results/flexible_demand/base_case/Scenario.csv",
     nodes_csv        = "model_work/DataFiles_flexible/nodes.csv",
-    save_dir         = "Results/flexible_demand/2026-05-14_4"
+    save_dir         = "Results/flexible_demand/base_case"
 )

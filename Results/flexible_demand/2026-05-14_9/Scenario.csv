@@ -1,4 +1,0 @@
-scenario_id,track,cap_factor,cost_factor,co2_tax_region_name,co2_tax_region,co2_tax_shipping,fossil_price_factor,demand_factor_Steel,demand_factor_Fertiliser,demand_factor_Shipping
-R1-S1,Regulatory,low,high,none,0,100,1.0,1.0,1.0,1.0
-R1-S2,Regulatory,low,medium,none,0,100,1.0,1.0,1.0,1.0
-R1-S3,Regulatory,low,low,none,0,100,1.0,1.0,1.0,1.0
