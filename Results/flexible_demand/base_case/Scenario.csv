@@ -1,0 +1,12 @@
+scenario_id,track,cap_factor,cost_factor,co2_tax_region_name,co2_tax_region,co2_tax_shipping,fossil_price_factor,demand_factor_Steel,demand_factor_Fertiliser,demand_factor_Shipping,min_coverage_Steel,min_coverage_Fertiliser
+S1,Base,low,high,none,0,0,1.0,1.0,1.0,1.0,0.0,0.0
+S2,Base,low,medium,none,0,0,1.0,1.0,1.0,1.0,0.0,0.0
+S3,Base,low,low,none,0,0,1.0,1.0,1.0,1.0,0.0,0.0
+S4,Base,medium,high,none,0,0,1.0,1.0,1.0,1.0,0.0,0.0
+S5,Base,medium,medium,none,0,0,1.0,1.0,1.0,1.0,0.0,0.0
+S6,Base,medium,low,none,0,0,1.0,1.0,1.0,1.0
+S7,Base,high,high,none,0,0,1.0,1.0,1.0,1.0
+S8,Base,high,medium,none,0,0,1.0,1.0,1.0,1.0
+S9,Base,high,low,none,0,0,1.0,1.0,1.0,1.0
+
+

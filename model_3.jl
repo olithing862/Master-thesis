@@ -44,8 +44,7 @@ function build_model_with_penalty(
     mode_of,
     distance_of,
     truckcost,
-    Prodcost
-)
+    Prodcost)
 
     model = Model(Gurobi.Optimizer)
 
@@ -78,7 +77,6 @@ function build_model_with_penalty(
     [p in P, (i,j) in A; i in P && i != p],
     f[p,(i,j)] == 0
     )
-
     # ----------------------------
     # Production capacity
     # ----------------------------
@@ -86,7 +84,6 @@ function build_model_with_penalty(
         [p in P],
         sum(f[p,(p,j)] for j in N if (p,j) in A) <= maxP[p]
     )
-
     # ----------------------------
     # Flow conservation at terminals
     # ----------------------------
@@ -96,7 +93,6 @@ function build_model_with_penalty(
         ==
         sum(f[p,(t,j)] for j in N if (t,j) in A)
     )
-
     # ----------------------------
     # Define production variable
     # ----------------------------

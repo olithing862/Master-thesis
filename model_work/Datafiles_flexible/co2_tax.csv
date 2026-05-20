@@ -1,0 +1,19 @@
+﻿region,tax_fert,tax_steel,tax_shipping
+Western Europe,75,75,75
+Nordics,75,75,75
+Mediterranean,75,75,75
+Middle East & India,0,0,0
+Red Sea,0,0,0
+Japan & South Korea,25,25,0
+China & Hong Kong,15,15,0
+South-east Asia,0,0,0
+West Australia,20,20,0
+East Australia,20,20,0
+East Africa,0,0,0
+West Africa,0,0,0
+NA East Coast,0,0,0
+NA West Coast,0,0,0
+Gulf of Mexico,0,0,0
+Panama,0,0,0
+N Latin America,0,0,0
+S Latin America,0,0,0

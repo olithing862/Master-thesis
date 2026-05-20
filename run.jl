@@ -17,15 +17,20 @@ penalty,
 region_of,
 mode_of,
 distance_of,
-truck_cost_per_km,truckcost,Demand_rand,Prodcost =
+truckcost,Demand_rand,Prodcost =
     ShippingData.generate_data()
-print(Demand_rand)
+
 print(Demand)
-print(maxP)
+print(sum(values(Demand)))
+#multiply demand by 0.01 to stest the model with smaller demand values
+for o in O
+    Demand[o] = Demand[o]*0.01
+end
 
 # ----------------------------
 # Build model
 # ----------------------------
+#=
 model2, f2,q2, u2, prod2 =
     ShippingModelFinal.build_model_with_penalty(
     N, P, T, O, A,
@@ -138,3 +143,4 @@ description = "results_02march_1"
 
 CSV.write("/Users/oliviathingvad/Master-thesis/Results/$(description).csv", flow_rows)
 println("Saved: $(description).csv")
+=#
