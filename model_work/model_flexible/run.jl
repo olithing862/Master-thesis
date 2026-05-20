@@ -27,7 +27,6 @@ config_df      = CSV.read("model_work/DataFiles_flexible/base_map.csv", DataFram
 scenarios      = CSV.read("model_work/DataFiles_flexible/Scenario.csv", DataFrame)
 
 total_capacity = 180
-
 # ----------------------------
 # Create dated results folder
 # ----------------------------

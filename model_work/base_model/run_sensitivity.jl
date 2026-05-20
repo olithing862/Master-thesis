@@ -72,7 +72,7 @@ function save_results(f, prod, q, u, valid_edges, P, O, N, model, results_dir, M
 end
 
 # --- Capacity sweep ---
-capacity_levels = [8, 700, 1100]
+capacity_levels = [8, 700, 1400]
 summary_rows = []
 
 for total_capacity in capacity_levels

@@ -263,7 +263,7 @@ if __name__ == "__main__":
     capacity_levels = [8, 1100]
 
     for cap in capacity_levels:
-        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/2026-04-23_1")
+        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/2026-05-20")
 
         plot_network_map(
             nodes_csv  = "model_work/DataFiles_base/nodes.csv",
