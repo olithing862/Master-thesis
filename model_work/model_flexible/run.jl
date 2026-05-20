@@ -17,12 +17,12 @@ using Gurobi
 # Load input data
 # ----------------------------
 nodes          = CSV.read("model_work/DataFiles_flexible/nodes.csv", DataFrame)
-costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_hormuz.csv", DataFrame, missingstring=["inf","Inf",""])
+costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_fossil.csv", DataFrame, missingstring=["inf","Inf",""])
 production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", DataFrame)
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_flexible/prodcost.csv", DataFrame)
-penalty_df     = CSV.read("model_work/DataFiles_flexible/penalty_parameters.csv", DataFrame)
+penalty_df     = CSV.read("model_work/DataFiles_flexible/offtake_parameters.csv", DataFrame)
 config_df      = CSV.read("model_work/DataFiles_flexible/base_map.csv", DataFrame)
 scenarios      = CSV.read("model_work/DataFiles_flexible/Scenario.csv", DataFrame)
 
@@ -42,7 +42,7 @@ function next_results_dir(base::String = "Results")
     return candidate
 end
 
-results_dir = next_results_dir("Results/flexible_demand")
+results_dir = next_results_dir("Results_final")
 println("Writing results to: $results_dir")
 
 #Save scenario snapshot for traceability
