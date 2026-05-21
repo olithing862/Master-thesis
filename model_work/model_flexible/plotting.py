@@ -7,7 +7,28 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
 
-
+def fix_antimeridian(coords):
+    """Split line at antimeridian crossings into multiple segments."""
+    if not coords:
+        return [coords]
+    
+    segments = []
+    current = [coords[0]]
+    
+    for i in range(1, len(coords)):
+        prev_lat, prev_lon = current[-1]
+        lat, lon = coords[i]
+        
+        diff = lon - prev_lon
+        if abs(diff) > 180:
+            # crossing detected — end current segment and start new one
+            segments.append(current)
+            current = [(lat, lon)]
+        else:
+            current.append((lat, lon))
+    
+    segments.append(current)
+    return segments
 
 def curved_line(lat1, lon1, lat2, lon2, curvature=0.15, n_points=30):
     mid_lat = (lat1 + lat2) / 2
@@ -46,8 +67,8 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
         if is_port(from_id) and is_port(to_id):
             try:
                 route = sr.searoute([o["lon"], o["lat"]], [d["lon"], d["lat"]])
-                coords = route["geometry"]["coordinates"]
-                return [(c[1], c[0]) for c in coords], "ship"
+                coords = [(c[1], c[0]) for c in route["geometry"]["coordinates"]]
+                return fix_antimeridian(coords), "ship"
             except Exception as e:
                 print(f"Searoutes failed for {from_id}->{to_id}: {e}")
         return curved_line(o["lat"], o["lon"], d["lat"], d["lon"]), "land"
@@ -186,66 +207,203 @@ def plot_network_map(nodes_csv, flows_csv, prod_csv,
     print(f"Map saved to {output_html}")
     return m
 
+def plot_network_map_1(nodes_csv, flows_csv, prod_csv,
+                     demand_rigid_csv, demand_ship_ports_csv,
+                     output_html, zoom_start=3, tiles="CartoDB positron"):
 
-def plot_industry_share(demand_rigid_csv, demand_ship_aggregate_csv, nodes_csv,
-                        value_col="delivered", title=None, save_path=None):
-    rigid    = pd.read_csv(demand_rigid_csv)
-    ship_agg = pd.read_csv(demand_ship_aggregate_csv)
-    nodes    = pd.read_csv(nodes_csv)[["node_id", "industry"]]
+    GREEN  = "#4a7c59"
+    STEEL  = "#6b9e78"
+    FERT   = "#c97b38"
+    SHIP   = "#4a6fa5"
+    TRANSIT = "#2ca1b0"
 
-    rigid = rigid.merge(nodes, on="node_id", how="left")
-    rigid_shares = rigid.groupby("industry")[value_col].sum()
+    # ---------- Load ----------
+    nodes_df     = pd.read_csv(nodes_csv)
+    flows_df     = pd.read_csv(flows_csv)
+    prod_df      = pd.read_csv(prod_csv)
+    demand_rigid = pd.read_csv(demand_rigid_csv)
+    demand_ship  = pd.read_csv(demand_ship_ports_csv)
 
-    ship_value = float(ship_agg[value_col].iloc[0])
+    # keep only green ammonia flows
+    flows_df = flows_df[~flows_df["commodity"].astype(str).str.startswith("pf")]
+    prod_df  = prod_df[~prod_df["node_id"].astype(str).str.startswith("pf")]
 
-
-
-    ship_value = float(ship_agg[value_col].iloc[0])
-    industry_df = rigid_shares.reset_index()
-    industry_df.columns = ["industry", value_col]
-    industry_df = pd.concat([industry_df,
-                            pd.DataFrame({"industry": ["Shipping"], value_col: [ship_value]})],
-                            ignore_index=True)
-    industry_df = industry_df[industry_df[value_col] > 0]
-
-    if industry_df.empty:
-        print(f"Skipping plot — no positive deliveries found in {demand_rigid_csv}")
-        return pd.DataFrame()
-    industries = industry_df["industry"].tolist()
-    volumes    = industry_df[value_col].tolist()
-    total      = sum(volumes)
-    shares     = [v / total * 100 for v in volumes]
-
-    colors = {
-        "Shipping":   "#008a65",
-        "Fertilizer": "#e58250",
-        "Steel":      "#5780b6",
+    nodes = {
+        str(r["node_id"]): {"lat": float(r["lat"]), "lon": float(r["lon"]),
+                            "industry": str(r.get("industry", ""))}
+        for _, r in nodes_df.iterrows()
     }
-    bar_colors = [colors.get(ind, "#888888") for ind in industries]
+    
+    
 
-    fig, ax = plt.subplots(figsize=(7, 3))
-    bars = ax.barh(industries, volumes, color=bar_colors, height=0.55,
-                   edgecolor="white", linewidth=0.5)
+    def is_port(node_id):
+        return node_id.startswith("t")
 
-    for bar, vol, share in zip(bars, volumes, shares):
-        ax.text(bar.get_width() + total * 0.02, bar.get_y() + bar.get_height() / 2,
-                f"{vol:.2f} Mt  ({share:.1f}%)",
-                va="center", ha="left", fontsize=10, color="#333333")
+    def get_route(from_id, to_id):
+        o, d = nodes[from_id], nodes[to_id]
+        if is_port(from_id) and is_port(to_id):
+            try:
+                route = sr.searoute([o["lon"], o["lat"]], [d["lon"], d["lat"]])
+                coords = route["geometry"]["coordinates"]
+                return [(c[1], c[0]) for c in coords], "ship"
+            except Exception as e:
+                print(f"Searoutes failed for {from_id}->{to_id}: {e}")
+        return curved_line(o["lat"], o["lon"], d["lat"], d["lon"]), "land"
+    # DEBUG - find antimeridian crossings
 
-    ax.set_xlim(0, max(volumes) * 1.45)
-    ax.set_title(title or f"Delivered share by industry (total: {total:,.2f} Mt)",
-                 fontsize=12, pad=10)
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.spines["left"].set_visible(False)
-    ax.tick_params(left=False, labelsize=10)
-    ax.xaxis.set_visible(False)
+    # ---------- Aggregate flows ----------
+    transit_inflow = (
+        flows_df[flows_df["to_id"].astype(str).str.startswith("t")]
+        .groupby("to_id")["flow"].sum()
+        .rename_axis("node_id")
+        .reset_index()
+    )
+    max_inflow = transit_inflow["flow"].max() or 1
 
-    plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
-    plt.show()
-    return industry_df
+    edge_flows = (
+        flows_df[flows_df["flow"] > 1e-6]
+        .groupby(["from_id", "to_id"])["flow"]
+        .sum()
+        .reset_index()
+    )
+    max_edge_flow = edge_flows["flow"].max() or 1
+    for _, row in edge_flows.iterrows():
+        from_id, to_id = str(row["from_id"]), str(row["to_id"])
+        if from_id not in nodes or to_id not in nodes:
+            continue
+        if is_port(from_id) and is_port(to_id):
+            o, d = nodes[from_id], nodes[to_id]
+            try:
+                route = sr.searoute([o["lon"], o["lat"]], [d["lon"], d["lat"]])
+                coords = route["geometry"]["coordinates"]
+                lons = [c[0] for c in coords]
+                if max(lons) > 160 and min(lons) < -160:
+                    print(f"{from_id} -> {to_id}")
+                    print(f"  min_lon={min(lons):.1f}, max_lon={max(lons):.1f}")
+                    print(f"  first 3: {coords[:3]}")
+                    print(f"  last 3:  {coords[-3:]}")
+            except:
+                pass
+    # ---------- Map ----------
+    m = folium.Map(
+        location=[nodes_df["lat"].mean(), nodes_df["lon"].mean()],
+        zoom_start=zoom_start, tiles=tiles,
+        zoom_snap=0.25, zoom_delta=0.5,
+        wheel_debounce_time=80, wheel_pxPerZoomLevel=120,
+    )
+
+    ship_layer         = folium.FeatureGroup(name="Shipping Routes",           show=True)
+    land_layer         = folium.FeatureGroup(name="Onshore Transport",         show=True)
+    transit_layer      = folium.FeatureGroup(name="Active Transit Nodes",      show=True)
+    prod_layer         = folium.FeatureGroup(name="Production Nodes",          show=True)
+    demand_rigid_layer = folium.FeatureGroup(name="Rigid Demand (Steel/Fert)", show=True)
+    demand_ship_layer  = folium.FeatureGroup(name="Shipping Bunkering Ports",  show=True)
+
+    for layer in [ship_layer, land_layer, transit_layer,
+                  prod_layer, demand_rigid_layer, demand_ship_layer]:
+        layer.add_to(m)
+
+    # ---------- Green flows ----------
+# ---------- Green flows ----------
+    for _, row in edge_flows.iterrows():
+        from_id, to_id = str(row["from_id"]), str(row["to_id"])
+        flow = float(row["flow"])
+        if from_id not in nodes or to_id not in nodes:
+            continue
+        route, mode = get_route(from_id, to_id)
+        weight = 1.5 + 6 * (flow / max_edge_flow)
+
+        if mode == "ship":
+            segments = fix_antimeridian(route)
+            for seg in segments:
+                folium.PolyLine(
+                    seg, color=GREEN, weight=weight, opacity=0.8,
+                    tooltip=f"{from_id} → {to_id} | Flow: {flow:,.2f} Mt",
+                ).add_to(ship_layer)
+        else:
+            folium.PolyLine(
+                route, color=GREEN, weight=weight, opacity=0.8,
+                tooltip=f"{from_id} → {to_id} | Flow: {flow:,.2f} Mt",
+            ).add_to(land_layer)
+
+    # ---------- Transit nodes (sized by total green inflow) ----------
+    for _, row in transit_inflow.iterrows():
+        node_id = str(row["node_id"])
+        if node_id not in nodes:
+            continue
+        node = nodes[node_id]
+        radius = 3 + 10 * (row["flow"] / max_inflow)
+        folium.CircleMarker(
+            location=[node["lat"], node["lon"]],
+            radius=radius, color=TRANSIT, fill=True,
+            fill_color=TRANSIT, fill_opacity=0.7,
+            tooltip=f"{node_id}<br>Total green inflow: {row['flow']:,.2f} Mt",
+        ).add_to(transit_layer)
+
+    # ---------- Production (green only) ----------
+    max_prod = prod_df["produced"].max() or 1
+    for _, row in prod_df.iterrows():
+        node_id = str(row["node_id"])
+        if node_id not in nodes:
+            continue
+        node = nodes[node_id]
+        radius = 3 + 12 * (row["produced"] / max_prod)
+        folium.CircleMarker(
+            location=[node["lat"], node["lon"]],
+            radius=radius, color="#b8860b", fill=True,
+            fill_color="#b8860b", fill_opacity=0.8,
+            tooltip=(
+                f"{node_id}<br>"
+                f"Produced: {row['produced']:,.2f} Mt<br>"
+                f"Capacity: {row['capacity']:,.2f} Mt"
+            ),
+        ).add_to(prod_layer)
+
+    # ---------- Rigid demand ----------
+    industry_colors = {"Fertiliser": FERT, "Steel": STEEL}
+    max_demand_rigid = demand_rigid["demand"].max() or 1
+    for _, row in demand_rigid.iterrows():
+        node_id = str(row["node_id"])
+        if node_id not in nodes:
+            continue
+        node = nodes[node_id]
+        industry = node.get("industry", "")
+        color = industry_colors.get(industry, "#888888")
+        radius = 3 + 12 * (row["demand"] / max_demand_rigid)
+        folium.CircleMarker(
+            location=[node["lat"], node["lon"]],
+            radius=radius, color=color, fill=True,
+            fill_color=color, fill_opacity=0.92,
+            tooltip=(
+                f"{node_id} ({industry})<br>"
+                f"Demand:    {row['demand']:,.2f} Mt<br>"
+                f"Delivered: {row['delivered']:,.2f} Mt<br>"
+                f"Unmet:     {row['unmet']:,.2f} Mt<br>"
+                f"Served:    {row['served_pct']:.1f}%"
+            ),
+        ).add_to(demand_rigid_layer)
+
+    # ---------- Shipping bunkering ports ----------
+    delivered_ship = demand_ship[demand_ship["delivered"] > 1e-6].copy()
+    max_ship = delivered_ship["delivered"].max() if not delivered_ship.empty else 1
+    for _, row in delivered_ship.iterrows():
+        node_id = str(row["node_id"])
+        if node_id not in nodes:
+            continue
+        node = nodes[node_id]
+        radius = 3 + 12 * (row["delivered"] / max_ship)
+        folium.CircleMarker(
+            location=[node["lat"], node["lon"]],
+            radius=radius, color=SHIP, fill=True,
+            fill_color=SHIP, fill_opacity=0.8,
+            tooltip=f"{node_id} (bunkering)<br>Delivered: {row['delivered']:,.2f} Mt",
+        ).add_to(demand_ship_layer)
+
+    # ---------- Save ----------
+    folium.LayerControl(collapsed=False).add_to(m)
+    m.save(output_html)
+    print(f"Map saved to {output_html}")
+    return m
 
 
 def print_underutilized_production(results_production_csv, threshold=100.0):
@@ -274,10 +432,10 @@ if __name__ == "__main__":
     import os
     #os.chdir(r"Users/oliviathingvad/Master-thesis")
 
-    results_base = Path("Results/flexible_demand/2026-05-14_4")
+    results_base = Path("Results_final/base_case")
     nodes_csv    = "model_work/DataFiles_flexible/nodes.csv"
 
-    scen = ["R5-S9"]  # change this list to whatever you want
+    scen = ["S1","S2","S3","S4","S5","S6","S7","S8","S9"]  # change this list to whatever you want
 
     for scen_name in scen:
         results_dir = results_base / scen_name
@@ -285,7 +443,8 @@ if __name__ == "__main__":
 
         print_underutilized_production(results_dir / "results_production.csv")
 
-        plot_network_map(
+
+        plot_network_map_1(
             nodes_csv             = nodes_csv,
             flows_csv             = results_dir / "results_flows.csv",
             prod_csv              = results_dir / "results_production.csv",
@@ -294,9 +453,4 @@ if __name__ == "__main__":
             output_html           = results_dir / "network_flows.html",
         )
 
-        plot_industry_share(
-            demand_rigid_csv          = results_dir / "results_demand.csv",
-            demand_ship_aggregate_csv = results_dir / "results_demand_ship_aggregate.csv",
-            nodes_csv                 = nodes_csv,
-            save_path                 = results_dir / "industry_share.png"
-        )
+  

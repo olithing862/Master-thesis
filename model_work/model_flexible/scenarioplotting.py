@@ -405,17 +405,17 @@ def main():
     df = load_all_scenarios(results_dir, scenarios)
     print(f"  loaded {len(df)} scenarios")
 
-    # print("\nPlot 1: shipping share heatmap")
-    # plot1_heatmap(df, os.path.join(outdir, "plot1_shipping_share_heatmap.png"))
+    print("\nPlot 1: shipping share heatmap")
+    plot1_heatmap(df, os.path.join(outdir, "plot1_shipping_share_heatmap.png"))
 
     print("Plot 2: 3×3 line grid")
-    plot2_linegrid_nolow(df, os.path.join(outdir, "plot2_shipping_share_lines_nolow.png"))
+    plot2_linegrid(df, os.path.join(outdir, "plot2_shipping_share_lines.png"))
 
-    # print(f"Plot 3: sector allocation (cap={args.cap}, cost={args.cost})")
-    # plot3_sector_allocation(
-    #     df, os.path.join(outdir, "plot3_sector_allocation.png"),
-    #     cap=args.cap, cost=args.cost
-    # )
+    print(f"Plot 3: sector allocation (cap={args.cap}, cost={args.cost})")
+    plot3_sector_allocation(
+        df, os.path.join(outdir, "plot3_sector_allocation.png"),
+        cap=args.cap, cost=args.cost
+    )
 
     print(f"Plot 4: global demand coverage (cap={args.cap}, cost={args.cost})")
     plot4_demand_coverage(

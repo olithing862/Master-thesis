@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bdac19d616bf23722e948757aefe02dc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bdac19d616bf23722e948757aefe02dc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bdac19d616bf23722e948757aefe02dc = L.map(
+                "map_bdac19d616bf23722e948757aefe02dc",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_74a32a7e0b773897ecee9f209904c8eb = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_74a32a7e0b773897ecee9f209904c8eb.addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            var circle_marker_1a1f07cd084bc6e2dcad88873c49f714 = L.circleMarker(
+                [45.0, 98.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.425396791417321, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_1a1f07cd084bc6e2dcad88873c49f714.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p0<br>Capacity share: 0.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_436799cd399331098925892d39912265 = L.circleMarker(
+                [-15.0, -51.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2859870464906846, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_436799cd399331098925892d39912265.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p1<br>Capacity share: 0.41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8fccdbe9f0f3cf8e2a6c3fd8f320a97 = L.circleMarker(
+                [7.0, 23.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0787248846669995, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a8fccdbe9f0f3cf8e2a6c3fd8f320a97.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p2<br>Capacity share: 0.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2fae2e05699755c279d46aba8f79bc2d = L.circleMarker(
+                [35.0, -103.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2876642869401955, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_2fae2e05699755c279d46aba8f79bc2d.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p3<br>Capacity share: 0.41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_757ec4379ce92ba9ff32231a6a45ff53 = L.circleMarker(
+                [-20.0, 124.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.130867482255134, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_757ec4379ce92ba9ff32231a6a45ff53.bindTooltip(
+                `<div>
+                     West Australia<br>Node: p4<br>Capacity share: 1.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8e3c21df6af0c9fc4b4fe325a2cbacf = L.circleMarker(
+                [42.0, 12.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.051701256391887, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f8e3c21df6af0c9fc4b4fe325a2cbacf.bindTooltip(
+                `<div>
+                     Mediterranean<br>Node: p5<br>Capacity share: 0.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99bc6a5040dc098b82c7d6b66a850c97 = L.circleMarker(
+                [36.0, 59.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.9823523482045387, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_99bc6a5040dc098b82c7d6b66a850c97.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p6<br>Capacity share: 1.40%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a6d93c191dad82ce67f58b696434644 = L.circleMarker(
+                [38.0, 96.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.18295473710821, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4a6d93c191dad82ce67f58b696434644.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p7<br>Capacity share: 1.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66049fba61bd96185b463b9a98137de7 = L.circleMarker(
+                [62.0, -114.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0511057431679247, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_66049fba61bd96185b463b9a98137de7.bindTooltip(
+                `<div>
+                     NA West Coast<br>Node: p8<br>Capacity share: 0.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3c166451677911328498729e1a4d1ab = L.circleMarker(
+                [18.0, 28.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.420202028623344, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f3c166451677911328498729e1a4d1ab.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p9<br>Capacity share: 3.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c844b75bc5f79f822dda60fb13c11b1 = L.circleMarker(
+                [30.0, 85.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1657804395465825, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_0c844b75bc5f79f822dda60fb13c11b1.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p10<br>Capacity share: 0.24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_98e21b58d14923f84a08b43fa5b967b9 = L.circleMarker(
+                [19.0, 4.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.0, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_98e21b58d14923f84a08b43fa5b967b9.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p11<br>Capacity share: 17.10%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b00ddaebabddf3bc1761b65ff4cf3367 = L.circleMarker(
+                [48.0, -89.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0718729531952786, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_b00ddaebabddf3bc1761b65ff4cf3367.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p12<br>Capacity share: 0.10%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc4ab38b4fcf507cc6a8511707bf74c1 = L.circleMarker(
+                [-52.0, -74.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1887524087683596, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_dc4ab38b4fcf507cc6a8511707bf74c1.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p13<br>Capacity share: 0.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_646e079872e9dd807799db15bded4041 = L.circleMarker(
+                [-25.0, 16.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.907566086220957, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_646e079872e9dd807799db15bded4041.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p14<br>Capacity share: 1.29%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2822c2a9f9b48a359f3e0b19eb347881 = L.circleMarker(
+                [35.0, 128.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.013373145616656, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_2822c2a9f9b48a359f3e0b19eb347881.bindTooltip(
+                `<div>
+                     Japan & South Korea<br>Node: p15<br>Capacity share: 0.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a408a75811c7fd21e60bb9ce53efcc26 = L.circleMarker(
+                [16.0, -94.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.117569355613046, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a408a75811c7fd21e60bb9ce53efcc26.bindTooltip(
+                `<div>
+                     Gulf of Mexico<br>Node: p16<br>Capacity share: 0.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f52974090ec4c5155a2e0e0edd54c54a = L.circleMarker(
+                [-28.0, 142.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.59305041281745, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f52974090ec4c5155a2e0e0edd54c54a.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p17<br>Capacity share: 0.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_934b61bea01a79a673aec2b4540815dd = L.circleMarker(
+                [12.0, -70.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2307148830907053, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_934b61bea01a79a673aec2b4540815dd.bindTooltip(
+                `<div>
+                     N Latin America<br>Node: p18<br>Capacity share: 0.33%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b818e8637a96ae6fe59fe32a4a104a6 = L.circleMarker(
+                [42.0, 109.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4063112751628366, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_6b818e8637a96ae6fe59fe32a4a104a6.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p19<br>Capacity share: 0.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e044bdd672a367cd2f14e01c550e532 = L.circleMarker(
+                [-11.0, -43.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4297099099011286, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8e044bdd672a367cd2f14e01c550e532.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p20<br>Capacity share: 0.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6161a0d16dacae53043016e5de80e7c6 = L.circleMarker(
+                [68.0, 13.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0114522838128597, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_6161a0d16dacae53043016e5de80e7c6.bindTooltip(
+                `<div>
+                     Nordics<br>Node: p21<br>Capacity share: 0.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05bdd98d46636458a122ae767b0d449a = L.circleMarker(
+                [3.0, 36.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4743072050223063, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_05bdd98d46636458a122ae767b0d449a.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p22<br>Capacity share: 0.68%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f74bfeb2070976b5adfca3f9878ada38 = L.circleMarker(
+                [48.0, 58.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0717402877275077, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f74bfeb2070976b5adfca3f9878ada38.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p23<br>Capacity share: 0.10%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa30d5904e818bc3794a20cf8dd25b54 = L.circleMarker(
+                [38.0, -106.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2831962543041766, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_fa30d5904e818bc3794a20cf8dd25b54.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p24<br>Capacity share: 0.40%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ec8beee55df9cc7c2401086763d0962 = L.circleMarker(
+                [33.0, 80.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.268963860790727, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_7ec8beee55df9cc7c2401086763d0962.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p25<br>Capacity share: 1.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ac59eed6528680f926e301d016a84a1 = L.circleMarker(
+                [53.0, -98.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0875187818742567, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3ac59eed6528680f926e301d016a84a1.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p26<br>Capacity share: 0.12%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9309d492b2099bbe2617db63ed3bf26c = L.circleMarker(
+                [-28.0, -69.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.12826935491174, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_9309d492b2099bbe2617db63ed3bf26c.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p27<br>Capacity share: 1.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3b28bb57a94de7527157e8bced54e58 = L.circleMarker(
+                [46.0, 109.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.247796414406987, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_b3b28bb57a94de7527157e8bced54e58.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p28<br>Capacity share: 0.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7ea75e80bdc60fda9b23f1af3ea407d = L.circleMarker(
+                [26.0, -7.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.690671689193781, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a7ea75e80bdc60fda9b23f1af3ea407d.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p29<br>Capacity share: 6.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32c34b410f537b3b4f525c9780d8faea = L.circleMarker(
+                [-19.0, 16.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.665765090427338, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_32c34b410f537b3b4f525c9780d8faea.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p30<br>Capacity share: 0.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b668154efa09f0d1b1548d443d905884 = L.circleMarker(
+                [18.0, 45.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.158831169504536, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_b668154efa09f0d1b1548d443d905884.bindTooltip(
+                `<div>
+                     Red Sea<br>Node: p31<br>Capacity share: 3.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a25332d35c498e094c7885e322ad2eb5 = L.circleMarker(
+                [46.0, 142.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1168634528664936, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a25332d35c498e094c7885e322ad2eb5.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p32<br>Capacity share: 0.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_248653f62b2515f0b19cdb9fc0fbc14b = L.circleMarker(
+                [11.0, 108.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1173317906964266, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_248653f62b2515f0b19cdb9fc0fbc14b.bindTooltip(
+                `<div>
+                     South-east Asia<br>Node: p33<br>Capacity share: 0.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4533dda3d09eb68752c2ef3a05deba18 = L.circleMarker(
+                [17.0, 10.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.588763474202315, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4533dda3d09eb68752c2ef3a05deba18.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p34<br>Capacity share: 3.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8cd08395b3d415898695cc72127683e = L.circleMarker(
+                [37.0, 47.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2218135598386692, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_d8cd08395b3d415898695cc72127683e.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p35<br>Capacity share: 0.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_657142276e40e9d3dea8294460c23025 = L.circleMarker(
+                [-10.0, -57.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.049592750375159, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_657142276e40e9d3dea8294460c23025.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p36<br>Capacity share: 0.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8684b80aa76c8e9554f805c2946fc68f = L.circleMarker(
+                [-16.0, 26.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3433999785253414, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8684b80aa76c8e9554f805c2946fc68f.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p37<br>Capacity share: 0.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42fdcdfa63cd13072da5092819afa818 = L.circleMarker(
+                [27.0, -114.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.831835120989743, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_42fdcdfa63cd13072da5092819afa818.bindTooltip(
+                `<div>
+                     NA West Coast<br>Node: p38<br>Capacity share: 1.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2c0037ead5b9c3109ec20a9aca18e5d = L.circleMarker(
+                [39.0, 73.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.427866314933263, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_d2c0037ead5b9c3109ec20a9aca18e5d.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p39<br>Capacity share: 0.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c20b3d6d6da3e4f10219e37232a78af4 = L.circleMarker(
+                [26.0, 68.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3409387829712465, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_c20b3d6d6da3e4f10219e37232a78af4.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p40<br>Capacity share: 0.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d5c7b23001134f2dd0d770191dcd216 = L.circleMarker(
+                [-20.0, 122.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.296955986316465, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_5d5c7b23001134f2dd0d770191dcd216.bindTooltip(
+                `<div>
+                     West Australia<br>Node: p41<br>Capacity share: 1.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b16e7f54dc86d6e5aa8d326e41c368f = L.circleMarker(
+                [-41.0, 174.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0311746249339024, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3b16e7f54dc86d6e5aa8d326e41c368f.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p42<br>Capacity share: 0.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88e6a5c903260825d8e5f5133587dad5 = L.circleMarker(
+                [-12.0, 143.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0217023316094718, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_88e6a5c903260825d8e5f5133587dad5.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p43<br>Capacity share: 0.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82a2886c79e73956611ec2370622558e = L.circleMarker(
+                [47.0, -64.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.033987914790871, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_82a2886c79e73956611ec2370622558e.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p44<br>Capacity share: 0.05%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7a1ae3880ecdddfff9bf27c72b2be5c = L.circleMarker(
+                [35.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.099930229919031, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_b7a1ae3880ecdddfff9bf27c72b2be5c.bindTooltip(
+                `<div>
+                     Mediterranean<br>Node: p45<br>Capacity share: 0.14%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0bbf24db7fc389c1ceb5e2bf6d55c49 = L.circleMarker(
+                [-10.0, -48.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1909872539186357, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_c0bbf24db7fc389c1ceb5e2bf6d55c49.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p46<br>Capacity share: 0.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2defd80b7ddb61e6524091493cc229c = L.circleMarker(
+                [11.0, -64.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0472613845567516, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a2defd80b7ddb61e6524091493cc229c.bindTooltip(
+                `<div>
+                     N Latin America<br>Node: p47<br>Capacity share: 0.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a42f5c36c151cf4ced1af81770228de = L.circleMarker(
+                [30.0, -85.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.157234073340144, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_1a42f5c36c151cf4ced1af81770228de.bindTooltip(
+                `<div>
+                     Gulf of Mexico<br>Node: p48<br>Capacity share: 0.22%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07e4c67d17fdf76de3cf00d229af79f2 = L.circleMarker(
+                [47.0, -119.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.080438886518256, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_07e4c67d17fdf76de3cf00d229af79f2.bindTooltip(
+                `<div>
+                     NA West Coast<br>Node: p49<br>Capacity share: 0.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_87e1afd97afab5385c91e8186f14cae4 = L.circleMarker(
+                [12.0, 10.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.218184857763278, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_87e1afd97afab5385c91e8186f14cae4.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p50<br>Capacity share: 0.31%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f441731612a8fd220888d888655874fa = L.circleMarker(
+                [55.0, 15.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.016017713692223, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f441731612a8fd220888d888655874fa.bindTooltip(
+                `<div>
+                     Western Europe<br>Node: p51<br>Capacity share: 0.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90683f3aed6efc2349d21eec58fbd13c = L.circleMarker(
+                [16.0, -5.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.417307108650702, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_90683f3aed6efc2349d21eec58fbd13c.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p52<br>Capacity share: 0.59%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_993ba844e96509672f546fb2e79f06c8 = L.circleMarker(
+                [-30.0, -70.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5706231917689477, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_993ba844e96509672f546fb2e79f06c8.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p53<br>Capacity share: 0.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4982d01572d57d44c9e62d4386c160ed = L.circleMarker(
+                [30.0, 90.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.006931539358025, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4982d01572d57d44c9e62d4386c160ed.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p54<br>Capacity share: 1.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44dd52f96128c6244141ee2db35865f3 = L.circleMarker(
+                [21.0, 23.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.668529214881523, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_44dd52f96128c6244141ee2db35865f3.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p55<br>Capacity share: 3.80%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e0478e5c3d83c838aebe242c49856073 = L.circleMarker(
+                [-14.0, -43.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3914744762856204, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_e0478e5c3d83c838aebe242c49856073.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p56<br>Capacity share: 0.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b7e81a6630a4a999ab2e95403a38973 = L.circleMarker(
+                [49.0, 88.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1724781790816445, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8b7e81a6630a4a999ab2e95403a38973.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p57<br>Capacity share: 0.25%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db7ca09dac4370c2a0f874e3e639d52b = L.circleMarker(
+                [57.0, -64.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0479528981375457, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_db7ca09dac4370c2a0f874e3e639d52b.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p58<br>Capacity share: 0.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb807f1cd7d4f83b23e70cd0dfbef44a = L.circleMarker(
+                [17.0, 46.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.102640865812816, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_cb807f1cd7d4f83b23e70cd0dfbef44a.bindTooltip(
+                `<div>
+                     Red Sea<br>Node: p59<br>Capacity share: 3.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fa3984846a3a359765709ea404f31e8 = L.circleMarker(
+                [46.0, 65.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1475760880258856, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_1fa3984846a3a359765709ea404f31e8.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p60<br>Capacity share: 0.21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8af9a10e4e88b060b967921590e1917 = L.circleMarker(
+                [-6.0, -81.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1188090727254845, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_d8af9a10e4e88b060b967921590e1917.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p61<br>Capacity share: 0.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13319f40695c49f1c7d572fae81ce3c2 = L.circleMarker(
+                [31.0, 100.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1790763888723412, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_13319f40695c49f1c7d572fae81ce3c2.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p62<br>Capacity share: 0.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6108e4fbee591f75a7208d3950030ddb = L.circleMarker(
+                [23.0, -103.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.422300011775705, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_6108e4fbee591f75a7208d3950030ddb.bindTooltip(
+                `<div>
+                     Gulf of Mexico<br>Node: p63<br>Capacity share: 0.60%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d585fb3bc01d8f30fc0364d62af6138a = L.circleMarker(
+                [44.0, 118.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.108315190588382, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_d585fb3bc01d8f30fc0364d62af6138a.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p64<br>Capacity share: 0.15%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4338877d5ff05cf1ac928b5d7dfa880 = L.circleMarker(
+                [25.0, 119.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1152364873435507, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_a4338877d5ff05cf1ac928b5d7dfa880.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p65<br>Capacity share: 0.16%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_223090e8d7ad053fc77ce319137f28b1 = L.circleMarker(
+                [58.0, -93.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0617735279808977, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_223090e8d7ad053fc77ce319137f28b1.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p66<br>Capacity share: 0.09%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cdfcc7d11381358d39185c638e72e53 = L.circleMarker(
+                [37.0, -118.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4411609992865455, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_5cdfcc7d11381358d39185c638e72e53.bindTooltip(
+                `<div>
+                     NA West Coast<br>Node: p67<br>Capacity share: 0.63%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c073afea4b222870a168cff915a63b5 = L.circleMarker(
+                [-21.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3891561047989924, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3c073afea4b222870a168cff915a63b5.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p68<br>Capacity share: 0.55%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f31c6fc8f4d601c27c7839acc4edf62 = L.circleMarker(
+                [12.0, 28.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.30030823757107, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3f31c6fc8f4d601c27c7839acc4edf62.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p69<br>Capacity share: 0.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e18c6770a1f8898bd7c4b9af0856de4 = L.circleMarker(
+                [-30.0, 141.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3444079771134354, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4e18c6770a1f8898bd7c4b9af0856de4.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p70<br>Capacity share: 0.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0bae39893a5dfbe275b9555838130c5 = L.circleMarker(
+                [-7.0, 114.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0116596463082046, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_f0bae39893a5dfbe275b9555838130c5.bindTooltip(
+                `<div>
+                     South-east Asia<br>Node: p71<br>Capacity share: 0.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b38f4c37ea68bea5a6b4252c275dafc = L.circleMarker(
+                [29.0, 98.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1121323064528688, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8b38f4c37ea68bea5a6b4252c275dafc.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p72<br>Capacity share: 0.16%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1aa354c9027e8b330b75278a9b09102b = L.circleMarker(
+                [38.0, 89.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.322916456037505, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_1aa354c9027e8b330b75278a9b09102b.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p73<br>Capacity share: 1.89%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc4b8380d25f84a5e4e0a62fa1ddc9cb = L.circleMarker(
+                [54.0, 15.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.024637996052517, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_fc4b8380d25f84a5e4e0a62fa1ddc9cb.bindTooltip(
+                `<div>
+                     Western Europe<br>Node: p74<br>Capacity share: 0.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e984b47b717d59d42a98491f6c212932 = L.circleMarker(
+                [-18.0, 136.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.7266892199761834, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_e984b47b717d59d42a98491f6c212932.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p75<br>Capacity share: 1.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9711d7a963df451c6383f55d8c074492 = L.circleMarker(
+                [17.0, 29.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.334727534353137, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_9711d7a963df451c6383f55d8c074492.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p76<br>Capacity share: 1.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f5e468f1de934f00ba415a5d32f5774 = L.circleMarker(
+                [20.0, -12.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.601518107939829, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3f5e468f1de934f00ba415a5d32f5774.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p77<br>Capacity share: 3.71%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e30d6de62400c779bbf15adbcd125f5a = L.circleMarker(
+                [-6.0, 35.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.248180107376591, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_e30d6de62400c779bbf15adbcd125f5a.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p78<br>Capacity share: 0.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aea2aa3523cbedc4e9aa6e6aec8aa957 = L.circleMarker(
+                [35.0, 67.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.892547265971175, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_aea2aa3523cbedc4e9aa6e6aec8aa957.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p79<br>Capacity share: 2.70%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae9c7a8554c079cb60d74949ec21ae68 = L.circleMarker(
+                [27.0, 38.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.406876854141814, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_ae9c7a8554c079cb60d74949ec21ae68.bindTooltip(
+                `<div>
+                     Red Sea<br>Node: p80<br>Capacity share: 2.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7253d5c73471fe75782b9777bc1c18e7 = L.circleMarker(
+                [26.0, 6.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.846249287465636, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_7253d5c73471fe75782b9777bc1c18e7.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p81<br>Capacity share: 4.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03a1ed7cfcab667339896ba8e50739a9 = L.circleMarker(
+                [46.0, 150.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.017992260806342, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_03a1ed7cfcab667339896ba8e50739a9.bindTooltip(
+                `<div>
+                     China & Hong Kong<br>Node: p82<br>Capacity share: 0.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ea8cdc1747951f0459cb0311200ff26 = L.circleMarker(
+                [37.0, -3.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.105085570090935, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4ea8cdc1747951f0459cb0311200ff26.bindTooltip(
+                `<div>
+                     Mediterranean<br>Node: p83<br>Capacity share: 0.15%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bb1d13bda1459723eb30dfc87eafdaa = L.circleMarker(
+                [10.0, 79.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0715907059259835, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8bb1d13bda1459723eb30dfc87eafdaa.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p84<br>Capacity share: 0.10%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f5192dec324fbde51d7549c9260621d = L.circleMarker(
+                [17.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.7931083542225705, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_3f5192dec324fbde51d7549c9260621d.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p85<br>Capacity share: 2.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f3ec05cc3405ead3b1bf09f22ffbe2a = L.circleMarker(
+                [-9.0, 17.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.243091090881843, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_8f3ec05cc3405ead3b1bf09f22ffbe2a.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p86<br>Capacity share: 0.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0909f6ead514cb47e2c7d652efcf8c19 = L.circleMarker(
+                [-23.0, -52.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.256221849679411, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_0909f6ead514cb47e2c7d652efcf8c19.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p87<br>Capacity share: 0.37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31b49ffad59218ee498a55f55b70f0f4 = L.circleMarker(
+                [59.0, -3.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.011385819528587, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_31b49ffad59218ee498a55f55b70f0f4.bindTooltip(
+                `<div>
+                     Western Europe<br>Node: p88<br>Capacity share: 0.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd9e54150f509d2c74c17ba1c499e8f7 = L.circleMarker(
+                [-15.0, -72.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3559347826721733, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_bd9e54150f509d2c74c17ba1c499e8f7.bindTooltip(
+                `<div>
+                     S Latin America<br>Node: p89<br>Capacity share: 0.51%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7862c8e0c5f3d3ef6389f5323aa489dc = L.circleMarker(
+                [-17.0, 31.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.208019719215635, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_7862c8e0c5f3d3ef6389f5323aa489dc.bindTooltip(
+                `<div>
+                     East Africa<br>Node: p90<br>Capacity share: 0.30%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e612abf3bb3448264a6b5d5e38165ecc = L.circleMarker(
+                [16.0, 46.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.182670228985604, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_e612abf3bb3448264a6b5d5e38165ecc.bindTooltip(
+                `<div>
+                     Red Sea<br>Node: p91<br>Capacity share: 1.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_991729716d3661bc24b860e61cde7c12 = L.circleMarker(
+                [16.0, 6.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3962275292891473, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_991729716d3661bc24b860e61cde7c12.bindTooltip(
+                `<div>
+                     West Africa<br>Node: p92<br>Capacity share: 0.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb1bc58033e20a6425700a4cade9c1f7 = L.circleMarker(
+                [45.0, 35.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.036359141795407, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_fb1bc58033e20a6425700a4cade9c1f7.bindTooltip(
+                `<div>
+                     Mediterranean<br>Node: p93<br>Capacity share: 0.05%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a57aaa2e4011d7efcc70f2c86ef7c3e = L.circleMarker(
+                [7.0, 122.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0260810677940393, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_9a57aaa2e4011d7efcc70f2c86ef7c3e.bindTooltip(
+                `<div>
+                     South-east Asia<br>Node: p94<br>Capacity share: 0.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9013130e80166d929384095650105a9a = L.circleMarker(
+                [44.0, -87.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.044672388554916, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_9013130e80166d929384095650105a9a.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p95<br>Capacity share: 0.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4284ac6648bda4bb8c1506d778b2a128 = L.circleMarker(
+                [45.0, -82.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0593542881852183, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_4284ac6648bda4bb8c1506d778b2a128.bindTooltip(
+                `<div>
+                     NA East Coast<br>Node: p96<br>Capacity share: 0.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57fe502f5f9faf23579bfb024aefdaf7 = L.circleMarker(
+                [18.0, -67.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0301255133705585, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_57fe502f5f9faf23579bfb024aefdaf7.bindTooltip(
+                `<div>
+                     N Latin America<br>Node: p97<br>Capacity share: 0.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bca38712da7eb35540fb0cc1326d8c50 = L.circleMarker(
+                [30.0, 55.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.410902106570958, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_bca38712da7eb35540fb0cc1326d8c50.bindTooltip(
+                `<div>
+                     Middle East & India<br>Node: p98<br>Capacity share: 2.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05b79f65e543330859435b83251b048a = L.circleMarker(
+                [-23.0, 132.0],
+                {"bubblingMouseEvents": true, "color": "#b8860b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b8860b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.029763542997634, "stroke": true, "weight": 3}
+            ).addTo(map_bdac19d616bf23722e948757aefe02dc);
+        
+    
+            circle_marker_05b79f65e543330859435b83251b048a.bindTooltip(
+                `<div>
+                     East Australia<br>Node: p99<br>Capacity share: 1.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

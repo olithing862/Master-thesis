@@ -18,7 +18,7 @@ ammonia_df1["Y"] = np.cos(lat_rad) * np.sin(lon_rad)
 ammonia_df1["Z"] = np.sin(lat_rad)
 
 # Cluster on X, Y, Z
-n_clusters = 50
+n_clusters = 100
 
 kmeans = KMeans(n_clusters=n_clusters, random_state=0, n_init=50)
 ammonia_df1["cluster"] = kmeans.fit_predict(ammonia_df1[["X", "Y", "Z"]])
@@ -42,5 +42,5 @@ print(f"Total capacity: {best_ammonia['Max_capacity'].sum():.0f} tonnes/year")
 
 # Drop helper columns before saving
 #best_ammonia = best_ammonia.drop(columns=["X", "Y", "Z", "cluster"])
-best_ammonia.to_csv("model_work/Datafiles_base/production_sites_clustered.csv", index=False)
+best_ammonia.to_csv("model_work/Datafiles_base/production_sites_clustered_100.csv", index=False)
 

@@ -1,0 +1,556 @@
+node_id,Location,lat,lon,region,industry,type,landmass
+t1,Houston,29.75,-95.283333,Gulf of Mexico,Port,transit,NorthAmerica
+t2,Dalian,38.916667,121.666667,China & Hong Kong,Port,transit,Eurasia_Africa
+t3,Livorno,43.542,10.29,Mediterranean,Port,transit,Eurasia_Africa
+t4,Norfolk,36.85,-76.29999999999998,NA East Coast,Port,transit,NorthAmerica
+t5,Toulon,43.1,5.916667,Western Europe,Port,transit,Eurasia_Africa
+t6,Taranto,40.466667,17.2,Mediterranean,Port,transit,Eurasia_Africa
+t7,Philadelphia,39.95,-75.13333299999998,NA East Coast,Port,transit,NorthAmerica
+t8,Rio De Janeiro,-22.9,-43.166667,S Latin America,Port,transit,SouthAmerica
+t9,Alger,36.766667,3.066667,Mediterranean,Port,transit,Eurasia_Africa
+t10,Civitavecchia,42.102,11.771,Mediterranean,Port,transit,Eurasia_Africa
+t11,Piraievs,37.933333,23.65,Mediterranean,Port,transit,Eurasia_Africa
+t12,Rijeka Luka,45.333333,14.433333,Mediterranean,Port,transit,Eurasia_Africa
+t13,Napoli,40.833,14.275,Mediterranean,Port,transit,Eurasia_Africa
+t14,Siracusa,37.05,15.283333,Mediterranean,Port,transit,Sicily
+t15,Porto Di Lido-Venezia,45.416667,12.433333,Mediterranean,Port,transit,Eurasia_Africa
+t16,Casablanca,33.6,-7.616667,Mediterranean,Port,transit,Eurasia_Africa
+t17,Lisboa,38.7,-9.166667,Western Europe,Port,transit,Eurasia_Africa
+t18,Agadir,30.433333,-9.633333,Mediterranean,Port,transit,Eurasia_Africa
+t20,Baltimore,39.266667,-76.58333299999998,NA East Coast,Port,transit,NorthAmerica
+t21,Chester,39.85,-75.34999999999998,NA East Coast,Port,transit,NorthAmerica
+t22,Keppel - (East Singapore),1.283333,103.85,South-east Asia,Port,transit,Eurasia_Africa
+t23,Galveston,29.316667,-94.783333,Gulf of Mexico,Port,transit,NorthAmerica
+t24,Oakland,37.816667,-122.333333,NA West Coast,Port,transit,NorthAmerica
+t25,New Orleans,29.95,-90.04999999999998,Gulf of Mexico,Port,transit,NorthAmerica
+t26,Mobile,30.683333,-88.116667,Gulf of Mexico,Port,transit,NorthAmerica
+t27,San Francisco,37.816667,-122.416667,NA West Coast,Port,transit,NorthAmerica
+t28,New York City,40.7,-74.016667,NA East Coast,Port,transit,NorthAmerica
+t29,Brooklyn,40.666667,-74.016667,NA East Coast,Port,transit,NorthAmerica
+t30,Nagasaki,32.716667,129.85,Japan & South Korea,Port,transit,Japan
+t31,Kobe,34.65,135.183333,Japan & South Korea,Port,transit,Japan
+t32,Cebu,10.3,123.9,South-east Asia,Port,transit,Philippines
+t33,As Suways,29.966667,32.55,Red Sea,Port,transit,Eurasia_Africa
+t34,Durban,-29.866667,31.066667,East Africa,Port,transit,Eurasia_Africa
+t35,Oran,35.7,-0.633333,Mediterranean,Port,transit,Eurasia_Africa
+t36,Izmir,38.433333,27.133333,Mediterranean,Port,transit,Eurasia_Africa
+t37,Jakarta,-6.1,106.883333,South-east Asia,Port,transit,Indonesia_Java
+t38,Brindisi,40.65,17.983333,Mediterranean,Port,transit,Eurasia_Africa
+t39,La Spezia,44.1,9.833333,Mediterranean,Port,transit,Eurasia_Africa
+t40,Genova,44.398,8.922,Mediterranean,Port,transit,Eurasia_Africa
+t41,Barcelona,41.35,2.166667,Mediterranean,Port,transit,Eurasia_Africa
+t42,Boston,42.35,-71.05,NA East Coast,Port,transit,NorthAmerica
+t44,Montreal,45.516667,-73.54999999999998,NA East Coast,Port,transit,NorthAmerica
+t45,Gioia Tauro,38.444,15.89,Mediterranean,Port,transit,Eurasia_Africa
+t46,Mikawa,34.716667,137.3,Japan & South Korea,Port,transit,Japan
+t47,Onomichi-Itozaki,34.383333,133.166667,Japan & South Korea,Port,transit,Japan
+t48,Messina,38.2,15.566667,Mediterranean,Port,transit,Sicily
+t49,Al Iskandariyh (Alexandria),31.166667,29.833333,Mediterranean,Port,transit,Eurasia_Africa
+t50,Damietta,31.483333,31.75,Mediterranean,Port,transit,Eurasia_Africa
+t51,Port Of Le Havre,49.483333,0.116667,Western Europe,Port,transit,Eurasia_Africa
+t52,Nagoya Ko,35.066667,136.866667,Japan & South Korea,Port,transit,Japan
+t53,Muqdisho,2.033333,45.35,Red Sea,Port,transit,Eurasia_Africa
+t54,Lagos,6.4,3.4,West Africa,Port,transit,Eurasia_Africa
+t55,Rade De Brest,48.383333,-4.5,Western Europe,Port,transit,Eurasia_Africa
+t56,Lagos,37.1,-8.616667,Western Europe,Port,transit,Eurasia_Africa
+t57,Wakayama-Shimotsu Ko,34.2,135.133333,Japan & South Korea,Port,transit,Japan
+t58,Split,43.5,16.433333,Mediterranean,Port,transit,Eurasia_Africa
+t59,Tangier-Mediterranean,35.9,-5.516667,Mediterranean,Port,transit,Eurasia_Africa
+t60,Tarragona,41.1,1.233333,Mediterranean,Port,transit,Eurasia_Africa
+t61,Tokyo Ko,35.666667,139.75,Japan & South Korea,Port,transit,Japan
+t62,Port Klang,3.0,101.4,South-east Asia,Port,transit,Eurasia_Africa
+t63,Tianjin Xin Gang,38.966667,117.833333,China & Hong Kong,Port,transit,Eurasia_Africa
+t65,Wakamatsu Ko,33.9,130.816667,Japan & South Korea,Port,transit,Japan
+t66,Osaka,34.65,135.433333,Japan & South Korea,Port,transit,Japan
+t67,Bur Sa'id,31.266667,32.3,Mediterranean,Port,transit,Eurasia_Africa
+t68,Calcutta,22.55,88.33333299999998,Middle East & India,Port,transit,Eurasia_Africa
+t69,Chennai (Madras),13.1,80.29999999999998,Middle East & India,Port,transit,Eurasia_Africa
+t70,Mumbai (Bombay),18.966667,72.866667,Middle East & India,Port,transit,Eurasia_Africa
+t71,Kattupalli Port,13.306944444,80.35222222199998,Middle East & India,Port,transit,Eurasia_Africa
+t72,Puerto La Cruz,10.25,-64.633333,N Latin America,Port,transit,SouthAmerica
+t73,Bayrut,33.9,35.5,Mediterranean,Port,transit,Eurasia_Africa
+t74,Baniyas,35.188333333,35.943333333,Mediterranean,Port,transit,Eurasia_Africa
+t75,Puerto Guantanamo,19.983333,-75.13333299999998,N Latin America,Port,transit,Cuba
+t76,Cienfuegos,22.15,-80.45,N Latin America,Port,transit,Cuba
+t77,Ain Sukhna Terminal,29.583333,32.366667,Red Sea,Port,transit,Eurasia_Africa
+t78,Abidjan,5.25,-4.016667,West Africa,Port,transit,Eurasia_Africa
+t80,Mina Jabal Ali,25.016667,55.05,Middle East & India,Port,transit,Eurasia_Africa
+t83,Nuevitas Bay,21.55,-77.266667,N Latin America,Port,transit,Cuba
+t84,Los Angeles,33.75,-118.25,NA West Coast,Port,transit,NorthAmerica
+t85,Wellington,-41.283333,174.783333,East Australia,Port,transit,NewZealand
+t87,Cape Town,-33.916667,18.416667,East Africa,Port,transit,Eurasia_Africa
+t88,Novorossiysk,44.716667,37.783333,Mediterranean,Port,transit,Eurasia_Africa
+t89,Odesa,46.483333,30.733333,Mediterranean,Port,transit,Eurasia_Africa
+t90,Illichivsk,46.3,30.65,Mediterranean,Port,transit,Eurasia_Africa
+t91,Istanbul,41.016667,28.966667,Mediterranean,Port,transit,Eurasia_Africa
+t92,Dundee,56.466667,-2.95,Western Europe,Port,transit,GreatBritain
+t93,Antwerpen,51.216667,4.4,Western Europe,Port,transit,Eurasia_Africa
+t94,Amsterdam,52.366667,4.9,Western Europe,Port,transit,Eurasia_Africa
+t95,Bremen,53.133333,8.766667,Western Europe,Port,transit,Eurasia_Africa
+t96,Bremerhaven,53.533333,8.583333,Western Europe,Port,transit,Eurasia_Africa
+t97,Hamburg,53.55,9.933333,Western Europe,Port,transit,Eurasia_Africa
+t98,Malmo,55.623333333,12.984722222,Nordics,Port,transit,Eurasia_Africa
+t99,Goteborg,57.709722222,11.954722222,Nordics,Port,transit,Eurasia_Africa
+t100,Bordeaux,44.866667,-0.566667,Western Europe,Port,transit,Eurasia_Africa
+t101,Manchester,53.483333,-2.266667,Western Europe,Port,transit,GreatBritain
+t102,Liverpool,53.416667,-3.0,Western Europe,Port,transit,GreatBritain
+t103,Halifax,44.65,-63.583333,NA East Coast,Port,transit,NorthAmerica
+t104,Kiel,54.316667,10.133333,Western Europe,Port,transit,Eurasia_Africa
+t105,Gdansk,54.35,18.666667,Nordics,Port,transit,Eurasia_Africa
+t106,Buenos Aires,-34.6,-58.366667,S Latin America,Port,transit,SouthAmerica
+t107,Detroit,42.333333,-83.033333,NA East Coast,Port,transit,NorthAmerica
+t108,Buffalo,42.883333,-78.88333299999998,NA East Coast,Port,transit,NorthAmerica
+t109,London,51.5,-0.0833329999999,Western Europe,Port,transit,GreatBritain
+t110,Cilacap,-7.733333,109.0,South-east Asia,Port,transit,Indonesia_Java
+t111,Kokkola,63.85,23.016667,Nordics,Port,transit,Eurasia_Africa
+t112,Kotka,60.466667,26.966667,Nordics,Port,transit,Eurasia_Africa
+t114,Foynes,52.616667,-9.116667,Western Europe,Port,transit,Ireland
+t115,Kasim Terminal,-1.3,131.016667,South-east Asia,Port,transit,Indonesia_Papua
+t117,Hong Kong,22.266667,114.2,China & Hong Kong,Port,transit,Eurasia_Africa
+t118,Helsinki,60.166667,24.966667,Nordics,Port,transit,Eurasia_Africa
+t119,Murmansk,68.983333,33.05,Nordics,Port,transit,Eurasia_Africa
+t120,Rotterdam,51.9,4.483333,Western Europe,Port,transit,Eurasia_Africa
+t121,Oulu,65.016667,25.4,Nordics,Port,transit,Eurasia_Africa
+t122,Stockholm,59.333333,18.05,Nordics,Port,transit,Eurasia_Africa
+t123,Santos,-23.95,-46.3,S Latin America,Port,transit,SouthAmerica
+t124,Seattle,47.6,-122.333333,NA West Coast,Port,transit,NorthAmerica
+t125,Samsun,41.3,36.35,Mediterranean,Port,transit,Eurasia_Africa
+t126,Varna,43.183333,27.966667,Mediterranean,Port,transit,Eurasia_Africa
+t127,Oslo,59.898055556,10.745555556,Nordics,Port,transit,Eurasia_Africa
+t128,Rostock,54.1,12.133333,Western Europe,Port,transit,Eurasia_Africa
+t129,Portland,45.516667,-122.666667,NA West Coast,Port,transit,NorthAmerica
+t130,Rade De Cherbourg,49.65,-1.633333,Western Europe,Port,transit,Eurasia_Africa
+t131,Teesport,54.65,-1.133333,Western Europe,Port,transit,GreatBritain
+t132,Southampton,50.9,-1.4,Western Europe,Port,transit,GreatBritain
+t133,Sevastopol,44.616667,33.533333,Mediterranean,Port,transit,Eurasia_Africa
+t134,Port Of Rouen,49.45,1.066667,Western Europe,Port,transit,Eurasia_Africa
+t135,Tri-City Port,38.716667,-90.2,NA East Coast,Port,transit,NorthAmerica
+t136,Vanasadam - Port of Tallinn,59.450128,24.766676,Nordics,Port,transit,Eurasia_Africa
+t137,Sillamae,59.42612,27.73945,Nordics,Port,transit,Eurasia_Africa
+t138,Trieste,45.651,13.746,Mediterranean,Port,transit,Eurasia_Africa
+t139,Cleveland,41.5,-81.716667,NA East Coast,Port,transit,NorthAmerica
+t140,Belfast,54.616667,-5.9,Western Europe,Port,transit,Ireland
+t141,Pori,61.483333,21.8,Nordics,Port,transit,Eurasia_Africa
+t142,Vancouver,49.283333,-123.116667,NA West Coast,Port,transit,NorthAmerica
+t143,Sankt-Peterburg,59.933333,30.3,Nordics,Port,transit,Eurasia_Africa
+t144,Busan,35.1,129.033333,Japan & South Korea,Port,transit,Eurasia_Africa
+t145,Inchon,37.466667,126.616667,Japan & South Korea,Port,transit,Eurasia_Africa
+t146,Bangkok,13.75,100.5,South-east Asia,Port,transit,Eurasia_Africa
+t147,Shanghai,31.216667,121.5,China & Hong Kong,Port,transit,Eurasia_Africa
+t148,Qingdao Gang,36.033333,120.266667,China & Hong Kong,Port,transit,Eurasia_Africa
+t149,Johor,1.433333,103.9,South-east Asia,Port,transit,Eurasia_Africa
+t150,Jurong Island,1.283333,103.733333,South-east Asia,Port,transit,Eurasia_Africa
+t151,Auckland,-36.85,174.766667,East Australia,Port,transit,NewZealand
+t152,Rio Grande,-32.05,-52.083333,S Latin America,Port,transit,SouthAmerica
+t153,Manila,14.583333,120.966667,South-east Asia,Port,transit,Philippines
+t154,Paldiski Lounasadam,59.333343,24.081111,Nordics,Port,transit,Eurasia_Africa
+t155,Tan-Shui,25.183333,121.4,China & Hong Kong,Port,transit,Taiwan
+t156,Muuga-Port of Tallin,59.500042,24.966693,Nordics,Port,transit,Eurasia_Africa
+t157,Tai-Chung Kang,24.3,120.5,China & Hong Kong,Port,transit,Taiwan
+t158,Kao-Hsiung,22.616667,120.25,China & Hong Kong,Port,transit,Taiwan
+t159,Gdynia,54.533333,18.55,Nordics,Port,transit,Eurasia_Africa
+t160,Kobenhavn,55.7,12.616667,Nordics,Port,transit,Eurasia_Africa
+t161,Riga,56.95,24.1,Nordics,Port,transit,Eurasia_Africa
+t162,Tubarao,-20.283333,-40.25,S Latin America,Port,transit,SouthAmerica
+t163,Fremantle,-32.05,115.75,West Australia,Port,transit,Australia
+t164,Bahai De La Habana,23.133333,-82.366667,N Latin America,Port,transit,Cuba
+t165,Vladivostok,43.108888889,131.888333333,China & Hong Kong,Port,transit,Eurasia_Africa
+t166,Melbourne,-37.833333,144.966667,East Australia,Port,transit,Australia
+t167,Newcastle,-32.916667,151.783333,East Australia,Port,transit,Australia
+t168,Brisbane,-27.466667,153.033333,East Australia,Port,transit,Australia
+t169,Sydney,-33.866667,151.2,East Australia,Port,transit,Australia
+t170,Bahia De Sagua De Tanamo,20.683333,-75.33333299999998,N Latin America,Port,transit,Cuba
+t171,Antilla,20.833333,-75.733333,N Latin America,Port,transit,Cuba
+t172,Chi-Lung,25.133333,121.766667,China & Hong Kong,Port,transit,Taiwan
+t173,Kawasaki Ko,35.5,139.766667,Japan & South Korea,Port,transit,Japan
+t174,Yokohama Ko,35.45,139.583333,Japan & South Korea,Port,transit,Japan
+oft_f1,China Hubei,30.67,111.37,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f2,China Yunnan,25.02,102.74,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f3,China Sichuan,30.4,103.7,China & Hong Kong,Fertiliser,offtake,Eurasia_Africa
+oft_f4,Norway Porsgrunn,59.13,9.66,Nordics,Fertiliser,offtake,Eurasia_Africa
+oft_f5,Germany Ludwigshafen,49.49,8.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f6,Belgium Antwerpen,51.18,4.41,Western Europe,Fertiliser,offtake,Eurasia_Africa
+oft_f7,USA Texas,31.5,-91.17,NA East Coast,Fertiliser,offtake,NorthAmerica
+oft_f8,Canada Alberta,53.69,-113.6,NA West Coast,Fertiliser,offtake,NorthAmerica
+oft_f9,Qatar Mesaieed,24.98,51.54,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f10,Uttar Pradesh India,27.37,79.45,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f11,Gujarat India,21.97,73.06,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f12,Odisha India,20.94,85.17,Middle East & India,Fertiliser,offtake,Eurasia_Africa
+oft_f13,Jakarta Indonesia,-6.312,107.424,South-east Asia,Fertiliser,offtake,Indonesia_Java
+oft_steel1,China Hubei,31.15,114.77,China & Hong Kong,Steel,offtake,Eurasia_Africa
+oft_steel2,China Jiangsu,32.93,119.47,China & Hong Kong,Steel,offtake,Eurasia_Africa
+oft_steel3,China Shandong,35.31,119.4,China & Hong Kong,Steel,offtake,Eurasia_Africa
+oft_steel4,South Korea Pohang,35.95,129.31,Japan & South Korea,Steel,offtake,Eurasia_Africa
+oft_steel5,Japan,35.33,139.93,Japan & South Korea,Steel,offtake,Japan
+oft_steel6,India Odisha,21.71,83.295,Middle East & India,Steel,offtake,Eurasia_Africa
+oft_steel7,India Karnataka,14.17,75.85,Middle East & India,Steel,offtake,Eurasia_Africa
+oft_steel8,Germany Duisberg,51.5,6.78,Western Europe,Steel,offtake,Eurasia_Africa
+oft_steel9,Netherlands Ijmuiden,52.46,4.59,Western Europe,Steel,offtake,Eurasia_Africa
+oft_steel10,USA Alabama,30.819058,-88.14,NA East Coast,Steel,offtake,NorthAmerica
+oft_steel11,USA Michigan,42.345372,-83.036646,NA East Coast,Steel,offtake,NorthAmerica
+oft_steel12,Brazil Rio de Janeiro,-22.851524,-44.108331,S Latin America,Steel,offtake,SouthAmerica
+oft_ship1,Houston,29.75,-95.283333,Gulf of Mexico,Shipping,offtake,NorthAmerica
+oft_ship2,Dalian,38.916667,121.666667,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship3,Livorno,43.542,10.29,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship4,Norfolk,36.85,-76.29999999999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship5,Toulon,43.1,5.916667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship6,Taranto,40.466667,17.2,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship7,Philadelphia,39.95,-75.13333299999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship8,Rio De Janeiro,-22.9,-43.166667,S Latin America,Shipping,offtake,SouthAmerica
+oft_ship9,Alger,36.766667,3.066667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship10,Civitavecchia,42.102,11.771,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship11,Piraievs,37.933333,23.65,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship12,Rijeka Luka,45.333333,14.433333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship13,Napoli,40.833,14.275,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship14,Siracusa,37.05,15.283333,Mediterranean,Shipping,offtake,Sicily
+oft_ship15,Porto Di Lido-Venezia,45.416667,12.433333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship16,Casablanca,33.6,-7.616667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship17,Lisboa,38.7,-9.166667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship18,Agadir,30.433333,-9.633333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship19,Baltimore,39.266667,-76.58333299999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship20,Chester,39.85,-75.34999999999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship21,Keppel - (East Singapore),1.283333,103.85,South-east Asia,Shipping,offtake,Eurasia_Africa
+oft_ship22,Galveston,29.316667,-94.783333,Gulf of Mexico,Shipping,offtake,NorthAmerica
+oft_ship23,Oakland,37.816667,-122.333333,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship24,New Orleans,29.95,-90.04999999999998,Gulf of Mexico,Shipping,offtake,NorthAmerica
+oft_ship25,Mobile,30.683333,-88.116667,Gulf of Mexico,Shipping,offtake,NorthAmerica
+oft_ship26,San Francisco,37.816667,-122.416667,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship27,New York City,40.7,-74.016667,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship28,Brooklyn,40.666667,-74.016667,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship29,Nagasaki,32.716667,129.85,Japan & South Korea,Shipping,offtake,Japan
+oft_ship30,Kobe,34.65,135.183333,Japan & South Korea,Shipping,offtake,Japan
+oft_ship31,Cebu,10.3,123.9,South-east Asia,Shipping,offtake,Philippines
+oft_ship32,As Suways,29.966667,32.55,Red Sea,Shipping,offtake,Eurasia_Africa
+oft_ship33,Durban,-29.866667,31.066667,East Africa,Shipping,offtake,Eurasia_Africa
+oft_ship34,Oran,35.7,-0.633333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship35,Izmir,38.433333,27.133333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship36,Jakarta,-6.1,106.883333,South-east Asia,Shipping,offtake,Indonesia_Java
+oft_ship37,Brindisi,40.65,17.983333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship38,La Spezia,44.1,9.833333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship39,Genova,44.398,8.922,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship40,Barcelona,41.35,2.166667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship41,Boston,42.35,-71.05,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship42,Montreal,45.516667,-73.54999999999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship43,Gioia Tauro,38.444,15.89,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship44,Mikawa,34.716667,137.3,Japan & South Korea,Shipping,offtake,Japan
+oft_ship45,Onomichi-Itozaki,34.383333,133.166667,Japan & South Korea,Shipping,offtake,Japan
+oft_ship46,Messina,38.2,15.566667,Mediterranean,Shipping,offtake,Sicily
+oft_ship47,Al Iskandariyh (Alexandria),31.166667,29.833333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship48,Damietta,31.483333,31.75,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship49,Port Of Le Havre,49.483333,0.116667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship50,Nagoya Ko,35.066667,136.866667,Japan & South Korea,Shipping,offtake,Japan
+oft_ship51,Muqdisho,2.033333,45.35,Red Sea,Shipping,offtake,Eurasia_Africa
+oft_ship52,Lagos,6.4,3.4,West Africa,Shipping,offtake,Eurasia_Africa
+oft_ship53,Rade De Brest,48.383333,-4.5,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship54,Lagos,37.1,-8.616667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship55,Wakayama-Shimotsu Ko,34.2,135.133333,Japan & South Korea,Shipping,offtake,Japan
+oft_ship56,Split,43.5,16.433333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship57,Tangier-Mediterranean,35.9,-5.516667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship58,Tarragona,41.1,1.233333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship59,Tokyo Ko,35.666667,139.75,Japan & South Korea,Shipping,offtake,Japan
+oft_ship60,Port Klang,3.0,101.4,South-east Asia,Shipping,offtake,Eurasia_Africa
+oft_ship61,Tianjin Xin Gang,38.966667,117.833333,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship62,Wakamatsu Ko,33.9,130.816667,Japan & South Korea,Shipping,offtake,Japan
+oft_ship63,Osaka,34.65,135.433333,Japan & South Korea,Shipping,offtake,Japan
+oft_ship64,Bur Sa'id,31.266667,32.3,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship65,Calcutta,22.55,88.33333299999998,Middle East & India,Shipping,offtake,Eurasia_Africa
+oft_ship66,Chennai (Madras),13.1,80.29999999999998,Middle East & India,Shipping,offtake,Eurasia_Africa
+oft_ship67,Mumbai (Bombay),18.966667,72.866667,Middle East & India,Shipping,offtake,Eurasia_Africa
+oft_ship68,Kattupalli Port,13.306944444,80.35222222199998,Middle East & India,Shipping,offtake,Eurasia_Africa
+oft_ship69,Puerto La Cruz,10.25,-64.633333,N Latin America,Shipping,offtake,SouthAmerica
+oft_ship70,Bayrut,33.9,35.5,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship71,Baniyas,35.188333333,35.943333333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship72,Puerto Guantanamo,19.983333,-75.13333299999998,N Latin America,Shipping,offtake,Cuba
+oft_ship73,Cienfuegos,22.15,-80.45,N Latin America,Shipping,offtake,Cuba
+oft_ship74,Ain Sukhna Terminal,29.583333,32.366667,Red Sea,Shipping,offtake,Eurasia_Africa
+oft_ship75,Abidjan,5.25,-4.016667,West Africa,Shipping,offtake,Eurasia_Africa
+oft_ship76,Mina Jabal Ali,25.016667,55.05,Middle East & India,Shipping,offtake,Eurasia_Africa
+oft_ship77,Nuevitas Bay,21.55,-77.266667,N Latin America,Shipping,offtake,Cuba
+oft_ship78,Los Angeles,33.75,-118.25,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship79,Wellington,-41.283333,174.783333,East Australia,Shipping,offtake,NewZealand
+oft_ship80,Cape Town,-33.916667,18.416667,East Africa,Shipping,offtake,Eurasia_Africa
+oft_ship81,Novorossiysk,44.716667,37.783333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship82,Odesa,46.483333,30.733333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship83,Illichivsk,46.3,30.65,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship84,Istanbul,41.016667,28.966667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship85,Dundee,56.466667,-2.95,Western Europe,Shipping,offtake,GreatBritain
+oft_ship86,Antwerpen,51.216667,4.4,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship87,Amsterdam,52.366667,4.9,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship88,Bremen,53.133333,8.766667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship89,Bremerhaven,53.533333,8.583333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship90,Hamburg,53.55,9.933333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship91,Malmo,55.623333333,12.984722222,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship92,Goteborg,57.709722222,11.954722222,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship93,Bordeaux,44.866667,-0.566667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship94,Manchester,53.483333,-2.266667,Western Europe,Shipping,offtake,GreatBritain
+oft_ship95,Liverpool,53.416667,-3.0,Western Europe,Shipping,offtake,GreatBritain
+oft_ship96,Halifax,44.65,-63.583333,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship97,Kiel,54.316667,10.133333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship98,Gdansk,54.35,18.666667,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship99,Buenos Aires,-34.6,-58.366667,S Latin America,Shipping,offtake,SouthAmerica
+oft_ship100,Detroit,42.333333,-83.033333,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship101,Buffalo,42.883333,-78.88333299999998,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship102,London,51.5,-0.0833329999999,Western Europe,Shipping,offtake,GreatBritain
+oft_ship103,Cilacap,-7.733333,109.0,South-east Asia,Shipping,offtake,Indonesia_Java
+oft_ship104,Kokkola,63.85,23.016667,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship105,Kotka,60.466667,26.966667,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship106,Foynes,52.616667,-9.116667,Western Europe,Shipping,offtake,Ireland
+oft_ship107,Kasim Terminal,-1.3,131.016667,South-east Asia,Shipping,offtake,Indonesia_Papua
+oft_ship108,Hong Kong,22.266667,114.2,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship109,Helsinki,60.166667,24.966667,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship110,Murmansk,68.983333,33.05,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship111,Rotterdam,51.9,4.483333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship112,Oulu,65.016667,25.4,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship113,Stockholm,59.333333,18.05,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship114,Santos,-23.95,-46.3,S Latin America,Shipping,offtake,SouthAmerica
+oft_ship115,Seattle,47.6,-122.333333,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship116,Samsun,41.3,36.35,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship117,Varna,43.183333,27.966667,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship118,Oslo,59.898055556,10.745555556,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship119,Rostock,54.1,12.133333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship120,Portland,45.516667,-122.666667,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship121,Rade De Cherbourg,49.65,-1.633333,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship122,Teesport,54.65,-1.133333,Western Europe,Shipping,offtake,GreatBritain
+oft_ship123,Southampton,50.9,-1.4,Western Europe,Shipping,offtake,GreatBritain
+oft_ship124,Sevastopol,44.616667,33.533333,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship125,Port Of Rouen,49.45,1.066667,Western Europe,Shipping,offtake,Eurasia_Africa
+oft_ship126,Tri-City Port,38.716667,-90.2,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship127,Vanasadam - Port of Tallinn,59.450128,24.766676,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship128,Sillamae,59.42612,27.73945,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship129,Trieste,45.651,13.746,Mediterranean,Shipping,offtake,Eurasia_Africa
+oft_ship130,Cleveland,41.5,-81.716667,NA East Coast,Shipping,offtake,NorthAmerica
+oft_ship131,Belfast,54.616667,-5.9,Western Europe,Shipping,offtake,Ireland
+oft_ship132,Pori,61.483333,21.8,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship133,Vancouver,49.283333,-123.116667,NA West Coast,Shipping,offtake,NorthAmerica
+oft_ship134,Sankt-Peterburg,59.933333,30.3,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship135,Busan,35.1,129.033333,Japan & South Korea,Shipping,offtake,Eurasia_Africa
+oft_ship136,Inchon,37.466667,126.616667,Japan & South Korea,Shipping,offtake,Eurasia_Africa
+oft_ship137,Bangkok,13.75,100.5,South-east Asia,Shipping,offtake,Eurasia_Africa
+oft_ship138,Shanghai,31.216667,121.5,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship139,Qingdao Gang,36.033333,120.266667,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship140,Johor,1.433333,103.9,South-east Asia,Shipping,offtake,Eurasia_Africa
+oft_ship141,Jurong Island,1.283333,103.733333,South-east Asia,Shipping,offtake,Eurasia_Africa
+oft_ship142,Auckland,-36.85,174.766667,East Australia,Shipping,offtake,NewZealand
+oft_ship143,Rio Grande,-32.05,-52.083333,S Latin America,Shipping,offtake,SouthAmerica
+oft_ship144,Manila,14.583333,120.966667,South-east Asia,Shipping,offtake,Philippines
+oft_ship145,Paldiski Lounasadam,59.333343,24.081111,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship146,Tan-Shui,25.183333,121.4,China & Hong Kong,Shipping,offtake,Taiwan
+oft_ship147,Muuga-Port of Tallin,59.500042,24.966693,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship148,Tai-Chung Kang,24.3,120.5,China & Hong Kong,Shipping,offtake,Taiwan
+oft_ship149,Kao-Hsiung,22.616667,120.25,China & Hong Kong,Shipping,offtake,Taiwan
+oft_ship150,Gdynia,54.533333,18.55,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship151,Kobenhavn,55.7,12.616667,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship152,Riga,56.95,24.1,Nordics,Shipping,offtake,Eurasia_Africa
+oft_ship153,Tubarao,-20.283333,-40.25,S Latin America,Shipping,offtake,SouthAmerica
+oft_ship154,Fremantle,-32.05,115.75,West Australia,Shipping,offtake,Australia
+oft_ship155,Bahai De La Habana,23.133333,-82.366667,N Latin America,Shipping,offtake,Cuba
+oft_ship156,Vladivostok,43.108888889,131.888333333,China & Hong Kong,Shipping,offtake,Eurasia_Africa
+oft_ship157,Melbourne,-37.833333,144.966667,East Australia,Shipping,offtake,Australia
+oft_ship158,Newcastle,-32.916667,151.783333,East Australia,Shipping,offtake,Australia
+oft_ship159,Brisbane,-27.466667,153.033333,East Australia,Shipping,offtake,Australia
+oft_ship160,Sydney,-33.866667,151.2,East Australia,Shipping,offtake,Australia
+oft_ship161,Bahia De Sagua De Tanamo,20.683333,-75.33333299999998,N Latin America,Shipping,offtake,Cuba
+oft_ship162,Antilla,20.833333,-75.733333,N Latin America,Shipping,offtake,Cuba
+oft_ship163,Chi-Lung,25.133333,121.766667,China & Hong Kong,Shipping,offtake,Taiwan
+oft_ship164,Kawasaki Ko,35.5,139.766667,Japan & South Korea,Shipping,offtake,Japan
+oft_ship165,Yokohama Ko,35.45,139.583333,Japan & South Korea,Shipping,offtake,Japan
+p0,45_98_1000000.0,45.0,98.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p1,-15_-51_1000000.0,-15.0,-51.0,S Latin America,Green Ammonia,production,SouthAmerica
+p2,7_23_1000000.0,7.0,23.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p3,35_-103_1000000.0,35.0,-103.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p4,-20_124_1000000.0,-20.0,124.0,West Australia,Green Ammonia,production,Australia
+p5,42_12_1000000.0,42.0,12.0,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p6,36_59_1000000.0,36.0,59.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p7,38_96_1000000.0,38.0,96.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p8,62_-114_1000000.0,62.0,-114.0,NA West Coast,Green Ammonia,production,NorthAmerica
+p9,18_28_1000000.0,18.0,28.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p10,30_85_1000000.0,30.0,85.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p11,19_4_1000000.0,19.0,4.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p12,48_-89_1000000.0,48.0,-89.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p13,-52_-74_1000000.0,-52.0,-74.0,S Latin America,Green Ammonia,production,SouthAmerica
+p14,-25_16_1000000.0,-25.0,16.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p15,35_128_1000000.0,35.0,128.0,Japan & South Korea,Green Ammonia,production,Japan
+p16,16_-94_1000000.0,16.0,-94.0,Gulf of Mexico,Green Ammonia,production,NorthAmerica
+p17,-28_142_1000000.0,-28.0,142.0,East Australia,Green Ammonia,production,Australia
+p18,12_-70_1000000.0,12.0,-70.0,N Latin America,Green Ammonia,production,SouthAmerica
+p19,42_109_1000000.0,42.0,109.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p20,-11_-43_1000000.0,-11.0,-43.0,S Latin America,Green Ammonia,production,SouthAmerica
+p21,68_13_1000000.0,68.0,13.0,Nordics,Green Ammonia,production,Eurasia_Africa
+p22,3_36_1000000.0,3.0,36.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p23,48_58_1000000.0,48.0,58.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p24,38_-106_1000000.0,38.0,-106.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p25,33_80_1000000.0,33.0,80.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p26,53_-98_1000000.0,53.0,-98.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p27,-28_-69_1000000.0,-28.0,-69.0,S Latin America,Green Ammonia,production,SouthAmerica
+p28,46_109_1000000.0,46.0,109.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p29,26_-7_1000000.0,26.0,-7.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p30,-19_16_1000000.0,-19.0,16.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p31,18_45_1000000.0,18.0,45.0,Red Sea,Green Ammonia,production,Eurasia_Africa
+p32,46_142_1000000.0,46.0,142.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p33,11_108_1000000.0,11.0,108.0,South-east Asia,Green Ammonia,production,Eurasia_Africa
+p34,17_10_1000000.0,17.0,10.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p35,37_47_1000000.0,37.0,47.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p36,-10_-57_1000000.0,-10.0,-57.0,S Latin America,Green Ammonia,production,SouthAmerica
+p37,-16_26_1000000.0,-16.0,26.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p38,27_-114_1000000.0,27.0,-114.0,NA West Coast,Green Ammonia,production,NorthAmerica
+p39,39_73_1000000.0,39.0,73.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p40,26_68_1000000.0,26.0,68.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p41,-20_122_1000000.0,-20.0,122.0,West Australia,Green Ammonia,production,Australia
+p42,-41_174_1000000.0,-41.0,174.0,East Australia,Green Ammonia,production,NewZealand
+p43,-12_143_1000000.0,-12.0,143.0,East Australia,Green Ammonia,production,Australia
+p44,47_-64_1000000.0,47.0,-64.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p45,35_25_1000000.0,35.0,25.0,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p46,-10_-48_1000000.0,-10.0,-48.0,S Latin America,Green Ammonia,production,SouthAmerica
+p47,11_-64_1000000.0,11.0,-64.0,N Latin America,Green Ammonia,production,SouthAmerica
+p48,30_-85_1000000.0,30.0,-85.0,Gulf of Mexico,Green Ammonia,production,NorthAmerica
+p49,47_-119_1000000.0,47.0,-119.0,NA West Coast,Green Ammonia,production,NorthAmerica
+p50,12_10_1000000.0,12.0,10.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p51,55_15_1000000.0,55.0,15.0,Western Europe,Green Ammonia,production,Eurasia_Africa
+p52,16_-5_1000000.0,16.0,-5.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p53,-30_-70_1000000.0,-30.0,-70.0,S Latin America,Green Ammonia,production,SouthAmerica
+p54,30_90_1000000.0,30.0,90.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p55,21_23_1000000.0,21.0,23.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p56,-14_-43_1000000.0,-14.0,-43.0,S Latin America,Green Ammonia,production,SouthAmerica
+p57,49_88_1000000.0,49.0,88.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p58,57_-64_1000000.0,57.0,-64.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p59,17_46_1000000.0,17.0,46.0,Red Sea,Green Ammonia,production,Eurasia_Africa
+p60,46_65_1000000.0,46.0,65.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p61,-6_-81_1000000.0,-6.0,-81.0,S Latin America,Green Ammonia,production,SouthAmerica
+p62,31_100_1000000.0,31.0,100.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p63,23_-103_1000000.0,23.0,-103.0,Gulf of Mexico,Green Ammonia,production,NorthAmerica
+p64,44_118_1000000.0,44.0,118.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p65,25_119_1000000.0,25.0,119.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p66,58_-93_1000000.0,58.0,-93.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p67,37_-118_1000000.0,37.0,-118.0,NA West Coast,Green Ammonia,production,NorthAmerica
+p68,-21_25_1000000.0,-21.0,25.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p69,12_28_1000000.0,12.0,28.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p70,-30_141_1000000.0,-30.0,141.0,East Australia,Green Ammonia,production,Australia
+p71,-7_114_1000000.0,-7.0,114.0,South-east Asia,Green Ammonia,production,Indonesia_Java
+p72,29_98_1000000.0,29.0,98.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p73,38_89_1000000.0,38.0,89.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p74,54_15_1000000.0,54.0,15.0,Western Europe,Green Ammonia,production,Eurasia_Africa
+p75,-18_136_1000000.0,-18.0,136.0,East Australia,Green Ammonia,production,Australia
+p76,17_29_1000000.0,17.0,29.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p77,20_-12_1000000.0,20.0,-12.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p78,-6_35_1000000.0,-6.0,35.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p79,35_67_1000000.0,35.0,67.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p80,27_38_1000000.0,27.0,38.0,Red Sea,Green Ammonia,production,Eurasia_Africa
+p81,26_6_1000000.0,26.0,6.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p82,46_150_1000000.0,46.0,150.0,China & Hong Kong,Green Ammonia,production,Eurasia_Africa
+p83,37_-3_1000000.0,37.0,-3.0,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p84,10_79_1000000.0,10.0,79.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p85,17_25_1000000.0,17.0,25.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p86,-9_17_1000000.0,-9.0,17.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p87,-23_-52_1000000.0,-23.0,-52.0,S Latin America,Green Ammonia,production,SouthAmerica
+p88,59_-3_1000000.0,59.0,-3.0,Western Europe,Green Ammonia,production,Eurasia_Africa
+p89,-15_-72_1000000.0,-15.0,-72.0,S Latin America,Green Ammonia,production,SouthAmerica
+p90,-17_31_1000000.0,-17.0,31.0,East Africa,Green Ammonia,production,Eurasia_Africa
+p91,16_46_1000000.0,16.0,46.0,Red Sea,Green Ammonia,production,Eurasia_Africa
+p92,16_6_1000000.0,16.0,6.0,West Africa,Green Ammonia,production,Eurasia_Africa
+p93,45_35_1000000.0,45.0,35.0,Mediterranean,Green Ammonia,production,Eurasia_Africa
+p94,7_122_1000000.0,7.0,122.0,South-east Asia,Green Ammonia,production,Philippines
+p95,44_-87_1000000.0,44.0,-87.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p96,45_-82_1000000.0,45.0,-82.0,NA East Coast,Green Ammonia,production,NorthAmerica
+p97,18_-67_1000000.0,18.0,-67.0,N Latin America,Green Ammonia,production,NorthAmerica
+p98,30_55_1000000.0,30.0,55.0,Middle East & India,Green Ammonia,production,Eurasia_Africa
+p99,-23_132_1000000.0,-23.0,132.0,East Australia,Green Ammonia,production,Australia
+pf0,45_98_1000000.0,45.0,98.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf1,-15_-51_1000000.0,-15.0,-51.0,S Latin America,Fossil,production,SouthAmerica
+pf2,7_23_1000000.0,7.0,23.0,East Africa,Fossil,production,Eurasia_Africa
+pf3,35_-103_1000000.0,35.0,-103.0,NA East Coast,Fossil,production,NorthAmerica
+pf4,-20_124_1000000.0,-20.0,124.0,West Australia,Fossil,production,Australia
+pf5,42_12_1000000.0,42.0,12.0,Mediterranean,Fossil,production,Eurasia_Africa
+pf6,36_59_1000000.0,36.0,59.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf7,38_96_1000000.0,38.0,96.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf8,62_-114_1000000.0,62.0,-114.0,NA West Coast,Fossil,production,NorthAmerica
+pf9,18_28_1000000.0,18.0,28.0,East Africa,Fossil,production,Eurasia_Africa
+pf10,30_85_1000000.0,30.0,85.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf11,19_4_1000000.0,19.0,4.0,West Africa,Fossil,production,Eurasia_Africa
+pf12,48_-89_1000000.0,48.0,-89.0,NA East Coast,Fossil,production,NorthAmerica
+pf13,-52_-74_1000000.0,-52.0,-74.0,S Latin America,Fossil,production,SouthAmerica
+pf14,-25_16_1000000.0,-25.0,16.0,West Africa,Fossil,production,Eurasia_Africa
+pf15,35_128_1000000.0,35.0,128.0,Japan & South Korea,Fossil,production,Japan
+pf16,16_-94_1000000.0,16.0,-94.0,Gulf of Mexico,Fossil,production,NorthAmerica
+pf17,-28_142_1000000.0,-28.0,142.0,East Australia,Fossil,production,Australia
+pf18,12_-70_1000000.0,12.0,-70.0,N Latin America,Fossil,production,SouthAmerica
+pf19,42_109_1000000.0,42.0,109.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf20,-11_-43_1000000.0,-11.0,-43.0,S Latin America,Fossil,production,SouthAmerica
+pf21,68_13_1000000.0,68.0,13.0,Nordics,Fossil,production,Eurasia_Africa
+pf22,3_36_1000000.0,3.0,36.0,East Africa,Fossil,production,Eurasia_Africa
+pf23,48_58_1000000.0,48.0,58.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf24,38_-106_1000000.0,38.0,-106.0,NA East Coast,Fossil,production,NorthAmerica
+pf25,33_80_1000000.0,33.0,80.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf26,53_-98_1000000.0,53.0,-98.0,NA East Coast,Fossil,production,NorthAmerica
+pf27,-28_-69_1000000.0,-28.0,-69.0,S Latin America,Fossil,production,SouthAmerica
+pf28,46_109_1000000.0,46.0,109.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf29,26_-7_1000000.0,26.0,-7.0,West Africa,Fossil,production,Eurasia_Africa
+pf30,-19_16_1000000.0,-19.0,16.0,West Africa,Fossil,production,Eurasia_Africa
+pf31,18_45_1000000.0,18.0,45.0,Red Sea,Fossil,production,Eurasia_Africa
+pf32,46_142_1000000.0,46.0,142.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf33,11_108_1000000.0,11.0,108.0,South-east Asia,Fossil,production,Eurasia_Africa
+pf34,17_10_1000000.0,17.0,10.0,West Africa,Fossil,production,Eurasia_Africa
+pf35,37_47_1000000.0,37.0,47.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf36,-10_-57_1000000.0,-10.0,-57.0,S Latin America,Fossil,production,SouthAmerica
+pf37,-16_26_1000000.0,-16.0,26.0,East Africa,Fossil,production,Eurasia_Africa
+pf38,27_-114_1000000.0,27.0,-114.0,NA West Coast,Fossil,production,NorthAmerica
+pf39,39_73_1000000.0,39.0,73.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf40,26_68_1000000.0,26.0,68.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf41,-20_122_1000000.0,-20.0,122.0,West Australia,Fossil,production,Australia
+pf42,-41_174_1000000.0,-41.0,174.0,East Australia,Fossil,production,NewZealand
+pf43,-12_143_1000000.0,-12.0,143.0,East Australia,Fossil,production,Australia
+pf44,47_-64_1000000.0,47.0,-64.0,NA East Coast,Fossil,production,NorthAmerica
+pf45,35_25_1000000.0,35.0,25.0,Mediterranean,Fossil,production,Eurasia_Africa
+pf46,-10_-48_1000000.0,-10.0,-48.0,S Latin America,Fossil,production,SouthAmerica
+pf47,11_-64_1000000.0,11.0,-64.0,N Latin America,Fossil,production,SouthAmerica
+pf48,30_-85_1000000.0,30.0,-85.0,Gulf of Mexico,Fossil,production,NorthAmerica
+pf49,47_-119_1000000.0,47.0,-119.0,NA West Coast,Fossil,production,NorthAmerica
+pf50,12_10_1000000.0,12.0,10.0,West Africa,Fossil,production,Eurasia_Africa
+pf51,55_15_1000000.0,55.0,15.0,Western Europe,Fossil,production,Eurasia_Africa
+pf52,16_-5_1000000.0,16.0,-5.0,West Africa,Fossil,production,Eurasia_Africa
+pf53,-30_-70_1000000.0,-30.0,-70.0,S Latin America,Fossil,production,SouthAmerica
+pf54,30_90_1000000.0,30.0,90.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf55,21_23_1000000.0,21.0,23.0,East Africa,Fossil,production,Eurasia_Africa
+pf56,-14_-43_1000000.0,-14.0,-43.0,S Latin America,Fossil,production,SouthAmerica
+pf57,49_88_1000000.0,49.0,88.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf58,57_-64_1000000.0,57.0,-64.0,NA East Coast,Fossil,production,NorthAmerica
+pf59,17_46_1000000.0,17.0,46.0,Red Sea,Fossil,production,Eurasia_Africa
+pf60,46_65_1000000.0,46.0,65.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf61,-6_-81_1000000.0,-6.0,-81.0,S Latin America,Fossil,production,SouthAmerica
+pf62,31_100_1000000.0,31.0,100.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf63,23_-103_1000000.0,23.0,-103.0,Gulf of Mexico,Fossil,production,NorthAmerica
+pf64,44_118_1000000.0,44.0,118.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf65,25_119_1000000.0,25.0,119.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf66,58_-93_1000000.0,58.0,-93.0,NA East Coast,Fossil,production,NorthAmerica
+pf67,37_-118_1000000.0,37.0,-118.0,NA West Coast,Fossil,production,NorthAmerica
+pf68,-21_25_1000000.0,-21.0,25.0,East Africa,Fossil,production,Eurasia_Africa
+pf69,12_28_1000000.0,12.0,28.0,East Africa,Fossil,production,Eurasia_Africa
+pf70,-30_141_1000000.0,-30.0,141.0,East Australia,Fossil,production,Australia
+pf71,-7_114_1000000.0,-7.0,114.0,South-east Asia,Fossil,production,Indonesia_Java
+pf72,29_98_1000000.0,29.0,98.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf73,38_89_1000000.0,38.0,89.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf74,54_15_1000000.0,54.0,15.0,Western Europe,Fossil,production,Eurasia_Africa
+pf75,-18_136_1000000.0,-18.0,136.0,East Australia,Fossil,production,Australia
+pf76,17_29_1000000.0,17.0,29.0,East Africa,Fossil,production,Eurasia_Africa
+pf77,20_-12_1000000.0,20.0,-12.0,West Africa,Fossil,production,Eurasia_Africa
+pf78,-6_35_1000000.0,-6.0,35.0,East Africa,Fossil,production,Eurasia_Africa
+pf79,35_67_1000000.0,35.0,67.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf80,27_38_1000000.0,27.0,38.0,Red Sea,Fossil,production,Eurasia_Africa
+pf81,26_6_1000000.0,26.0,6.0,West Africa,Fossil,production,Eurasia_Africa
+pf82,46_150_1000000.0,46.0,150.0,China & Hong Kong,Fossil,production,Eurasia_Africa
+pf83,37_-3_1000000.0,37.0,-3.0,Mediterranean,Fossil,production,Eurasia_Africa
+pf84,10_79_1000000.0,10.0,79.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf85,17_25_1000000.0,17.0,25.0,East Africa,Fossil,production,Eurasia_Africa
+pf86,-9_17_1000000.0,-9.0,17.0,West Africa,Fossil,production,Eurasia_Africa
+pf87,-23_-52_1000000.0,-23.0,-52.0,S Latin America,Fossil,production,SouthAmerica
+pf88,59_-3_1000000.0,59.0,-3.0,Western Europe,Fossil,production,Eurasia_Africa
+pf89,-15_-72_1000000.0,-15.0,-72.0,S Latin America,Fossil,production,SouthAmerica
+pf90,-17_31_1000000.0,-17.0,31.0,East Africa,Fossil,production,Eurasia_Africa
+pf91,16_46_1000000.0,16.0,46.0,Red Sea,Fossil,production,Eurasia_Africa
+pf92,16_6_1000000.0,16.0,6.0,West Africa,Fossil,production,Eurasia_Africa
+pf93,45_35_1000000.0,45.0,35.0,Mediterranean,Fossil,production,Eurasia_Africa
+pf94,7_122_1000000.0,7.0,122.0,South-east Asia,Fossil,production,Philippines
+pf95,44_-87_1000000.0,44.0,-87.0,NA East Coast,Fossil,production,NorthAmerica
+pf96,45_-82_1000000.0,45.0,-82.0,NA East Coast,Fossil,production,NorthAmerica
+pf97,18_-67_1000000.0,18.0,-67.0,N Latin America,Fossil,production,NorthAmerica
+pf98,30_55_1000000.0,30.0,55.0,Middle East & India,Fossil,production,Eurasia_Africa
+pf99,-23_132_1000000.0,-23.0,132.0,East Australia,Fossil,production,Australia

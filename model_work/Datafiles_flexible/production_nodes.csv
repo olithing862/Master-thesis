@@ -1,51 +1,101 @@
-node_id,Location,lat,lon,region,industry,type,capacity_share_percent
-p0,-14_-47_1000000.0,-14.0,-47.0,S Latin America,Green Hydrogen,production,0.6912239967510095
-p1,8_81_1000000.0,8.0,81.0,Middle East & India,Green Hydrogen,production,0.34921425300949477
-p2,14_26_1000000.0,14.0,26.0,East Africa,Green Hydrogen,production,4.292631601271028
-p3,-28_142_1000000.0,-28.0,142.0,East Australia,Green Hydrogen,production,2.108862500323504
-p4,24_-110_1000000.0,24.0,-110.0,N Latin America,Green Hydrogen,production,0.5670765510101367
-p5,30_55_1000000.0,30.0,55.0,Middle East & India,Green Hydrogen,production,4.595750287215579
-p6,-31_-70_1000000.0,-31.0,-70.0,S Latin America,Green Hydrogen,production,3.302870770454897
-p7,41_97_1000000.0,41.0,97.0,China & Hong Kong,Green Hydrogen,production,3.4762249643020637
-p8,24_0_1000000.0,24.0,0.0,Mediterranean,Green Hydrogen,production,4.550203750860973
-p9,-21_124_1000000.0,-21.0,124.0,West Australia,Green Hydrogen,production,2.6802860518347176
-p10,-21_15_1000000.0,-21.0,15.0,East Africa,Green Hydrogen,production,1.3937036161513716
-p11,21_24_1000000.0,21.0,24.0,Mediterranean,Green Hydrogen,production,5.892377104933285
-p12,18_12_1000000.0,18.0,12.0,West Africa,Green Hydrogen,production,3.264471483320799
-p13,18_-98_1000000.0,18.0,-98.0,Gulf of Mexico,Green Hydrogen,production,0.8967281701090392
-p14,-21_25_1000000.0,-21.0,25.0,East Africa,Green Hydrogen,production,1.0203656495493263
-p15,-11_-43_1000000.0,-11.0,-43.0,S Latin America,Green Hydrogen,production,0.8052017859185621
-p16,36_77_1000000.0,36.0,77.0,Middle East & India,Green Hydrogen,production,1.8392211363177173
-p17,45_115_1000000.0,45.0,115.0,China & Hong Kong,Green Hydrogen,production,0.6374990969739998
-p18,16_10_1000000.0,16.0,10.0,West Africa,Green Hydrogen,production,0.8134666330980956
-p19,17_46_1000000.0,17.0,46.0,Red Sea,Green Hydrogen,production,5.776234036115129
-p20,-20_124_1000000.0,-20.0,124.0,West Australia,Green Hydrogen,production,2.754367760849592
-p21,-28_-69_1000000.0,-28.0,-69.0,S Latin America,Green Hydrogen,production,3.436273442922805
-p22,37_-118_1000000.0,37.0,-118.0,NA West Coast,Green Hydrogen,production,0.8407552095681864
-p23,12_106_1000000.0,12.0,106.0,South-east Asia,Green Hydrogen,production,0.5290818679501051
-p24,17_25_1000000.0,17.0,25.0,East Africa,Green Hydrogen,production,6.133829025157779
-p25,54_159_1000000.0,54.0,159.0,China & Hong Kong,Green Hydrogen,production,0.4007038293405064
-p26,27_38_1000000.0,27.0,38.0,Middle East & India,Green Hydrogen,production,3.4630122061809896
-p27,42_81_1000000.0,42.0,81.0,Middle East & India,Green Hydrogen,production,1.2633873025864761
-p28,27_-82_1000000.0,27.0,-82.0,NA East Coast,Green Hydrogen,production,0.481195669241884
-p29,-21_44_1000000.0,-21.0,44.0,East Africa,Green Hydrogen,production,0.41630951192348886
-p30,35_67_1000000.0,35.0,67.0,Middle East & India,Green Hydrogen,production,0.7509379264244924
-p31,30_85_1000000.0,30.0,85.0,Middle East & India,Green Hydrogen,production,2.209310216460117
-p32,-21_-58_1000000.0,-21.0,-58.0,S Latin America,Green Hydrogen,production,0.7075930777107586
-p33,17_-16_1000000.0,17.0,-16.0,West Africa,Green Hydrogen,production,1.6447562740700465
-p34,37_63_1000000.0,37.0,63.0,Middle East & India,Green Hydrogen,production,1.7298230607697724
-p35,6_102_1000000.0,6.0,102.0,South-east Asia,Green Hydrogen,production,0.32711106432539744
-p36,3_36_1000000.0,3.0,36.0,East Africa,Green Hydrogen,production,4.44261623969798
-p37,38_-106_1000000.0,38.0,-106.0,NA West Coast,Green Hydrogen,production,0.6511834039116507
-p38,12_-72_1000000.0,12.0,-72.0,N Latin America,Green Hydrogen,production,0.878715254552492
-p39,33_92_1000000.0,33.0,92.0,China & Hong Kong,Green Hydrogen,production,1.5485949653265623
-p40,20_9_1000000.0,20.0,9.0,West Africa,Green Hydrogen,production,1.3115341609862285
-p41,-6_35_1000000.0,-6.0,35.0,East Africa,Green Hydrogen,production,0.9085365613994781
-p42,23_-103_1000000.0,23.0,-103.0,N Latin America,Green Hydrogen,production,1.0381155882439561
-p43,-23_134_1000000.0,-23.0,134.0,East Australia,Green Hydrogen,production,2.6135026365102916
-p44,17_121_1000000.0,17.0,121.0,China & Hong Kong,Green Hydrogen,production,0.3460020531205808
-p45,20_-12_1000000.0,20.0,-12.0,West Africa,Green Hydrogen,production,5.762379119692072
-p46,-16_137_1000000.0,-16.0,137.0,East Australia,Green Hydrogen,production,0.7607216202902074
-p47,-15_-72_1000000.0,-15.0,-72.0,S Latin America,Green Hydrogen,production,1.6796273829725217
-p48,-19_13_1000000.0,-19.0,13.0,West Africa,Green Hydrogen,production,1.1522546606420738
-p49,42_109_1000000.0,42.0,109.0,China & Hong Kong,Green Hydrogen,production,0.8641554676507833
+node_id,Location,lat,lon,region,industry,type,capacity_share_percent,landmass
+p0,45_98_1000000.0,45,98,China & Hong Kong,Green Ammonia,production,0.6063650558729173,Eurasia_Africa
+p1,-15_-51_1000000.0,-15,-51,S Latin America,Green Ammonia,production,0.4076489407606606,SouthAmerica
+p2,7_23_1000000.0,7,23,East Africa,Green Ammonia,production,0.1122152777190657,Eurasia_Africa
+p3,35_-103_1000000.0,35,-103,NA East Coast,Green Ammonia,production,0.4100396969191434,NorthAmerica
+p4,-20_124_1000000.0,-20,124,West Australia,Green Ammonia,production,1.6119503905467836,Australia
+p5,42_12_1000000.0,42,12,Mediterranean,Green Ammonia,production,0.0736955140548104,Eurasia_Africa
+p6,36_59_1000000.0,36,59,Middle East & India,Green Ammonia,production,1.4002553581124226,Eurasia_Africa
+p7,38_96_1000000.0,38,96,China & Hong Kong,Green Ammonia,production,1.6861961108636248,Eurasia_Africa
+p8,62_-114_1000000.0,62,-114,NA West Coast,Green Ammonia,production,0.0728466632486779,NorthAmerica
+p9,18_28_1000000.0,18,28,East Africa,Green Ammonia,production,3.4497813991978967,Eurasia_Africa
+p10,30_85_1000000.0,30,85,China & Hong Kong,Green Ammonia,production,0.2363051802844588,Eurasia_Africa
+p11,19_4_1000000.0,19,4,West Africa,Green Ammonia,production,17.104926076738458,Eurasia_Africa
+p12,48_-89_1000000.0,48,-89,NA East Coast,Green Ammonia,production,0.1024484626101768,NorthAmerica
+p13,-52_-74_1000000.0,-52,-74,S Latin America,Green Ammonia,production,0.2690496665657593,SouthAmerica
+p14,-25_16_1000000.0,-25,16,West Africa,Green Ammonia,production,1.2936542345470263,Eurasia_Africa
+p15,35_128_1000000.0,35,128,Japan & South Korea,Green Ammonia,production,0.0190622222655301,Japan
+p16,16_-94_1000000.0,16,-94,Gulf of Mexico,Green Ammonia,production,0.1675845947209106,NorthAmerica
+p17,-28_142_1000000.0,-28,142,East Australia,Green Ammonia,production,0.8453402892518089,Australia
+p18,12_-70_1000000.0,12,-70,N Latin America,Green Ammonia,production,0.3288634183391561,SouthAmerica
+p19,42_109_1000000.0,42,109,China & Hong Kong,Green Ammonia,production,0.5791603604838049,Eurasia_Africa
+p20,-11_-43_1000000.0,-11,-43,S Latin America,Green Ammonia,production,0.6125130202750623,SouthAmerica
+p21,68_13_1000000.0,68,13,Nordics,Green Ammonia,production,0.0163242056690664,Eurasia_Africa
+p22,3_36_1000000.0,3,36,East Africa,Green Ammonia,production,0.6760824732975815,Eurasia_Africa
+p23,48_58_1000000.0,48,58,Middle East & India,Green Ammonia,production,0.1022593598585807,Eurasia_Africa
+p24,38_-106_1000000.0,38,-106,NA East Coast,Green Ammonia,production,0.4036709162568473,NorthAmerica
+p25,33_80_1000000.0,33,80,Middle East & India,Green Ammonia,production,1.808794419406501,Eurasia_Africa
+p26,53_-98_1000000.0,53,-98,NA East Coast,Green Ammonia,production,0.1247501911904463,NorthAmerica
+p27,-28_-69_1000000.0,-28,-69,S Latin America,Green Ammonia,production,1.608246992534559,SouthAmerica
+p28,46_109_1000000.0,46,109,China & Hong Kong,Green Ammonia,production,0.353211612542697,Eurasia_Africa
+p29,26_-7_1000000.0,26,-7,West Africa,Green Ammonia,production,6.686132707825795,Eurasia_Africa
+p30,-19_16_1000000.0,-19,16,West Africa,Green Ammonia,production,0.948988554686059,Eurasia_Africa
+p31,18_45_1000000.0,18,45,Red Sea,Green Ammonia,production,3.0772206305444927,Eurasia_Africa
+p32,46_142_1000000.0,46,142,China & Hong Kong,Green Ammonia,production,0.1665783935294817,Eurasia_Africa
+p33,11_108_1000000.0,11,108,South-east Asia,Green Ammonia,production,0.1672459671928106,Eurasia_Africa
+p34,17_10_1000000.0,17,10,West Africa,Green Ammonia,production,3.690050654699269,Eurasia_Africa
+p35,37_47_1000000.0,37,47,Middle East & India,Green Ammonia,production,0.3161753786548865,Eurasia_Africa
+p36,-10_-57_1000000.0,-10,-57,S Latin America,Green Ammonia,production,0.0706900274257699,SouthAmerica
+p37,-16_26_1000000.0,-16,26,East Africa,Green Ammonia,production,0.489485937285795,Eurasia_Africa
+p38,27_-114_1000000.0,27,-114,NA West Coast,Green Ammonia,production,1.185706521047029,NorthAmerica
+p39,39_73_1000000.0,39,73,Middle East & India,Green Ammonia,production,0.6098851406383297,Eurasia_Africa
+p40,26_68_1000000.0,26,68,Middle East & India,Green Ammonia,production,0.4859777232846959,Eurasia_Africa
+p41,-20_122_1000000.0,-20,122,West Australia,Green Ammonia,production,1.848694689227212,Australia
+p42,-41_174_1000000.0,-41,174,East Australia,Green Ammonia,production,0.044436637913704,NewZealand
+p43,-12_143_1000000.0,-12,143,East Australia,Green Ammonia,production,0.0309347314894065,Australia
+p44,47_-64_1000000.0,47,-64,NA East Coast,Green Ammonia,production,0.0484467308333607,NorthAmerica
+p45,35_25_1000000.0,35,25,Mediterranean,Green Ammonia,production,0.142441599633042,Eurasia_Africa
+p46,-10_-48_1000000.0,-10,-48,S Latin America,Green Ammonia,production,0.2722352383231284,SouthAmerica
+p47,11_-64_1000000.0,11,-64,N Latin America,Green Ammonia,production,0.0673668740939623,SouthAmerica
+p48,30_-85_1000000.0,30,-85,Gulf of Mexico,Green Ammonia,production,0.224123100102303,NorthAmerica
+p49,47_-119_1000000.0,47,-119,NA West Coast,Green Ammonia,production,0.1146584339658273,NorthAmerica
+p50,12_10_1000000.0,12,10,West Africa,Green Ammonia,production,0.3110029885920472,Eurasia_Africa
+p51,55_15_1000000.0,55,15,Western Europe,Green Ammonia,production,0.0228318173853194,Eurasia_Africa
+p52,16_-5_1000000.0,16,-5,West Africa,Green Ammonia,production,0.5948339370639765,Eurasia_Africa
+p53,-30_-70_1000000.0,-30,-70,S Latin America,Green Ammonia,production,0.8133722927400339,SouthAmerica
+p54,30_90_1000000.0,30,90,China & Hong Kong,Green Ammonia,production,1.4352907954212892,Eurasia_Africa
+p55,21_23_1000000.0,21,23,East Africa,Green Ammonia,production,3.80374957951378,Eurasia_Africa
+p56,-14_-43_1000000.0,-14,-43,S Latin America,Green Ammonia,production,0.5580118314829535,SouthAmerica
+p57,49_88_1000000.0,49,88,China & Hong Kong,Green Ammonia,production,0.2458522085868325,Eurasia_Africa
+p58,57_-64_1000000.0,57,-64,NA East Coast,Green Ammonia,production,0.0683525648173408,NorthAmerica
+p59,17_46_1000000.0,17,46,Red Sea,Green Ammonia,production,2.9971263813047977,Eurasia_Africa
+p60,46_65_1000000.0,46,65,Middle East & India,Green Ammonia,production,0.210356506364752,Eurasia_Africa
+p61,-6_-81_1000000.0,-6,-81,S Latin America,Green Ammonia,production,0.1693517005179379,SouthAmerica
+p62,31_100_1000000.0,31,100,China & Hong Kong,Green Ammonia,production,0.2552573661458887,Eurasia_Africa
+p63,23_-103_1000000.0,23,-103,Gulf of Mexico,Green Ammonia,production,0.6019508736357682,NorthAmerica
+p64,44_118_1000000.0,44,118,China & Hong Kong,Green Ammonia,production,0.1543936106668426,Eurasia_Africa
+p65,25_119_1000000.0,25,119,China & Hong Kong,Green Ammonia,production,0.1642592997795367,Eurasia_Africa
+p66,58_-93_1000000.0,58,-93,NA East Coast,Green Ammonia,production,0.0880526358010492,NorthAmerica
+p67,37_-118_1000000.0,37,-118,NA West Coast,Green Ammonia,production,0.6288355233947024,NorthAmerica
+p68,-21_25_1000000.0,-21,25,East Africa,Green Ammonia,production,0.5547072004081872,Eurasia_Africa
+p69,12_28_1000000.0,12,28,East Africa,Green Ammonia,production,0.4280625169907305,Eurasia_Africa
+p70,-30_141_1000000.0,-30,141,East Australia,Green Ammonia,production,0.4909227490636955,Australia
+p71,-7_114_1000000.0,-7,114,South-east Asia,Green Ammonia,production,0.0166197823485627,Indonesia_Java
+p72,29_98_1000000.0,29,98,China & Hong Kong,Green Ammonia,production,0.1598345677242086,Eurasia_Africa
+p73,38_89_1000000.0,38,89,China & Hong Kong,Green Ammonia,production,1.8856990155185285,Eurasia_Africa
+p74,54_15_1000000.0,54,15,Western Europe,Green Ammonia,production,0.0351192584297733,Eurasia_Africa
+p75,-18_136_1000000.0,-18,136,East Australia,Green Ammonia,production,1.0358304490379455,Australia
+p76,17_29_1000000.0,17,29,East Africa,Green Ammonia,production,1.9025346506414824,Eurasia_Africa
+p77,20_-12_1000000.0,20,-12,West Africa,Green Ammonia,production,3.7082312436339393,Eurasia_Africa
+p78,-6_35_1000000.0,-6,35,East Africa,Green Ammonia,production,0.3537585325327998,Eurasia_Africa
+p79,35_67_1000000.0,35,67,Middle East & India,Green Ammonia,production,2.6976567567642022,Eurasia_Africa
+p80,27_38_1000000.0,27,38,Red Sea,Green Ammonia,production,2.0053770490975067,Eurasia_Africa
+p81,26_6_1000000.0,26,6,West Africa,Green Ammonia,production,4.057073638172435,Eurasia_Africa
+p82,46_150_1000000.0,46,150,China & Hong Kong,Green Ammonia,production,0.0256463575871566,Eurasia_Africa
+p83,37_-3_1000000.0,37,-3,Mediterranean,Green Ammonia,production,0.149790075678114,Eurasia_Africa
+p84,10_79_1000000.0,10,79,Middle East & India,Green Ammonia,production,0.1020461443871224,Eurasia_Africa
+p85,17_25_1000000.0,17,25,East Africa,Green Ammonia,production,2.555915487213269,Eurasia_Africa
+p86,-9_17_1000000.0,-9,17,West Africa,Green Ammonia,production,0.3465045949539694,Eurasia_Africa
+p87,-23_-52_1000000.0,-23,-52,S Latin America,Green Ammonia,production,0.3652213165009598,SouthAmerica
+p88,59_-3_1000000.0,59,-3,Western Europe,Green Ammonia,production,0.0162294667799637,Eurasia_Africa
+p89,-15_-72_1000000.0,-15,-72,S Latin America,Green Ammonia,production,0.5073531788122908,SouthAmerica
+p90,-17_31_1000000.0,-17,31,East Africa,Green Ammonia,production,0.2965134933072771,Eurasia_Africa
+p91,16_46_1000000.0,16,46,Red Sea,Green Ammonia,production,1.6857905699965086,Eurasia_Africa
+p92,16_6_1000000.0,16,6,West Africa,Green Ammonia,production,0.5647868831716323,Eurasia_Africa
+p93,45_35_1000000.0,45,35,Mediterranean,Green Ammonia,production,0.0518267027186739,Eurasia_Africa
+p94,7_122_1000000.0,7,122,South-east Asia,Green Ammonia,production,0.0371762280516204,Philippines
+p95,44_-87_1000000.0,44,-87,NA East Coast,Green Ammonia,production,0.0636764919919315,NorthAmerica
+p96,45_-82_1000000.0,45,-82,NA East Coast,Green Ammonia,production,0.0846042259787989,NorthAmerica
+p97,18_-67_1000000.0,18,-67,N Latin America,Green Ammonia,production,0.0429412232689329,NorthAmerica
+p98,30_55_1000000.0,30,55,Middle East & India,Green Ammonia,production,2.011114686200901,Eurasia_Africa
+p99,-23_132_1000000.0,-23,132,East Australia,Green Ammonia,production,1.4678357732912353,Australia
