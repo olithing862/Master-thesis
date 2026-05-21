@@ -5,7 +5,7 @@ from math import radians, sin, cos, sqrt, atan2
 
 # --- Config ---
 MAX_LAND_DISTANCE_KM = 3219  # set to None to disable the cap
-BLOCK_HORMUZ = True  # set to True to block t80
+BLOCK_HORMUZ = False  # set to True to block t80
 HORMUZ_NODES = ["t80"]
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -18,7 +18,7 @@ def haversine(lat1, lon1, lat2, lon2):
     return R * c
 
 # --- Load nodes (with landmass column) ---
-nodes = pd.read_csv("model_work/DataFiles_flexible/nodes.csv").set_index('node_id')
+nodes = pd.read_csv("model_work/DataFiles_flexible/nodes_1.csv").set_index('node_id')
 
 
 # --- Distance-to-cost interpolation (onshore) ---
@@ -106,4 +106,4 @@ print("\nt80 column (i -> t80), finite only:")
 col = c["t80"]
 print(col[np.isfinite(col)].to_string())
 
-c.to_csv("model_work/DataFiles_flexible/cost_matrix_hormuz.csv")
+c.to_csv("model_work/DataFiles_flexible/cost_matrix_100_pnodes.csv")

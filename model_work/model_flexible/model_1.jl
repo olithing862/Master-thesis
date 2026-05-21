@@ -13,11 +13,11 @@ function network_model_flexible(P_fossil,P_green, T, O_steel, O_fert, O_ship, N,
                             fossil_price, co2_tax, conversion,GRB_ENV, min_coverage)
 
     model = Model(() -> Gurobi.Optimizer(GRB_ENV))
+    set_optimizer_attribute(model, "OutputFlag", 0)  # must be first
     set_optimizer_attribute(model, "NumericFocus", 3)
     set_optimizer_attribute(model, "ScaleFlag", 2)
     set_optimizer_attribute(model, "BarHomogeneous", 1)
-    set_optimizer_attribute(model, "TimeLimit", 180)
-    set_optimizer_attribute(model, "OutputFlag", 0)   # silence per-scenario logs if you want
+    set_optimizer_attribute(model, "TimeLimit", 180)  # silence per-scenario logs if you want
 
     # Full offtake set (union of rigid and shipping candidates)
     O = union(O_steel,O_fert,O_ship)

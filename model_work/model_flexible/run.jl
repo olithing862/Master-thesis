@@ -16,9 +16,9 @@ using Gurobi
 # ----------------------------
 # Load input data
 # ----------------------------
-nodes          = CSV.read("model_work/DataFiles_flexible/nodes.csv", DataFrame)
-costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_fossil.csv", DataFrame, missingstring=["inf","Inf",""])
-production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes.csv", DataFrame)
+nodes          = CSV.read("model_work/DataFiles_flexible/nodes_1.csv", DataFrame)
+costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_100_pnodes.csv", DataFrame, missingstring=["inf","Inf",""])
+production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes_100.csv", DataFrame)
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_flexible/prodcost.csv", DataFrame)
@@ -55,30 +55,45 @@ cp("model_work/DataFiles_flexible/base_map.csv", joinpath(results_dir, "base_map
 if !isdefined(Main, :GRB_ENV)
     const GRB_ENV = Gurobi.Env()
 end
+
 for scen in eachrow(scenarios)
     println("\n==============================")
     println("Running scenario: ", scen.scenario_id)
     println("==============================")
 
+    t1 = time()
     N, P, P_fossil, P_green, T, O, O_Steel, O_fert, O_ship, costs,
-    D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production,min_coverage =
+    D, D_ship, MaxP, Prodcost, fossil_price, co2_tax, conversion, production, min_coverage =
         DataPrep.generate_data(total_capacity, nodes, costs_df, production_df, demand_df,
             globald, productioncost, penalty_df, config_df, scen)
+    println("Data prep: ", round(time()-t1, digits=1), "s")
 
     scen_dir = joinpath(results_dir, scen.scenario_id)
     mkpath(scen_dir)
 
+    t2 = time()
     model, f, q, u, prod, valid_edges =
         Model_flexible.network_model_flexible(
             P_fossil, P_green, T, O_Steel, O_fert, O_ship, N,
             costs, MaxP, Prodcost,
-            D, D_ship, fossil_price, co2_tax, conversion,GRB_ENV,min_coverage
+            D, D_ship, fossil_price, co2_tax, conversion, GRB_ENV, min_coverage
         )
+    println("Model build: ", round(time()-t2, digits=1), "s")
 
+    t3 = time()
     optimize!(model)
+    println("Solve: ", round(time()-t3, digits=1), "s")
 
     status = termination_status(model)
-    if status ∉ (MOI.OPTIMAL, MOI.LOCALLY_SOLVED)
+    gap = try
+        MOI.get(model, MOI.RelativeGap())
+    catch
+        NaN
+    end
+    println("Status: ", status)
+    println("MIP gap: ", isnan(gap) ? "unavailable" : string(round(gap * 100, digits=2), "%"))
+
+    if status ∉ (MOI.OPTIMAL, MOI.LOCALLY_SOLVED, MOI.TIME_LIMIT)
         println("Scenario ", scen.scenario_id, " skipped — status: ", status)
         continue
     end
@@ -113,5 +128,18 @@ for scen in eachrow(scenarios)
         D_ship   = D_ship,
         MaxP     = MaxP
     )
+
+    t4 = time()
     save.save_results(f, prod, q, u, valid_edges, data, scen_dir)
+    println("Save: ", round(time()-t4, digits=1), "s")
+
+    open(joinpath(scen_dir, "solver_info.txt"), "w") do io
+        println(io, "Status: ", status)
+        println(io, "MIP gap: ", isnan(gap) ? "unavailable" : string(round(gap * 100, digits=2), "%"))
+        println(io, "Objective: ", objective_value(model))
+        println(io, "Data prep: ", round(t2-t1, digits=1), "s")
+        println(io, "Model build: ", round(t3-t2, digits=1), "s")
+        println(io, "Solve: ", round(t3-t3, digits=1), "s")
+        println(io, "Save: ", round(time()-t4, digits=1), "s")
+    end
 end
