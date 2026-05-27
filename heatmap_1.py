@@ -220,7 +220,7 @@ def plot_summary_table(results_base_dir, scenarios_csv, nodes_csv, save_dir=None
     nodes_df  = pd.read_csv(nodes_csv)[["node_id", "industry"]]
     nodes_df["node_id"] = nodes_df["node_id"].astype(str)
 
-    scenario_order = [f"S{i}" for i in range(1, 10)]
+    scenario_order = scenarios["scenario_id"].unique().tolist()
     scenarios = scenarios[scenarios["scenario_id"].isin(scenario_order)]
     scenarios["_order"] = scenarios["scenario_id"].map({s: i for i, s in enumerate(scenario_order)})
     scenarios = scenarios.sort_values("_order")
@@ -318,13 +318,19 @@ def plot_summary_table(results_base_dir, scenarios_csv, nodes_csv, save_dir=None
 
     plt.show()
 
-
-plot_industry_allocation(
-    results_base_dir = "Results_final/base_case",
-    scenarios_csv    = "Results_final/base_case/Scenario.csv",
+plot_summary_table(
+    results_base_dir = "Results_final/fixed_steel",
+    scenarios_csv    = "Results_final/fixed_steel/Scenario.csv",
     nodes_csv        = "model_work/DataFiles_flexible/nodes.csv",
-    save_dir         = "Results_final/base_case"
+    save_dir         = "Results_final/fixed_steel"
 )
+
+# plot_industry_allocation(
+#     results_base_dir = "Results_final/fixed_steel",
+#     scenarios_csv    = "Results_final/fixed_steel/Scenario.csv",
+#     nodes_csv        = "model_work/DataFiles_flexible/nodes_1.csv",
+#     save_dir         = "Results_final/fixed_steel"
+# )
 # plot_unmet_base(
 #     results_base_dir = "Results_final/base_case",
 #     scenarios_csv    = "Results_final/base_case/Scenario.csv",

@@ -210,10 +210,10 @@ def plot_region_coverage(nodes_csv, demand_csv, output_path,
 if __name__ == "__main__":
     from datetime import date
     today = "2026-04-23_1"
-    capacity_levels = [8, 700, 1100]
+    capacity_levels = [1400]
 
     for cap in capacity_levels:
-        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/{today}")
+        results_dir = Path(f"Results/sensitivity_base/capacity_{cap}/2026-05-20")
 
         prod_csv   = pd.read_csv(results_dir / "results_production.csv")
         demand_csv = pd.read_csv(results_dir / "results_demand.csv")
