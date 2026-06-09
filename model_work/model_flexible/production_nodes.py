@@ -3,7 +3,7 @@ sys.path.append("/Users/oliviathingvad/Master-thesis/model_work")
 import pandas as pd
 import folium
 
-prod_df = pd.read_csv("/Users/oliviathingvad/Master-thesis/model_work/DataFiles_flexible/production_nodes_100.csv")
+prod_df = pd.read_csv("/Users/oliviathingvad/Master-thesis/model_work/DataFiles_flexible/production_nodes_50.csv")
 
 def assign_region(lat, lon): 
     if -45 < lat < -9 and 112 < lon < 129:
@@ -85,7 +85,7 @@ print(prod_df["landmass"].value_counts())
 prod_df["region"] = prod_df.apply(lambda r: assign_region(r["lat"], r["lon"]), axis=1)
 print(prod_df["region"].value_counts())
 print(prod_df[prod_df["region"] == "Other"][["node_id", "lat", "lon"]])
-prod_df.to_csv("/Users/oliviathingvad/Master-thesis/model_work/DataFiles_flexible/production_nodes_100.csv", index=False)
+prod_df.to_csv("/Users/oliviathingvad/Master-thesis/model_work/DataFiles_flexible/production_nodes_50_1.csv", index=False)
 print("Saved updated nodes")
 # --- Plot ---
 m = folium.Map(location=[20, 0], zoom_start=2, tiles="CartoDB positron")
@@ -107,7 +107,7 @@ for _, row in prod_df.iterrows():
 m.save("production_nodes.html")
 print("Saved to production_nodes.html")
 
-nodes_df = pd.read_csv("/Users/oliviathingvad/Master-thesis/model_work/Datafiles_flexible/nodes_1.csv")
+nodes_df = pd.read_csv("/Users/oliviathingvad/Master-thesis/model_work/Datafiles_flexible/nodes_2.csv")
 
 # Keep only columns matching nodes format
 prod_df = prod_df[["node_id", "Location", "lat", "lon", "region", "industry", "type", "landmass"]]
@@ -122,6 +122,6 @@ fossil_nodes["industry"] = "Fossil"
 
 # Combine all
 combined = pd.concat([nodes_df, green_nodes, fossil_nodes], ignore_index=True)
-combined.to_csv("/Users/oliviathingvad/Master-thesis/model_work/Datafiles_flexible/nodes_1.csv", index=False)
+combined.to_csv("/Users/oliviathingvad/Master-thesis/model_work/Datafiles_flexible/nodes_2.csv", index=False)
 print(f"Total nodes: {len(combined)}")
 print(combined["type"].value_counts())

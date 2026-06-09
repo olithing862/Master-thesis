@@ -1,0 +1,7 @@
+Status: OPTIMAL
+MIP gap: unavailable
+Objective: 712320.1271308835
+Data prep: 0.4s
+Model build: 28.7s
+Solve: 0.0s
+Save: 99.4s

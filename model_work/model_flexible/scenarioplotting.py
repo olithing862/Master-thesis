@@ -4,8 +4,8 @@ plot_shippingtax.py
 Three thesis plots for the 45-scenario shipping CO₂ tax analysis.
 
 Usage:
-    python scenarioplotting.py --results /Users/oliviathingvad/Master-thesis/Results/flexible_demand/shippingtax_case
-    python scenarioplotting.py --results /Users/oliviathingvad/Master-thesis/Results/flexible_demand/shippingtax_case --cap high --cost medium
+    python scenarioplotting.py --results /Users/oliviathingvad/Master-thesis/Results_final/shipping_tax
+    python scenarioplotting.py --results /Users/oliviathingvad/Master-thesis/Results_final/shipping_tax --cap high --cost low
 """
 
 import argparse
@@ -44,6 +44,8 @@ def load_all_scenarios(results_dir, scenarios):
 
         ship = pd.read_csv(os.path.join(folder, "results_demand_ship_aggregate.csv"))
         dem  = pd.read_csv(os.path.join(folder, "results_demand.csv"))
+        prod = pd.read_csv(os.path.join(folder, "results_production.csv"))
+        prod = prod[~prod["node_id"].astype(str).str.startswith("pf")]
 
         steel_del = dem.loc[dem.node_id.str.startswith("oft_steel"), "delivered"].sum()
         steel_dem = dem.loc[dem.node_id.str.startswith("oft_steel"), "demand"].sum()
@@ -64,6 +66,7 @@ def load_all_scenarios(results_dir, scenarios):
             "fert_demand"      : fert_dem,
             "fert_delivered"   : fert_del,
             "fert_served_pct"  : 100 * fert_del / fert_dem  if fert_dem  > 0 else 0,
+            "prod_capacity"    : prod["capacity"].sum(),
         })
 
     df = pd.DataFrame(records)
@@ -80,17 +83,17 @@ def plot1_heatmap(df, outpath):
     cmap  = LinearSegmentedColormap.from_list(
         "green_pen", ["#f7f7f7", "#c6e8c5", "#4a7c59"], N=256
     )
- 
+
     from matplotlib.gridspec import GridSpec
     fig = plt.figure(figsize=(9, 6))
     fig.subplots_adjust(left=0.10, right=0.88, top=0.82, bottom=0.12, hspace=0.55)
- 
+
     gs_top = GridSpec(1, 2, figure=fig, left=0.195, right=0.785, top=0.82, bottom=0.50, wspace=0.08)
     gs_bot = GridSpec(1, 3, figure=fig, left=0.10,  right=0.88,  top=0.42, bottom=0.12, wspace=0.08)
- 
+
     top_axes = [fig.add_subplot(gs_top[0, i]) for i in range(2)]
     bot_axes = [fig.add_subplot(gs_bot[0, i]) for i in range(3)]
- 
+
     im = None
     for axes_row, row_taxes in [(top_axes, taxes[:2]), (bot_axes, taxes[2:])]:
         for ci, (ax, tax) in enumerate(zip(axes_row, row_taxes)):
@@ -100,14 +103,14 @@ def plot1_heatmap(df, outpath):
                 .reindex(index=CAP_ORDER, columns=COST_ORDER)
             )
             im = ax.imshow(pivot.values, vmin=0, vmax=100, cmap=cmap, aspect="auto")
- 
+
             for r in range(3):
                 for c in range(3):
                     val   = pivot.values[r, c]
                     color = "white" if val > 60 else "#333333"
                     ax.text(c, r, f"{val:.0f}%", ha="center", va="center",
                             fontsize=8, color=color, fontweight="bold")
- 
+
             ax.set_xticks([0, 1, 2])
             ax.set_xticklabels([COST_LABEL[k] for k in COST_ORDER],
                                fontsize=7.5, rotation=30, ha="right")
@@ -117,12 +120,12 @@ def plot1_heatmap(df, outpath):
             else:
                 ax.set_yticklabels([])
             ax.set_title(f"CO₂ tax  \${tax}/t", fontsize=8.5, pad=6)
- 
+
     cbar_ax = fig.add_axes([0.90, 0.12, 0.022, 0.70])
     cb = fig.colorbar(im, cax=cbar_ax)
     cb.set_label("Green ammonia\nshare (%)", fontsize=8)
     cb.ax.tick_params(labelsize=7.5)
- 
+
     fig.text(0.49, 0.95, "Green ammonia share of shipping demand",
              ha="center", fontsize=10, fontweight="bold")
     fig.text(0.49, 0.91, "by production capacity, cost, and CO₂ tax",
@@ -130,10 +133,12 @@ def plot1_heatmap(df, outpath):
     fig.text(0.49, 0.02, "Production cost level", ha="center", fontsize=8.5)
     fig.text(0.02, 0.50, "Production capacity level", va="center",
              rotation="vertical", fontsize=8.5)
- 
+
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved → {outpath}")
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # PLOT 2  ·  3×3 line grid: green shipping % vs CO₂ tax
 # ─────────────────────────────────────────────────────────────────────────────
@@ -158,31 +163,32 @@ def plot2_linegrid(df, outpath):
             ax.set_xlim(taxes[0] - 20, taxes[-1] + 20)
             ax.yaxis.set_major_locator(mticker.MultipleLocator(50))
             ax.set_xticks(taxes)
-            ax.tick_params(labelsize=7)
+            ax.tick_params(labelsize=10)
             ax.spines[["top", "right"]].set_visible(False)
             ax.grid(axis="y", linewidth=0.35, alpha=0.5)
 
             if ri == 0:
-                ax.set_title(COST_LABEL[cost], fontsize=8.5, pad=6)
+                ax.set_title(COST_LABEL[cost], fontsize=12, pad=6)
             if ci == 2:
                 ax.annotate(CAP_LABEL[cap], xy=(1.05, 0.5), xycoords="axes fraction",
-                            fontsize=8.5, va="center", rotation=270)
+                            fontsize=12, va="center", rotation=270)
 
-    fig.text(0.53, 0.02, "CO₂ tax on shipping ($/t NH₃)", ha="center", fontsize=9)
+    fig.text(0.53, 0.02, "CO₂ tax on shipping ($/t NH₃)", ha="center", fontsize=12)
     fig.text(0.02, 0.50, "Green ammonia share (%)", va="center",
-             rotation="vertical", fontsize=9)
+             rotation="vertical", fontsize=12)
     fig.text(0.53, 0.95, "Green ammonia share for shipping by production scenario and CO₂ tax",
-             ha="center", fontsize=10, fontweight="bold")
+             ha="center", fontsize=12, fontweight="bold")
     fig.text(0.53, 0.91, "dashed line = 50% threshold",
-             ha="center", fontsize=8, color="#666")
+             ha="center", fontsize=12, color="#666")
 
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved → {outpath}")
 
+
 def plot2_linegrid_nolow(df, outpath):
     taxes = sorted(df["co2_tax_shipping"].unique())
-    cap_order_plot = ["medium", "high"]  # exclude low
+    cap_order_plot = ["medium", "high"]
 
     fig, axes = plt.subplots(2, 3, figsize=(8, 4.5), sharex=True, sharey=True)
     fig.subplots_adjust(hspace=0.12, wspace=0.08, top=0.85, left=0.10, right=0.97, bottom=0.12)
@@ -201,27 +207,29 @@ def plot2_linegrid_nolow(df, outpath):
             ax.set_xlim(taxes[0] - 20, taxes[-1] + 20)
             ax.yaxis.set_major_locator(mticker.MultipleLocator(50))
             ax.set_xticks(taxes)
-            ax.tick_params(labelsize=7)
+            ax.tick_params(labelsize=10)
             ax.spines[["top", "right"]].set_visible(False)
             ax.grid(axis="y", linewidth=0.35, alpha=0.5)
 
             if ri == 0:
-                ax.set_title(COST_LABEL[cost], fontsize=8.5, pad=6)
+                ax.set_title(COST_LABEL[cost], fontsize=12, pad=6)
             if ci == 2:
                 ax.annotate(CAP_LABEL[cap], xy=(1.05, 0.5), xycoords="axes fraction",
-                            fontsize=8.5, va="center", rotation=270)
-                
-    fig.text(0.53, 0.02, "CO₂ tax on shipping ($/t NH₃)", ha="center", fontsize=9)
+                            fontsize=12, va="center", rotation=270)
+
+    fig.text(0.53, 0.02, "CO₂ tax on shipping ($/t NH₃)", ha="center", fontsize=12)
     fig.text(0.02, 0.50, "Green ammonia share (%)", va="center",
-            rotation="vertical", fontsize=9)
+             rotation="vertical", fontsize=12)
     fig.text(0.53, 0.95, "Green ammonia share for shipping by production scenario and CO₂ tax",
-            ha="center", fontsize=10, fontweight="bold")
+             ha="center", fontsize=12, fontweight="bold")
     fig.text(0.53, 0.91, "dashed line = 50% threshold",
-            ha="center", fontsize=8, color="#666")
+             ha="center", fontsize=12, color="#666")
 
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved → {outpath}")
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # PLOT 3  ·  Sector allocation under rising CO₂ tax
 # ─────────────────────────────────────────────────────────────────────────────
@@ -248,7 +256,7 @@ def plot3_sector_allocation(df, outpath, cap="medium", cost="low"):
     fig.subplots_adjust(wspace=0.38, top=0.68, bottom=0.14, left=0.07, right=0.97)
 
     def stacked_bars(ax, green_vals, fossil_vals, title, color):
-        ax.bar(x, green_vals,  width=0.55, color=color,        zorder=3)
+        ax.bar(x, green_vals,  width=0.55, color=color,       zorder=3)
         ax.bar(x, fossil_vals, width=0.55, color=color, alpha=0.30,
                bottom=green_vals, zorder=3)
         ax.set_xticks(x)
@@ -288,19 +296,16 @@ def plot3_sector_allocation(df, outpath, cap="medium", cost="low"):
     fig.legend(handles=handles, loc="upper center", ncol=3, fontsize=8,
                bbox_to_anchor=(0.5, 0.995), frameon=False, columnspacing=1.0)
 
-    # fig.text(
-    #     0.53, 0.84,
-    #     f"Sector supply mix under rising CO₂ shipping tax  ·  "
-    #     f"{CAP_LABEL[cap].lower()} capacity, {COST_LABEL[cost].lower()}",
-    #     ha="center", fontsize=9.5, fontweight="bold"
-    # )
-
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved → {outpath}")
 
 
-def plot4_demand_coverage(df, outpath, cap="medium", cost="low"):
+# ─────────────────────────────────────────────────────────────────────────────
+# PLOT 4  ·  Global demand coverage under rising CO₂ tax
+# ─────────────────────────────────────────────────────────────────────────────
+
+def plot4_demand_coverage(df, outpath, cap="high", cost="low"):
     sub = df[(df["cap_factor"] == cap) & (df["cost_factor"] == cost)].sort_values(
         "co2_tax_shipping"
     )
@@ -322,18 +327,22 @@ def plot4_demand_coverage(df, outpath, cap="medium", cost="low"):
     fig.subplots_adjust(top=0.91, bottom=0.14, left=0.12, right=0.97)
 
     width = 0.55
-    ax.bar(x, steel_pct, width=width, color=STEEL,     zorder=3, label="Steel")
-    ax.bar(x, fert_pct,  width=width, color=FERT,      zorder=3, label="Fertiliser",
-           bottom=steel_pct)
-    ax.bar(x, ship_pct,  width=width, color=SHIP,      zorder=3, label="Shipping",
-           bottom=steel_pct + fert_pct)
-    ax.bar(x, unmet_pct, width=width, color="#cccccc", zorder=3, label="Unmet demand",
+    ax.bar(x, steel_pct, width=width, color=STEEL,     zorder=3)
+    ax.bar(x, fert_pct,  width=width, color=FERT,      zorder=3, bottom=steel_pct)
+    ax.bar(x, ship_pct,  width=width, color=SHIP,      zorder=3, bottom=steel_pct + fert_pct)
+    ax.bar(x, unmet_pct, width=width, color="#cccccc", zorder=3,
            bottom=steel_pct + fert_pct + ship_pct)
 
+    # production capacity line
+    cap_pct = 100 * sub["prod_capacity"].values[0] / total_demand[0]
+    ax.axhline(cap_pct, color="black", linestyle="--", linewidth=1.0, zorder=4)
+    ax.text(len(taxes) - 0.5, cap_pct + 1.0, f"Max green supply ({cap_pct:.0f}% of demand)",
+            ha="right", va="bottom", fontsize=7.5, color="black")
+
     # percentage labels inside each segment
-    bottoms = [np.zeros(len(taxes)), steel_pct, steel_pct + fert_pct,
-               steel_pct + fert_pct + ship_pct]
-    vals    = [steel_pct, fert_pct, ship_pct, unmet_pct]
+    bottoms      = [np.zeros(len(taxes)), steel_pct, steel_pct + fert_pct,
+                    steel_pct + fert_pct + ship_pct]
+    vals         = [steel_pct, fert_pct, ship_pct, unmet_pct]
     colors_label = ["white", "white", "white", "#666"]
     for bot, val, lc in zip(bottoms, vals, colors_label):
         for i, (b, v) in enumerate(zip(bot, val)):
@@ -351,26 +360,76 @@ def plot4_demand_coverage(df, outpath, cap="medium", cost="low"):
     ax.grid(axis="y", linewidth=0.4, alpha=0.5, zorder=0)
 
     from matplotlib.patches import Patch
+    from matplotlib.lines import Line2D
     handles = [
         Patch(facecolor=STEEL,     label="Steel — green NH₃"),
         Patch(facecolor=FERT,      label="Fertiliser — green NH₃"),
         Patch(facecolor=SHIP,      label="Shipping — green NH₃"),
-        Patch(facecolor="#cccccc", label="Unmet demand"),
+        Patch(facecolor="#cccccc", label="Unmet green demand")
     ]
     fig.legend(handles=handles, loc="upper center", ncol=2, fontsize=8,
                bbox_to_anchor=(0.5, 0.99), frameon=False)
-
-    # fig.text(
-    #     0.53, 0.82,
-    #     f"Global demand coverage under rising CO₂ shipping tax  ·  "
-    #     f"{CAP_LABEL[cap].lower()} capacity, {COST_LABEL[cost].lower()}",
-    #     ha="center", fontsize=9, fontweight="bold"
-    # )
 
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved → {outpath}")
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PLOT 2c  ·  Two-panel contrasting scenarios
+# ─────────────────────────────────────────────────────────────────────────────
+
+def plot2_twopanel(df, outpath,
+                   panel_a=("high", "low"),
+                   panel_b=("high", "high")):
+    taxes = sorted(df["co2_tax_shipping"].unique())
+
+    fig, axes = plt.subplots(1, 2, figsize=(8, 4), sharey=False)
+    fig.subplots_adjust(wspace=0.08, top=0.78, bottom=0.14, left=0.12, right=0.97)
+
+    panels    = [panel_a, panel_b]
+    subtitles = [f"{CAP_LABEL[p[0]]}, {COST_LABEL[p[1]].lower()}" for p in panels]
+
+    for ax, (cap, cost), subtitle in zip(axes, panels, subtitles):
+        sub = df[
+            (df["cap_factor"] == cap) & (df["cost_factor"] == cost)
+        ].sort_values("co2_tax_shipping")
+
+        ax.plot(sub["co2_tax_shipping"], sub["ship_served_pct"],
+                color=SHIP,  linewidth=2, marker="o", markersize=5, zorder=3)
+        ax.plot(sub["co2_tax_shipping"], sub["steel_served_pct"],
+                color=STEEL, linewidth=2, marker="o", markersize=5, zorder=3)
+        ax.plot(sub["co2_tax_shipping"], sub["fert_served_pct"],
+                color=FERT,  linewidth=2, marker="o", markersize=5, zorder=3)
+
+        ax.set_ylim(-5, 105)
+        ax.set_xlim(taxes[0] - 20, taxes[-1] + 20)
+        ax.yaxis.set_major_locator(mticker.MultipleLocator(25))
+        ax.set_xticks(taxes)
+        ax.set_xticklabels([f"${t}" for t in taxes], fontsize=8)
+        ax.tick_params(labelsize=8)
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.grid(axis="y", linewidth=0.35, alpha=0.5)
+        ax.set_title(subtitle, fontsize=9.5, pad=8)
+        ax.set_xlabel("CO\u2082 tax on shipping ($/t NH\u2083)", fontsize=9)
+
+    axes[0].set_ylabel("Green ammonia coverage (%)", fontsize=9)
+    axes[0].set_yticks([0, 25, 50, 75, 100])
+    axes[0].set_yticklabels(["0", "25", "50", "75", "100"], fontsize=8)
+    axes[1].set_yticklabels([])
+
+    from matplotlib.lines import Line2D
+    legend_handles = [
+        Line2D([0], [0], color=SHIP,  linewidth=2, marker="o", markersize=5, label="Shipping"),
+        Line2D([0], [0], color=STEEL, linewidth=2, marker="o", markersize=5, label="Steel"),
+        Line2D([0], [0], color=FERT,  linewidth=2, marker="o", markersize=5, label="Fertiliser"),
+    ]
+    fig.legend(handles=legend_handles, loc="upper center", ncol=3, fontsize=9,
+               bbox_to_anchor=(0.53, 0.99), frameon=False)
+
+    fig.savefig(outpath, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  saved → {outpath}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -380,17 +439,17 @@ def plot4_demand_coverage(df, outpath, cap="medium", cost="low"):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--results",      required=True,
-                        help="Path to shippingtax_case directory")
+                        help="Path to results directory")
     parser.add_argument("--scenario-csv", default=None,
                         help="Path to Scenario.csv (default: <results>/Scenario.csv)")
     parser.add_argument("--outdir",       default=None,
                         help="Output directory (default: <results>)")
-    parser.add_argument("--cap",          default="medium",
+    parser.add_argument("--cap",          default="high",
                         choices=["low", "medium", "high"],
-                        help="Capacity level for plot 3 (default: medium)")
+                        help="Capacity level for plots 3 and 4 (default: high)")
     parser.add_argument("--cost",         default="low",
                         choices=["low", "medium", "high"],
-                        help="Cost level for plot 3 (default: low)")
+                        help="Cost level for plots 3 and 4 (default: low)")
     args = parser.parse_args()
 
     results_dir  = args.results
@@ -408,8 +467,8 @@ def main():
     print("\nPlot 1: shipping share heatmap")
     plot1_heatmap(df, os.path.join(outdir, "plot1_shipping_share_heatmap.png"))
 
-    print("Plot 2: 3×3 line grid")
-    plot2_linegrid(df, os.path.join(outdir, "plot2_shipping_share_lines.png"))
+    print("Plot 2: 2×3 line grid (medium + high cap)")
+    plot2_linegrid_nolow(df, os.path.join(outdir, "plot2_shipping_share_lines.png"))
 
     print(f"Plot 3: sector allocation (cap={args.cap}, cost={args.cost})")
     plot3_sector_allocation(
@@ -417,11 +476,20 @@ def main():
         cap=args.cap, cost=args.cost
     )
 
+    print("Plot 2c: two-panel contrasting scenarios")
+    plot2_twopanel(
+        df,
+        os.path.join(outdir, "plot2_twopanel.png"),
+        panel_a=("high", "low"),
+        panel_b=("low", "low")
+    )
+
     print(f"Plot 4: global demand coverage (cap={args.cap}, cost={args.cost})")
     plot4_demand_coverage(
         df, os.path.join(outdir, f"plot4_demand_coverage_{args.cap}_{args.cost}.png"),
         cap=args.cap, cost=args.cost
     )
+
     print("\nDone.")
 
 

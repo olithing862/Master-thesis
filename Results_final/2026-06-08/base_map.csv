@@ -1,0 +1,7 @@
+type,level,factor
+cost,low,0.25
+cost,medium,0.5
+cost,high,0.7
+cap,low,1.0
+cap,medium,2.1
+cap,high,3.9

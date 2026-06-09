@@ -16,9 +16,9 @@ using Gurobi
 # ----------------------------
 # Load input data
 # ----------------------------
-nodes          = CSV.read("model_work/DataFiles_flexible/nodes_1.csv", DataFrame)
-costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_100_pnodes.csv", DataFrame, missingstring=["inf","Inf",""])
-production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes_100.csv", DataFrame)
+nodes          = CSV.read("model_work/DataFiles_flexible/nodes.csv", DataFrame)
+costs_df       = CSV.read("model_work/DataFiles_flexible/cost_matrix_hormuz3.csv", DataFrame, missingstring=["inf","Inf",""])
+production_df  = CSV.read("model_work/DataFiles_flexible/production_nodes_nodes.csv", DataFrame)
 demand_df      = CSV.read("model_work/DataFiles_flexible/demand_nodes.csv", DataFrame)
 globald        = CSV.read("model_work/DataFiles_flexible/2030_demand.csv", DataFrame)
 productioncost = CSV.read("model_work/DataFiles_flexible/prodcost.csv", DataFrame)

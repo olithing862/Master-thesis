@@ -72,7 +72,7 @@ function save_results(f, prod, q, u, valid_edges, P, O, N, model, results_dir, M
 end
 
 # --- Capacity sweep ---
-capacity_levels = [8, 700, 1400]
+capacity_levels = [8, 1100]
 summary_rows = []
 
 for total_capacity in capacity_levels
@@ -110,7 +110,8 @@ for total_capacity in capacity_levels
         total_unmet     = total_unmet,
     ))
 
-    results_dir = next_results_dir("Results/sensitivity_base/capacity_$(total_capacity)")
+    results_dir = "/Users/oliviathingvad/Master-thesis/Results_final/base_model1/capacity_$(total_capacity)"
+    mkpath(results_dir)
     save_results(f, prod, q, u, valid_edges, P, O, N, model, results_dir, MaxP, Demand)
 end
 

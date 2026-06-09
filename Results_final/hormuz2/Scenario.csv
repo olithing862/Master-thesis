@@ -1,0 +1,4 @@
+scenario_id,track,cap_factor,cost_factor,co2_tax_region_name,co2_tax_region,co2_tax_shipping,fossil_price_factor,demand_factor_Steel,demand_factor_Fertiliser,demand_factor_Shipping,min_coverage_steel,min_coverage_fertiliser,min_coverage_shipping
+H1-S7,Hormuz,high,high,none,0,300,1.0,1.0,1.0,1.0,0.5,0.0,0.0
+H1-S8,Hormuz,high,medium,none,0,300,1.0,1.0,1.0,1.0,0.5,0.0,0.0
+H1-S9,Hormuz,high,low,none,0,300,1.0,1.0,1.0,1.0,0.5,0.0,0.0
