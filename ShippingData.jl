@@ -5,15 +5,14 @@ using Random
 
 function generate_data(; seed=42)
 
-    nodes = CSV.read("nodes.csv", DataFrame)
-    edges = CSV.read("edges_complete_network1.csv", DataFrame)
-    costs = CSV.read("shippingcost.csv", DataFrame)
-    production = CSV.read("production_nh3.csv", DataFrame)
-    demand = CSV.read("demand_nh3.csv", DataFrame)
+    nodes = CSV.read("model_work_0904/nodes.csv", DataFrame)
+    costs = CSV.read("model_work_0904/shippingcost.csv", DataFrame)
+
 
     # ----------------------------
     # Sets
     # ----------------------------
+
     N = unique(nodes.node_id)
 
     P = filter(x -> startswith(x, "ps"), N)
@@ -58,8 +57,7 @@ function generate_data(; seed=42)
     end
 
     Random.seed!(seed)
-    #make demand with the real data but 5% steel demand
-    Demand = Dict(row.node_id => row.demand*0.05 for row in eachrow(demand))
+    Demand = Dict(row.node_id => row.demand for row in eachrow(demand))
     Prodcost = Dict(row.node_id => row.prod_cost for row in eachrow(production))
 
     maxP = Dict(row.node_id => row.prod_cap for row in eachrow(production))
@@ -67,9 +65,8 @@ function generate_data(; seed=42)
     #deamnd on random
     Demand_rand = Dict(o => rand(100:500) for o in O)
 
-    penalty = 10000000
+    penalty = 10000
 
-    truck_cost_per_km = 0.08   # example €/ton/km (choose realistic value)
     truckcost = [5, 15.0, 20.0, 25, 30,40] # example cost per ton based on distance brackets
     
     return N, P, T, O, A,
@@ -79,7 +76,6 @@ function generate_data(; seed=42)
            region_of,
            mode_of,
            distance_of,
-           truck_cost_per_km,
             truckcost,Demand_rand,Prodcost
 end
 end # module

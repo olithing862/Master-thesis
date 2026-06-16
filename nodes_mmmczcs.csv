@@ -1,0 +1,26 @@
+node_id,Location,Latitude,Longitude
+oft_f1,China Hubei,30.67,111.37
+oft_f2,China Yunnan,25.02,102.74
+oft_f3,China Sichuan,30.4,103.7
+oft_f4,Norway Porsgrunn ,59.13,9.66
+oft_f5,Germany Ludwigshafen,49.49,8.41
+oft_f6,Belgium Antwerpen,51.18,4.41
+oft_f7,USA Texas,31.5,-91.17
+oft_f8,Canada Alberta,53.69,-113.6
+oft_f9,Qatar Mesaieed,24.98,51.54
+oft_f10,Uttar Pradesh India,27.37,79.45
+oft_f11,Gujarat India,21.97,73.06
+oft_f12,Odisha India,20.94,85.17
+oft_f13,Bontang Indonesia,0.18,117.48
+oft_steel1,China Hubei,31.15,114.77
+oft_steel2,China Jiangsu,32.93,119.47
+oft_steel3,China Shandong ,35.31,119.40
+oft_steel4,South korea Pohang ,35.95,129.31
+oft_steel5,Japan,35.33,139.93
+oft_steel6,India Odisha,21.71,83.295
+oft_steel7,India Karnataka,14.17,75.85
+oft_steel8,Germany Duisberg,51.50,6.78
+oft_steel9,Netherlands Ijmuiden,52.46,4.59
+oft_steel10,USA Alabama,30.819058,-88.14
+oft_steel11,USA Michigan,42.345372,-83.036646
+oft_steel12, Brazil Rio de janeiro, -22.851524, -44.108331

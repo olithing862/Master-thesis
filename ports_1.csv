@@ -1,0 +1,175 @@
+Main Port Name,Country Code,Latitude,Longitude,Facilities - Liquid Bulk,node_id
+Houston,United States,29.75,-95.28333300000001,Unknown,1
+Dalian,China,38.916667,121.666667,Unknown,2
+Livorno,Italy,43.542,10.29,Unknown,3
+Norfolk,United States,36.85,-76.29999999999998,Unknown,4
+Toulon,France,43.1,5.916667,Unknown,5
+Taranto,Italy,40.466667,17.2,Unknown,6
+Philadelphia,United States,39.95,-75.13333299999998,Unknown,7
+Rio De Janeiro,Brazil,-22.9,-43.166667,Unknown,8
+Alger,Algeria,36.766667,3.066667,Unknown,9
+Civitavecchia,Italy,42.102,11.771,Unknown,10
+Piraievs,Greece,37.933333,23.65,Unknown,11
+Rijeka Luka,Croatia,45.333333,14.433333,Unknown,12
+Napoli,Italy,40.833,14.275,Unknown,13
+Siracusa,Italy,37.05,15.283333,Unknown,14
+Porto Di Lido-Venezia,Italy,45.416667,12.433333,Unknown,15
+Casablanca,Morocco,33.6,-7.616667,Unknown,16
+Lisboa,Portugal,38.7,-9.166667,Unknown,17
+Agadir,Morocco,30.433333,-9.633333,Unknown,18
+Tapis Marine Terminal A,Malaysia,5.516667,105.016667,Unknown,19
+Baltimore,United States,39.266667,-76.58333299999998,Unknown,20
+Chester,United States,39.85,-75.34999999999998,Unknown,21
+Keppel - (East Singapore),Singapore,1.283333,103.85,Unknown,22
+Galveston,United States,29.316667,-94.78333300000001,Unknown,23
+Oakland,United States,37.816667,-122.333333,Unknown,24
+New Orleans,United States,29.95,-90.04999999999998,Unknown,25
+Mobile,United States,30.683333,-88.116667,Unknown,26
+San Francisco,United States,37.816667,-122.416667,Unknown,27
+New York City,United States,40.7,-74.016667,Unknown,28
+Brooklyn,United States,40.666667,-74.016667,Unknown,29
+Nagasaki,Japan,32.716667,129.85,Unknown,30
+Kobe,Japan,34.65,135.183333,Unknown,31
+Cebu,Philippines,10.3,123.9,Unknown,32
+As Suways,Egypt,29.966667,32.55,Unknown,33
+Durban,South Africa,-29.866667,31.066667,Yes,34
+Oran,Algeria,35.7,-0.633333,Unknown,35
+Izmir,Turkey,38.433333,27.133333,Unknown,36
+Jakarta,Indonesia,-6.1,106.883333,Unknown,37
+Brindisi,Italy,40.65,17.983333,Unknown,38
+La Spezia,Italy,44.1,9.833333,Unknown,39
+Genova,Italy,44.398,8.922,Unknown,40
+Barcelona,Spain,41.35,2.166667,Unknown,41
+Boston,United States,42.35,-71.05,Unknown,42
+Loop Terminal,United States,28.883333,-90.016667,Unknown,43
+Montreal,Canada,45.516667,-73.54999999999998,Unknown,44
+Gioia Tauro,Italy,38.444,15.89,Unknown,45
+Mikawa,Japan,34.716667,137.3,Unknown,46
+Onomichi-Itozaki,Japan,34.383333,133.166667,Unknown,47
+Messina,Italy,38.2,15.566667,Unknown,48
+Al Iskandariyh (Alexandria),Egypt,31.166667,29.833333,Unknown,49
+Damietta,Egypt,31.483333,31.75,Unknown,50
+Port Of Le Havre,France,49.483333,0.116667,Unknown,51
+Nagoya Ko,Japan,35.066667,136.866667,Unknown,52
+Muqdisho,Somalia,2.033333,45.35,Unknown,53
+Lagos,Nigeria,6.4,3.4,Unknown,54
+Rade De Brest,France,48.383333,-4.5,Yes,55
+Lagos,Portugal,37.1,-8.616667,Unknown,56
+Wakayama-Shimotsu Ko,Japan,34.2,135.133333,Unknown,57
+Split,Croatia,43.5,16.433333,Unknown,58
+Tangier-Mediterranean,Morocco,35.9,-5.516667,Unknown,59
+Tarragona,Spain,41.1,1.233333,Unknown,60
+Tokyo Ko,Japan,35.666667,139.75,Unknown,61
+Port Klang,Malaysia,3.0,101.4,Unknown,62
+Tianjin Xin Gang,China,38.966667,117.833333,Unknown,63
+Ras Isa Marine Terminal,Yemen,15.133333,42.6,Unknown,64
+Wakamatsu Ko,Japan,33.9,130.816667,Unknown,65
+Osaka,Japan,34.65,135.433333,Unknown,66
+Bur Sa'id,Egypt,31.266667,32.3,Unknown,67
+Calcutta,India,22.55,88.33333299999998,Unknown,68
+Chennai (Madras),India,13.1,80.29999999999998,Unknown,69
+Mumbai (Bombay),India,18.966667,72.866667,Unknown,70
+Kattupalli Port,India,13.306944444,80.35222222199998,Unknown,71
+Puerto La Cruz,Venezuela,10.25,-64.633333,Yes,72
+Bayrut,Lebanon,33.9,35.5,Yes,73
+Baniyas,Syria,35.188333333,35.943333333,Yes,74
+Puerto Guantanamo,Cuba,19.983333,-75.13333299999998,Unknown,75
+Cienfuegos,Cuba,22.15,-80.45,Yes,76
+Ain Sukhna Terminal,Egypt,29.583333,32.366667,Unknown,77
+Abidjan,Cote D'Ivoire,5.25,-4.016667,Unknown,78
+Pennington Oil Terminal,Nigeria,4.25,5.616667,Unknown,79
+Mina Jabal Ali,United Arab Emirates,25.016667,55.05,Unknown,80
+Funchal,Portugal,32.633333,-16.916667,Unknown,81
+Las Palmas,Spain,28.15,-15.416667,Unknown,82
+Nuevitas Bay,Cuba,21.55,-77.266667,Yes,83
+Los Angeles,United States,33.75,-118.25,Unknown,84
+Wellington,New Zealand,-41.283333,174.783333,Unknown,85
+Jamestown,"Saint Helena, Ascension, and Tristan da Cunha",-15.916667,-5.716667,Unknown,86
+Cape Town,South Africa,-33.916667,18.416667,Unknown,87
+Novorossiysk,Russia,44.716667,37.783333,Unknown,88
+Odesa,Ukraine,46.483333,30.733333,Unknown,89
+Illichivsk,Ukraine,46.3,30.65,Unknown,90
+Istanbul,Turkey,41.016667,28.966667,Unknown,91
+Dundee,United Kingdom,56.466667,-2.95,Unknown,92
+Antwerpen,Belgium,51.216667,4.4,Unknown,93
+Amsterdam,Netherlands,52.366667,4.9,Unknown,94
+Bremen,Germany,53.133333,8.766667,Unknown,95
+Bremerhaven,Germany,53.533333,8.583333,Unknown,96
+Hamburg,Germany,53.55,9.933333,Unknown,97
+Malmo,Sweden,55.623333333,12.984722222,Yes,98
+Goteborg,Sweden,57.709722222,11.954722222,Unknown,99
+Bordeaux,France,44.866667,-0.566667,Unknown,100
+Manchester,United Kingdom,53.483333,-2.266667,Unknown,101
+Liverpool,United Kingdom,53.416667,-3.0,Unknown,102
+Halifax,Canada,44.65,-63.583333,Unknown,103
+Kiel,Germany,54.316667,10.133333,Yes,104
+Gdansk,Poland,54.35,18.666667,Yes,105
+Buenos Aires,Argentina,-34.6,-58.366667,Unknown,106
+Detroit,United States,42.333333,-83.033333,Unknown,107
+Buffalo,United States,42.883333,-78.88333299999998,Unknown,108
+London,United Kingdom,51.5,-0.0833329999999,Unknown,109
+Cilacap,Indonesia,-7.733333,109.0,Unknown,110
+Kokkola,Finland,63.85,23.016667,Yes,111
+Kotka,Finland,60.466667,26.966667,Yes,112
+Canaport (St. John),Canada,45.2,-65.983333,Unknown,113
+Foynes,Ireland,52.616667,-9.116667,Unknown,114
+Kasim Terminal,Indonesia,-1.3,131.016667,Unknown,115
+Lon Shui Terminal,China,20.833333,115.683333,Unknown,116
+Hong Kong,Hong Kong,22.266667,114.2,Unknown,117
+Helsinki,Finland,60.166667,24.966667,Yes,118
+Murmansk,Russia,68.983333,33.05,Unknown,119
+Rotterdam,Netherlands,51.9,4.483333,Unknown,120
+Oulu,Finland,65.016667,25.4,Yes,121
+Stockholm,Sweden,59.333333,18.05,Yes,122
+Santos,Brazil,-23.95,-46.3,Unknown,123
+Seattle,United States,47.6,-122.333333,Unknown,124
+Samsun,Turkey,41.3,36.35,Unknown,125
+Varna,Bulgaria,43.183333,27.966667,Yes,126
+Oslo,Norway,59.898055556,10.745555556,Yes,127
+Rostock,Germany,54.1,12.133333,Yes,128
+Portland,United States,45.516667,-122.666667,Unknown,129
+Rade De Cherbourg,France,49.65,-1.633333,Unknown,130
+Teesport,United Kingdom,54.65,-1.133333,Unknown,131
+Southampton,United Kingdom,50.9,-1.4,Unknown,132
+Sevastopol,Ukraine,44.616667,33.533333,Unknown,133
+Port Of Rouen,France,49.45,1.066667,Unknown,134
+Tri-City Port,United States,38.716667,-90.2,Unknown,135
+Vanasadam - Port of Tallinn,Estonia,59.450128,24.766676,Yes,136
+Sillamae,Estonia,59.42612,27.73945,Yes,137
+Trieste,Italy,45.651,13.746,Unknown,138
+Cleveland,United States,41.5,-81.716667,Unknown,139
+Belfast,United Kingdom,54.616667,-5.9,Yes,140
+Pori,Finland,61.483333,21.8,Yes,141
+Vancouver,Canada,49.283333,-123.116667,Unknown,142
+Sankt-Peterburg,Russia,59.933333,30.3,Yes,143
+Busan,South Korea,35.1,129.033333,Unknown,144
+Inchon,South Korea,37.466667,126.616667,Unknown,145
+Bangkok,Thailand,13.75,100.5,Unknown,146
+Shanghai,China,31.216667,121.5,Unknown,147
+Qingdao Gang,China,36.033333,120.266667,Unknown,148
+Johor,Malaysia,1.433333,103.9,Unknown,149
+Jurong Island,Singapore,1.283333,103.733333,Unknown,150
+Auckland,New Zealand,-36.85,174.766667,Unknown,151
+Rio Grande,Brazil,-32.05,-52.083333,Unknown,152
+Manila,Philippines,14.583333,120.966667,Unknown,153
+Paldiski Lounasadam,Estonia,59.333343,24.081111,Yes,154
+Tan-Shui,Taiwan,25.183333,121.4,Yes,155
+Muuga-Port of Tallin,Estonia,59.500042,24.966693,Yes,156
+Tai-Chung Kang,Taiwan,24.3,120.5,Yes,157
+Kao-Hsiung,Taiwan,22.616667,120.25,Yes,158
+Gdynia,Poland,54.533333,18.55,Yes,159
+Kobenhavn,Denmark,55.7,12.616667,Yes,160
+Riga,Latvia,56.95,24.1,Yes,161
+Tubarao,Brazil,-20.283333,-40.25,Unknown,162
+Fremantle,Australia,-32.05,115.75,Yes,163
+Bahai De La Habana,Cuba,23.133333,-82.366667,Yes,164
+Vladivostok,Russia,43.108888889,131.888333333,Yes,165
+Melbourne,Australia,-37.833333,144.966667,Unknown,166
+Newcastle,Australia,-32.916667,151.783333,Yes,167
+Brisbane,Australia,-27.466667,153.033333,Yes,168
+Sydney,Australia,-33.866667,151.2,Yes,169
+Bahia De Sagua De Tanamo,Cuba,20.683333,-75.33333299999998,Yes,170
+Antilla,Cuba,20.833333,-75.733333,Yes,171
+Chi-Lung,Taiwan,25.133333,121.766667,Yes,172
+Kawasaki Ko,Japan,35.5,139.766667,Unknown,173
+Yokohama Ko,Japan,35.45,139.583333,Unknown,174
